@@ -1,8 +1,6 @@
 package com.giu.resources;
 
 import com.giu.representation.Hello;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
