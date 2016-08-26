@@ -28,8 +28,6 @@ springBoot {
 }
 
 ext {
-    springBootVersion = '1.3.3.RELEASE'
-    springVersion='4.2.5.RELEASE'
     nexusUser = "admin"
     nexusPassword = "R3dB33575"
     nexusUrl =  "http://repo.dev.redbee.io:80/content/repositories/releases/"
@@ -84,7 +82,6 @@ dependencies {
     compile "org.springframework:spring-beans:4.2.5.RELEASE"
     compile "org.springframework:spring-aspects:4.2.5.RELEASE"
 
-
     //Test dependencies
     testCompile 'cglib:cglib-nodep:3.1'
     testCompile ('org.spockframework:spock-core:1.0-groovy-2.4-1'){
@@ -93,15 +90,6 @@ dependencies {
     testCompile 'org.codehaus.groovy:groovy-all:4.5.1'
     compile 'net.logstash.logback:logstash-logback-encoder:4.5.1'
 }
-
-task uploadNexus() {
-    if(project.hasProperty('release')){
-        println "Release $project.release"
-        project.version = project.release
-    }
-}
-
-uploadArchives.dependsOn('uploadNexus') 
 
 jacocoTestReport {
     reports {
@@ -141,6 +129,5 @@ task buildDocker(type: Docker, dependsOn: build) {
 
 
 bootRun {
-
     //jvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"]
 }

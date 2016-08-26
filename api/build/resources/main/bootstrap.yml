@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: giu-api
-  cloud:
-    config:
-      env: develop
-      uri: http://localhost:18190/giu-cloud-config/config
