@@ -1,0 +1,20 @@
+ESPECIFICACIONES FUNCIONALES :-D
+
+Principal:
+	V: La lista de jobs (nombre, estado,  
+	A: Acceso a cada vista indexada
+
+	Principal de vista:
+	V: La lista de jobs La lista de jobs (estado)
+	A: Volver a ppal
+	A: indexado: ver job / build job
+	
+		Principal de job:
+			V: detalles de job
+			A: build
+			A: volver principal de vista
+
+
+
+
+
