@@ -12,7 +12,7 @@ public class Order {
     private User user;
     private List<OrderItem> detail;
 
-
+    public Order(){}
     public Order(Event event, User user, List<OrderItem> detail) {
         this.event = event;
         this.user = user;

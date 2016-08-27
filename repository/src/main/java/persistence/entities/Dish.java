@@ -11,6 +11,8 @@ public class Dish {
 
     private String type;
 
+
+    public Dish(){}
     public Dish(String name, String type) {
         this.name = name;
         this.type = type;

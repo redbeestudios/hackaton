@@ -5,6 +5,7 @@ public class OrderItem {
     private Dish dish;
     private Integer quantity;
 
+    public OrderItem(){}
     public OrderItem(Dish dish, Integer quantity) {
         this.dish = dish;
         this.quantity = quantity;

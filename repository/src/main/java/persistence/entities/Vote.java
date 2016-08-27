@@ -13,6 +13,7 @@ public class Vote {
     private Restaurant restaurant;
 
 
+    public Vote(){}
     public Vote(User user, Restaurant restaurant) {
         this.user = user;
         this.restaurant = restaurant;

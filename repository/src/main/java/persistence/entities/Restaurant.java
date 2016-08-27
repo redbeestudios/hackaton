@@ -14,6 +14,9 @@ public class Restaurant {
 
     private Collection<Dish> dishes=new ArrayList<Dish>();
 
+    public Restaurant(){}
+
+
     public Restaurant(String name, Collection<Dish> dishes) {
         this.name = name;
         this.dishes = dishes;
