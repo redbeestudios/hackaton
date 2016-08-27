@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppSettings } from '../configs/app.settings';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+
 
 @Component({
   selector: 'navbar',
@@ -12,14 +14,13 @@ import { AppSettings } from '../configs/app.settings';
     </div>
 
     <ul class="nav navbar-nav navbar-right nav-bar-buttons">
-      <li class="button-navbar"><button type="submit" class="btn btn-default">Restaurants</button></li>
-      <li class="button-navbar"><button type="submit" class="btn btn-default">Eventos</button></li>
+      <li class="button-navbar"><a routerLink='/events' routerLinkActive="active">Eventos</a></li>
+      <li class="button-navbar"><a routerLink='/restaurants' routerLinkActive="active">Restaurants</a></li>
     </ul>
-
-
 
       </div>
     </nav>
+
     `,
   styles:[`
     .navbar {
@@ -32,24 +33,19 @@ import { AppSettings } from '../configs/app.settings';
 
     .button-navbar {
       margin-left: 10px;
-      padding-top: 5px;
+      border: solid 1px;
+      border-radius: 5px;
+      border-color: #A4A4A4;
      }
 
-     .logout-button{
-        position: relative;
-        top: 5px;
-        color: #000;
-     }
+     .button-navbar:hover {
+       background-color: #FFFFFF;
+      }
 
-     .logout-button:hover{
-        cursor: pointer;
-     }
-
-  `]
+  `],
+  directives: [ ROUTER_DIRECTIVES ]
 })
 export class NavbarComponent implements OnInit{
-
-
 
   constructor() {
   }
@@ -57,8 +53,6 @@ export class NavbarComponent implements OnInit{
   ngOnInit(){
     //this.getUser();
   }
-
-
 
   // logout(){
   //   //TODO: mover a un service de uath

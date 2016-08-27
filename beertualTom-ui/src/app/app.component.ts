@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { NavbarComponent } from './components/navbar.cmpt';
 
 @Component({
@@ -12,7 +13,7 @@ import { NavbarComponent } from './components/navbar.cmpt';
 
       `,
   styleUrls: ['app.component.css'],
-  directives: [ NavbarComponent ]
+  directives: [ NavbarComponent, ROUTER_DIRECTIVES ]
 })
 export class AppComponent {
   title = 'BeerTualTom';
