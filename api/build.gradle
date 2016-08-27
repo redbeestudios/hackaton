@@ -37,7 +37,7 @@ ext {
 
 
 jar {
-    baseName = 'com-virtual-tom-api'
+    baseName = 'beertual-tom-api'
 }
 version = '0.0.1'
 
@@ -83,6 +83,7 @@ dependencies {
     compile "org.springframework:spring-orm:4.2.5.RELEASE"
     compile "org.springframework:spring-beans:4.2.5.RELEASE"
     compile "org.springframework:spring-aspects:4.2.5.RELEASE"
+    compile group: 'com.redbee', name: 'beertual-tom-repository', version: '1.2.0'
 
     //Test dependencies
     testCompile 'cglib:cglib-nodep:3.1'
