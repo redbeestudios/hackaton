@@ -1,5 +1,7 @@
 package org.telegram.updateshandlers;
 
+import org.telegram.SenderHelper;
+import org.telegram.api.methods.Constants;
 import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
 import org.telegram.api.objects.ReplyKeyboardMarkup;
@@ -10,6 +12,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 import static org.telegram.services.LocalisationService.lformat;
 
 /**
@@ -19,7 +27,8 @@ public class LunchHandler extends BaseStatelessHandler {
 
     private static final BotLogger LOGGER = BotLogger.getLogger(JenkinsHandlers.class.getName());
     private List<String[]> actions = Arrays.asList(new String[]{"event", Emoji.CONSTRUCTION_SIGN.toString()},
-            new String[]{"poll", Emoji.TELEVISION.toString()}, new String[]{"orders", Emoji.BICYCLE.toString()});
+            new String[]{"poll", Emoji.TELEVISION.toString()}, new String[]{"order", Emoji.BICYCLE.toString()},
+            new String[]{"restaurant", Emoji.BICYCLE.toString()});
 
     public LunchHandler(){
         super();
@@ -88,7 +97,18 @@ public class LunchHandler extends BaseStatelessHandler {
     }
 
     public SendMessage handleRestaurant(Message message) {
-        return buildMessage(message, getDefaultKeyboard());
+        
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target("http://demo5329197.mockable.io/restaurants");
+    	
+    	Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
+    	
+    	SendMessage sendMessage = new SendMessage();
+		sendMessage.setText(response.readEntity(String.class));
+		sendMessage.setChatId(message.getChatId());
+		sendMessage.setReplayMarkup(getDefaultKeyboard());
+		
+		return sendMessage;
     }
 
     
