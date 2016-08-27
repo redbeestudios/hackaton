@@ -3812,3 +3812,628 @@
 [26_8_2016_21_22:18]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
 [26_8_2016_21_22:39]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
 [26_8_2016_21_22:40]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_50:45]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_21_50:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_51:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_51:7]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_51:28]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_51:28]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_51:50]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_51:50]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_52:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_52:12]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_52:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_52:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_52:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_52:55]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_53:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_53:17]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_53:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_53:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_53:59]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_54:0]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_54:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_54:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_54:27]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446544,"message":{"date":1472259267,"entities":[{"offset":0,"length":6,"type":"bot_command"}],"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":343,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"/start"}}]
+[26_8_2016_21_54:27]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@61a6b49
+[26_8_2016_21_54:51]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_54:52]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446545,"message":{"date":1472259275,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":344,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"Hola"}}]
+[26_8_2016_21_54:52]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_54:52]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@16d1961a
+[26_8_2016_21_55:14]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_55:15]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_55:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446546,"message":{"date":1472259324,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":347,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"Hola"}}]
+[26_8_2016_21_55:24]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@adb10a4
+[26_8_2016_21_55:42]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_55:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446547,"message":{"date":1472259339,"chat":{"last_name":"López Tonkli","id":14696754,"type":"private","first_name":"Pablo"},"message_id":348,"from":{"last_name":"López Tonkli","id":14696754,"first_name":"Pablo"},"text":"Hhhh"}}]
+[26_8_2016_21_55:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_55:44]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@2456323b
+[26_8_2016_21_56:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_56:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_56:27]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_56:28]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_56:49]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_56:50]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_57:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_57:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_57:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_57:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_57:47] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_57:47]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_57:49] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_57:49]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_57:51] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_57:51]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_57:53]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446548,"message":{"date":1472259473,"chat":{"last_name":"López Tonkli","id":14696754,"type":"private","first_name":"Pablo"},"message_id":351,"from":{"last_name":"López Tonkli","id":14696754,"first_name":"Pablo"},"text":"Jjjjj"}}]
+[26_8_2016_21_57:53]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@56af0784
+[26_8_2016_21_57:57] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_57:57]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:0] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:0]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:2] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:4] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:6] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:8] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:8]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:10] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:10]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:15]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_21_58:15]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:17] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:17]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:19] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:19]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:22] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:22]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:24] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:26] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:26]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:28] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:28]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:31] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:31]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:33] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:35] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:35]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:37] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:37]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446550,"message":{"date":1472259518,"chat":{"last_name":"López Tonkli","id":14696754,"type":"private","first_name":"Pablo"},"message_id":356,"from":{"last_name":"López Tonkli","id":14696754,"first_name":"Pablo"},"text":"Restaurant"}}]
+[26_8_2016_21_58:38]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@2198f75
+[26_8_2016_21_58:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:40]  [org.telegram.updateshandlers.BaseStatelessHandler]FINE - Error handling the message
+[26_8_2016_21_58:40] FINE - java.util.UnknownFormatConversionException: Conversion = 'O'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720)
+	at java.util.Formatter.parse(Formatter.java:2560)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at org.telegram.services.LocalisationService.lformat(LocalisationService.java:63)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:66)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_21_58:42] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:42]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:44] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:44]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:46] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:46]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:48] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:48]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:51] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:51]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:53] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:53]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:55] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_58:55]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:56]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446551,"message":{"date":1472259535,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":358,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"String not found"}}]
+[26_8_2016_21_58:56]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@4287e210
+[26_8_2016_21_58:58]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_58:58]  [org.telegram.updateshandlers.BaseStatelessHandler]SEVERE - Invocando handler
+[26_8_2016_21_58:58] SEVERE - java.lang.NoSuchMethodException: org.telegram.updateshandlers.LunchHandler.handleEventz(org.telegram.api.objects.Message)
+	at java.lang.Class.getMethod(Class.java:1786)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:69)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_21_58:58]  [org.telegram.updateshandlers.BaseStatelessHandler]FINE - Error handling the message
+[26_8_2016_21_58:58] FINE - java.util.UnknownFormatConversionException: Conversion = 'O'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720)
+	at java.util.Formatter.parse(Formatter.java:2560)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at org.telegram.services.LocalisationService.lformat(LocalisationService.java:63)
+	at org.telegram.updateshandlers.LunchHandler.getDefaultKeyboard(LunchHandler.java:47)
+	at org.telegram.updateshandlers.BaseStatelessHandler.buildErrorMsg(BaseStatelessHandler.java:93)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:73)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_21_59:0] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:0]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:2] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:4] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:7] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:7]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:9] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:9]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:11] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:13] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:13]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:15] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:15]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:17] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:17]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:19] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:19]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:21] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:24] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_21_59:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:47] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:47]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:49] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:49]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:51] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:51]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:54] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:56] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:56]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_21_59:58] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_21_59:58]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:0] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:0]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:2] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:4] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:7] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:7]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:9] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:9]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:11] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:14] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:14]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:16] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:18] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:18]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:20] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:20]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:23] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:23]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:25] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:25]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:27] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:27]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:29] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:29]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:31] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:31]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:33] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_0:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_0:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_0:55]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_1:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_1:17]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_1:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_1:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_2:0]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_2:0]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_2:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_2:22]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_2:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_2:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_3:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_3:8]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_3:8]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_3:30]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_3:31]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_3:52]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_3:52]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:13]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_4:14]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:24] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:26] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:26]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:28] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:28]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:30] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:30]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:37]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_4:37]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:39] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:39]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:42] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:42]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:44] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:44]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:46] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:46]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:48] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:48]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:51] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:51]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:53] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:53]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:55] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:55]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:57] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:57]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_4:59] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_4:59]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:2] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:4] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:6] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:8] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:8]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:10] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:10]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:13] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:13]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:17] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:17]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:19] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:19]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:21] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:24] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_5:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:25]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446553,"message":{"date":1472259924,"chat":{"last_name":"López Tonkli","id":14696754,"type":"private","first_name":"Pablo"},"message_id":361,"from":{"last_name":"López Tonkli","id":14696754,"first_name":"Pablo"},"text":"Restaurant"}}]
+[26_8_2016_22_5:25]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@5fd5e169
+[26_8_2016_22_5:25]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_5:33]  [org.telegram.updateshandlers.BaseStatelessHandler]SEVERE - Invocando handler
+[26_8_2016_22_5:33] SEVERE - java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:70)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_5:37] WARNING - java.io.InvalidObjectException: {"description":"Conflict: terminated by other long poll or webhook","error_code":409,"ok":false}
+	at org.telegram.updatesreceivers.UpdatesThread$ReaderThread.run(UpdatesThread.java:79)
+
+[26_8_2016_22_6:3]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_6:14]  [org.telegram.updateshandlers.BaseStatelessHandler]FINE - Error handling the message
+[26_8_2016_22_6:14] FINE - java.util.UnknownFormatConversionException: Conversion = 'O'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720)
+	at java.util.Formatter.parse(Formatter.java:2560)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at org.telegram.services.LocalisationService.lformat(LocalisationService.java:63)
+	at org.telegram.updateshandlers.LunchHandler.getDefaultKeyboard(LunchHandler.java:47)
+	at org.telegram.updateshandlers.BaseStatelessHandler.buildErrorMsg(BaseStatelessHandler.java:93)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:73)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_6:26]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_6:26]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_6:48]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_6:48]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_7:9]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_7:10]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_7:31]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_7:31]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_7:52]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_7:53]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_8:14]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_8:15]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_8:36]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_8:36]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_8:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446555,"message":{"date":1472260125,"entities":[{"offset":0,"length":6,"type":"bot_command"}],"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":365,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"/start"}}]
+[26_8_2016_22_8:45]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@2f650326
+[26_8_2016_22_8:49]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_8:55]  [org.telegram.updateshandlers.BaseStatelessHandler]FINE - Error handling the message
+[26_8_2016_22_8:55] FINE - java.util.UnknownFormatConversionException: Conversion = 'O'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720)
+	at java.util.Formatter.parse(Formatter.java:2560)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at org.telegram.services.LocalisationService.lformat(LocalisationService.java:63)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:66)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_9:18]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_9:18]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_9:40]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_9:40]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_10:1]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_10:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_10:23]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_10:23]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_10:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_10:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_11:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_11:7]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_11:28]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_11:28]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_11:50]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_11:50]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_12:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_12:12]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_12:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446556,"message":{"date":1472260344,"chat":{"last_name":"López Tonkli","id":14696754,"type":"private","first_name":"Pablo"},"message_id":366,"from":{"last_name":"López Tonkli","id":14696754,"first_name":"Pablo"},"text":"Order"}}]
+[26_8_2016_22_12:24]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@75868def
+[26_8_2016_22_12:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_13:11]  [org.telegram.updateshandlers.BaseStatelessHandler]FINE - Error handling the message
+[26_8_2016_22_13:11] FINE - java.util.UnknownFormatConversionException: Conversion = 'O'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720)
+	at java.util.Formatter.parse(Formatter.java:2560)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at org.telegram.services.LocalisationService.lformat(LocalisationService.java:63)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:66)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_13:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_13:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_13:16]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_13:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_13:23]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446557,"message":{"date":1472260403,"entities":[{"offset":0,"length":6,"type":"bot_command"}],"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":367,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"/start"}}]
+[26_8_2016_22_13:23]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@2f650326
+[26_8_2016_22_13:23]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_13:47]  [org.telegram.updateshandlers.BaseStatelessHandler]FINE - Error handling the message
+[26_8_2016_22_13:47] FINE - java.util.UnknownFormatConversionException: Conversion = 'O'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720)
+	at java.util.Formatter.parse(Formatter.java:2560)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at org.telegram.services.LocalisationService.lformat(LocalisationService.java:63)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:66)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_13:58]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_13:59]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_14:20]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_14:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_14:27]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446558,"message":{"date":1472260466,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":368,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"Hola"}}]
+[26_8_2016_22_14:27]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@4ebe0150
+[26_8_2016_22_14:27]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_14:45]  [org.telegram.updateshandlers.BaseStatelessHandler]FINE - Error handling the message
+[26_8_2016_22_14:45] FINE - java.util.UnknownFormatConversionException: Conversion = 'O'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720)
+	at java.util.Formatter.parse(Formatter.java:2560)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at org.telegram.services.LocalisationService.lformat(LocalisationService.java:63)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:66)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_15:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_15:9]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_15:9]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_15:26]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446559,"message":{"date":1472260526,"entities":[{"offset":0,"length":5,"type":"bot_command"}],"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":369,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"/stop"}}]
+[26_8_2016_22_15:26]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@450b883d
+[26_8_2016_22_15:26]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_15:53]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_15:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_16:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_16:22]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_16:26]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446560,"message":{"date":1472260586,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":371,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"restaurant"}}]
+[26_8_2016_22_16:26]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@23803e78
+[26_8_2016_22_16:31]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_16:47] SEVERE - java.io.InvalidObjectException: {"description":"Bad Request: Message text is empty","error_code":400,"ok":false}
+	at org.telegram.SenderHelper.SendApiMethod(SenderHelper.java:75)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:45)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_16:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_16:55]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_17:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_17:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_17:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_17:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1

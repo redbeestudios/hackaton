@@ -18,8 +18,8 @@ import static org.telegram.services.LocalisationService.lformat;
 public class LunchHandler extends BaseStatelessHandler {
 
     private static final BotLogger LOGGER = BotLogger.getLogger(JenkinsHandlers.class.getName());
-    private List<String[]> actions = Arrays.asList(new String[]{"event", Emoji.CONSTRUCTION_SIGN.toString()},
-            new String[]{"poll", Emoji.TELEVISION.toString()}, new String[]{"orders", Emoji.BICYCLE.toString()});
+    private List<String[]> actions = Arrays.asList(new String[]{"restaurant", Emoji.CONSTRUCTION_SIGN.toString()},
+            new String[]{"eventz", Emoji.BUS_STOP.toString()}, new String[]{"order", Emoji.DELIVERY_TRUCK.toString()},new String[]{"poll", Emoji.TELEVISION.toString()});
 
     public LunchHandler(){
         super();
@@ -45,6 +45,7 @@ public class LunchHandler extends BaseStatelessHandler {
         keyboardFirstRow.add(lformat(this.actions.get(1)));
         List<String> keyboardSecondRow = new ArrayList<>();
         keyboardSecondRow.add(lformat(this.actions.get(2)));
+        keyboardSecondRow.add(lformat(this.actions.get(3)));
         keyboard.add(keyboardFirstRow);
         keyboard.add(keyboardSecondRow);
         replyKeyboardMarkup.setKeyboard(keyboard);
