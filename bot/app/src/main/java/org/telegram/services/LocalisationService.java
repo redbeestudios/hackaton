@@ -49,7 +49,8 @@ public class LocalisationService {
    */
   public static String lstring(String key) {
     try {
-      return getInstance().english.getString(key);
+    //  return getInstance().english.getString(key);
+      return "%s "+key;
     } catch (MissingResourceException e) {
       return "String not found";
     }

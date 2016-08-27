@@ -26,8 +26,8 @@ import static org.telegram.services.LocalisationService.lformat;
 public class LunchHandler extends BaseStatelessHandler {
 
     private static final BotLogger LOGGER = BotLogger.getLogger(JenkinsHandlers.class.getName());
-    private List<String[]> actions = Arrays.asList(new String[]{"restaurant", Emoji.CONSTRUCTION_SIGN.toString()},
-            new String[]{"eventz", Emoji.BUS_STOP.toString()}, new String[]{"order", Emoji.DELIVERY_TRUCK.toString()},new String[]{"poll", Emoji.TELEVISION.toString()});
+    private List<String[]> actions = Arrays.asList(new String[]{"Restaurant", Emoji.CONSTRUCTION_SIGN.toString()},
+            new String[]{"Event", Emoji.BUS_STOP.toString()}, new String[]{"Order", Emoji.DELIVERY_TRUCK.toString()},new String[]{"Poll", Emoji.TELEVISION.toString()});
 
     public LunchHandler(){
         super();

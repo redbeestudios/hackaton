@@ -4445,3 +4445,190 @@
 [26_8_2016_22_18:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
 [26_8_2016_22_19:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
 [26_8_2016_22_19:5]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_19:26]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_19:26]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_19:32]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_19:32]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_19:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446561,"message":{"date":1472260785,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":372,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"restaurant"}}]
+[26_8_2016_22_19:45]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@452c3e3b
+[26_8_2016_22_19:51]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_20:15]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_20:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_20:31]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446562,"message":{"date":1472260831,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":374,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚏Event"}}]
+[26_8_2016_22_20:31]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@7c55974c
+[26_8_2016_22_20:33]  [org.telegram.updateshandlers.BaseStatelessHandler]SEVERE - Invocando handler
+[26_8_2016_22_20:33] SEVERE - java.lang.NoSuchMethodException: org.telegram.updateshandlers.LunchHandler.handleEventz(org.telegram.api.objects.Message)
+	at java.lang.Class.getMethod(Class.java:1786)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:69)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_20:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_20:46]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446563,"message":{"date":1472260846,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":376,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚚Order"}}]
+[26_8_2016_22_20:46]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@593d3a79
+[26_8_2016_22_20:48]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_20:49] SEVERE - java.io.InvalidObjectException: {"description":"Bad Request: Message text is empty","error_code":400,"ok":false}
+	at org.telegram.SenderHelper.SendApiMethod(SenderHelper.java:75)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:45)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_20:56]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446564,"message":{"date":1472260856,"chat":{"last_name":"López Tonkli","id":14696754,"type":"private","first_name":"Pablo"},"message_id":377,"from":{"last_name":"López Tonkli","id":14696754,"first_name":"Pablo"},"text":"Restaurant"}}]
+[26_8_2016_22_20:56]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@1f5d98b8
+[26_8_2016_22_20:56]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_21:29]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446565,"message":{"date":1472260888,"chat":{"last_name":"López Tonkli","id":14696754,"type":"private","first_name":"Pablo"},"message_id":379,"from":{"last_name":"López Tonkli","id":14696754,"first_name":"Pablo"},"text":"restaurant"}}]
+[26_8_2016_22_21:29]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@589fa115
+[26_8_2016_22_22:9]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_22:35]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_22:35]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_22:57]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_22:57]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_23:18]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_23:19]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_23:40]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_23:41]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_24:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_24:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_24:23]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_24:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_24:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_24:46]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_25:7]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_25:7]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_25:29]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_25:29]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_25:50]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_25:51]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_26:12]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_26:12]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_26:34]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_26:34]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_26:55]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_26:56]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_27:17]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_27:18]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_27:39]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_27:39]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_28:1]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_28:1]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_28:22]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_28:23]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_28:44]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_28:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_29:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_29:6]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_29:27]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_29:28]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_29:49]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_29:49]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_30:10]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_30:11]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_30:32]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_30:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_30:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_30:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_31:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_31:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_31:37]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_31:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_31:59]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_32:0]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_32:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_32:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_32:27]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_32:27]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_32:48]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_32:49]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_32:53]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446566,"message":{"date":1472261572,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":381,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"restaurant"}}]
+[26_8_2016_22_32:53]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@62e6c32e
+[26_8_2016_22_32:53]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_33:14]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_33:14]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_33:36]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_33:36]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_33:57]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_33:58]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_34:19]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_34:19]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_34:41]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_34:41]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_35:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_35:3]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_35:10]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_35:10]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_35:19]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446567,"message":{"date":1472261719,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":383,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"restaurant"}}]
+[26_8_2016_22_35:19]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@4c0b717d
+[26_8_2016_22_35:19]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_35:40]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_35:41]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_36:2]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_36:3]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_36:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_36:24]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_36:45]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_36:46]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_37:7]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_37:8]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_37:29]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_37:33]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_37:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_37:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446568,"message":{"date":1472261863,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":385,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚧Restaurant"}}]
+[26_8_2016_22_37:43]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@3150bdd1
+[26_8_2016_22_37:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_38:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_38:5]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_38:27]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_38:27]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_38:39]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446569,"message":{"date":1472261919,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":387,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚧restaurant"}}]
+[26_8_2016_22_38:39]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@4c0b717d
+[26_8_2016_22_38:39]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_38:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446570,"message":{"date":1472261933,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":389,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚧 restaurant"}}]
+[26_8_2016_22_38:54]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@2027bcce
+[26_8_2016_22_38:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_38:59]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446571,"message":{"date":1472261939,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":391,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚏 eventz"}}]
+[26_8_2016_22_38:59]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@6c797fc9
+[26_8_2016_22_38:59]  [org.telegram.updateshandlers.BaseStatelessHandler]SEVERE - Invocando handler
+[26_8_2016_22_38:59] SEVERE - java.lang.NoSuchMethodException: org.telegram.updateshandlers.LunchHandler.handleEventz(org.telegram.api.objects.Message)
+	at java.lang.Class.getMethod(Class.java:1786)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleMessage(BaseStatelessHandler.java:69)
+	at org.telegram.updateshandlers.BaseStatelessHandler.handleIncomingMessage(BaseStatelessHandler.java:60)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:44)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_38:59]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_39:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446572,"message":{"date":1472261944,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":393,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚚 order"}}]
+[26_8_2016_22_39:4]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@1e091b31
+[26_8_2016_22_39:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_39:5] SEVERE - java.io.InvalidObjectException: {"description":"Bad Request: Message text is empty","error_code":400,"ok":false}
+	at org.telegram.SenderHelper.SendApiMethod(SenderHelper.java:75)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:45)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_39:12]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446573,"message":{"date":1472261952,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":394,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"📺 poll"}}]
+[26_8_2016_22_39:12]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@402d3f05
+[26_8_2016_22_39:12]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_39:13] SEVERE - java.io.InvalidObjectException: {"description":"Bad Request: Message text is empty","error_code":400,"ok":false}
+	at org.telegram.SenderHelper.SendApiMethod(SenderHelper.java:75)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:45)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
+[26_8_2016_22_39:33]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_39:33]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_39:54]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_39:55]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_40:3]  [org.telegram.SenderHelper]FINE - {"ok":true,"result":true,"description":"Webhook is already deleted"}
+[26_8_2016_22_40:3]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_40:14]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446574,"message":{"date":1472262014,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":395,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚧 restaurant"}}]
+[26_8_2016_22_40:14]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@3ec8f506
+[26_8_2016_22_40:14]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_40:20]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446575,"message":{"date":1472262019,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":397,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚧 Restaurant"}}]
+[26_8_2016_22_40:20]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@693957c5
+[26_8_2016_22_40:20]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_40:39]  [org.telegram.updatesreceivers.UpdatesThread]FINE - [{"update_id":200446576,"message":{"date":1472262038,"chat":{"last_name":"Muzzillo","id":264644224,"type":"private","first_name":"Gustavo Daniel"},"message_id":399,"from":{"last_name":"Muzzillo","id":264644224,"first_name":"Gustavo Daniel"},"text":"🚚 Order"}}]
+[26_8_2016_22_40:39]  [org.telegram.updateshandlers.BaseStatelessHandler]INFO - Message: org.telegram.api.objects.Message@1c8a1d1d
+[26_8_2016_22_40:39]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_40:40] SEVERE - java.io.InvalidObjectException: {"description":"Bad Request: Message text is empty","error_code":400,"ok":false}
+	at org.telegram.SenderHelper.SendApiMethod(SenderHelper.java:75)
+	at org.telegram.updateshandlers.BaseStatelessHandler.onUpdateReceived(BaseStatelessHandler.java:45)
+	at org.telegram.updatesreceivers.UpdatesThread$HandlerThread.run(UpdatesThread.java:136)
+
