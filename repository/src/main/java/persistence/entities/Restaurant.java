@@ -4,7 +4,6 @@ package persistence.entities;
 import org.springframework.data.annotation.Id;
 
 import java.util.Collection;
-import java.util.List;
 
 public class Restaurant {
     @Id

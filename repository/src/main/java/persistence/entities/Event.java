@@ -14,5 +14,4 @@ public class Event {
 
     private Date date;
 
-
 }
