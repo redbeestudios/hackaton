@@ -4437,3 +4437,11 @@
 [26_8_2016_22_17:16]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
 [26_8_2016_22_17:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
 [26_8_2016_22_17:38]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_17:59]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_18:0]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_18:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_18:21]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_18:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_18:43]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
+[26_8_2016_22_19:4]  [org.telegram.updatesreceivers.UpdatesThread]FINE - []
+[26_8_2016_22_19:5]  [org.telegram.updatesreceivers.UpdatesThread]FINE - POST https://api.telegram.org/bot49873302:AAEuu-gLv8O_zBY7aPmi_CHgggeLwALFmZA/getupdates HTTP/1.1
