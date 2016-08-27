@@ -1,5 +1,7 @@
 package org.telegram.updateshandlers;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.telegram.SenderHelper;
 import org.telegram.api.methods.Constants;
 import org.telegram.api.methods.SendMessage;
@@ -7,6 +9,8 @@ import org.telegram.api.objects.Message;
 import org.telegram.api.objects.ReplyKeyboardMarkup;
 import org.telegram.services.BotLogger;
 import org.telegram.services.Emoji;
+
+import io.redbee.Restaurant;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,7 +65,7 @@ public class LunchHandler extends BaseStatelessHandler {
         return replyKeyboardMarkup;
     }
 
-    public ReplyKeyboardMarkup getPollKeyBoard(){
+    public ReplyKeyboardMarkup getActionKeyboards(List<String[]> actions){
 
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
 
@@ -72,14 +76,17 @@ public class LunchHandler extends BaseStatelessHandler {
         List<List<String>> keyboard = new ArrayList<>();
 
         List<String> keyboardFirstRow = new ArrayList<>();
-        keyboardFirstRow.add(lformat(actions.get(0)));
-        keyboardFirstRow.add(lformat(actions.get(1)));
+        for (String[] action : actions) {
+        	keyboardFirstRow.add(lformat(action));
+		}
+        
+//        keyboardFirstRow.add(lformat(actions.get(1)));
 
-        List<String> keyboardSecondRow = new ArrayList<>();
-        keyboardSecondRow.add(lformat(actions.get(2)));
+//        List<String> keyboardSecondRow = new ArrayList<>();
+//        keyboardSecondRow.add(lformat(actions.get(2)));
 
         keyboard.add(keyboardFirstRow);
-        keyboard.add(keyboardSecondRow);
+//        keyboard.add(keyboardSecondRow);
 
         replyKeyboardMarkup.setKeyboard(keyboard);
 
@@ -98,15 +105,24 @@ public class LunchHandler extends BaseStatelessHandler {
 
     public SendMessage handleRestaurant(Message message) {
         
+    	
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target("http://demo5329197.mockable.io/restaurants");
     	
     	Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
     	
+    	JSONArray restaurants = new JSONObject(response.readEntity(String.class)).getJSONArray("restaurants");
+    	
+    	List<String[]> restaurantActions = new ArrayList<>();
+    	for (int i = 0; i < restaurants.length(); i++) {
+    		JSONObject restaurant = restaurants.getJSONObject(i);
+    		restaurantActions.add(new String[] {restaurant.getString("name"), Emoji.BLACK_NIB.toString()});
+		}
+    	
     	SendMessage sendMessage = new SendMessage();
-		sendMessage.setText(response.readEntity(String.class));
+		sendMessage.setText("Testttt");
 		sendMessage.setChatId(message.getChatId());
-		sendMessage.setReplayMarkup(getDefaultKeyboard());
+		sendMessage.setReplayMarkup(getActionKeyboards(restaurantActions));
 		
 		return sendMessage;
     }
@@ -119,10 +135,10 @@ public class LunchHandler extends BaseStatelessHandler {
 
 
     public SendMessage handlePoll(Message message) {
-        return buildMessage(message, getPollKeyBoard());
+        return buildMessage(message, getDefaultKeyboard());
     }
 
     public SendMessage handleOrder(Message message) {
-        return buildMessage(message, getPollKeyBoard());
+        return buildMessage(message, getDefaultKeyboard());
     }
 }
