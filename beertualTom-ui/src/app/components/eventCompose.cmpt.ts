@@ -29,7 +29,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   `],
   directives: [ ROUTER_DIRECTIVES ]
 })
-export class EventsComposeComponent implements OnInit{
+export class EventComposeComponent implements OnInit{
 
   constructor() {
   }

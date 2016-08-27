@@ -1,10 +1,13 @@
 
 import { provideRouter, RouterConfig }  from '@angular/router';
+
 import { EventsComponent } from '../components/events.cmpt';
-import { EventsComposeComponent } from '../components/eventsCompose.cmpt';
+import { EventComposeComponent } from '../components/eventCompose.cmpt';
+import { EventDetailsComponent } from '../components/eventDetails.cmpt';
 
 import { RestaurantsComponent } from '../components/restaurants.cmpt';
-
+import { RestaurantComposeComponent } from '../components/restaurantCompose.cmpt';
+import { RestaurantDetailsComponent } from '../components/restaurantDetails.cmpt';
 
 const routes: RouterConfig = [
     {
@@ -17,11 +20,23 @@ const routes: RouterConfig = [
     },
     {
         path: 'events/compose',
-        component: EventsComposeComponent
+        component: EventComposeComponent
+    },
+    {
+        path: 'events/:id',
+        component: EventDetailsComponent
     },
     {
         path: 'restaurants',
         component: RestaurantsComponent
+    },
+    {
+        path: 'restaurants/compose',
+        component: RestaurantComposeComponent
+    },
+    {
+        path: 'restaurants/:id',
+        component: RestaurantDetailsComponent
     }
 ];
 
