@@ -1,6 +1,7 @@
 buildscript {
 
     repositories {
+        mavenLocal()
         mavenCentral()
         jcenter()
     }
@@ -70,6 +71,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-web:1.3.3.RELEASE"
     compile "org.springframework.boot:spring-boot-actuator:1.3.3.RELEASE"
     compile 'org.springframework.data:spring-data-commons:1.12.1.RELEASE'
+
     testCompile "junit:junit:4.8.2"
     testCompile "org.mockito:mockito-core:1.+"
     compile "org.springframework:spring-core:4.2.5.RELEASE"
@@ -84,10 +86,6 @@ dependencies {
 
     //Test dependencies
     testCompile 'cglib:cglib-nodep:3.1'
-    testCompile ('org.spockframework:spock-core:1.0-groovy-2.4-1'){
-        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
-    }
-    testCompile 'org.codehaus.groovy:groovy-all:4.5.1'
     compile 'net.logstash.logback:logstash-logback-encoder:4.5.1'
 }
 

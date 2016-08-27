@@ -1,4 +1,4 @@
-package com.giu.representation;
+package com.redbee.io.representation;
 
 /**
  * Created by julian on 20/07/16.

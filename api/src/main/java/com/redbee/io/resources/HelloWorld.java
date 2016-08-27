@@ -1,12 +1,12 @@
-package com.giu.resources;
+package com.redbee.io.resources;
 
-import com.giu.representation.Hello;
+import com.redbee.io.representation.Hello;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * Created by martin on 14/07/16.
+ * Created by Channo on 14/07/16.
  */
 @RestController
 public class HelloWorld {
