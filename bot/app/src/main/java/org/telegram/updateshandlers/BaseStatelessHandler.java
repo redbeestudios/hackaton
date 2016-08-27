@@ -76,9 +76,13 @@ public abstract class BaseStatelessHandler implements UpdatesCallback {
         }
       }
     }
+    
+    return doHandleMessage(message);
 
-    return buildErrorMsg(message);
+//    return buildErrorMsg(message);
   }
+  
+  protected abstract BotApiMethod doHandleMessage(Message message);
 
   private String capitalize(String str) {
     return str.substring(0, 1).toUpperCase() + str.substring(1);

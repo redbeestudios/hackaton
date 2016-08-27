@@ -1,16 +1,6 @@
 package org.telegram.updateshandlers;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.telegram.SenderHelper;
-import org.telegram.api.methods.Constants;
-import org.telegram.api.methods.SendMessage;
-import org.telegram.api.objects.Message;
-import org.telegram.api.objects.ReplyKeyboardMarkup;
-import org.telegram.services.BotLogger;
-import org.telegram.services.Emoji;
-
-import io.redbee.Restaurant;
+import static org.telegram.services.LocalisationService.lformat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +12,17 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import static org.telegram.services.LocalisationService.lformat;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.telegram.api.methods.BotApiMethod;
+import org.telegram.api.methods.SendMessage;
+import org.telegram.api.objects.Message;
+import org.telegram.api.objects.ReplyKeyboardMarkup;
+import org.telegram.services.BotLogger;
+import org.telegram.services.Emoji;
+import org.telegram.services.LocalisationService;
+
+import redis.clients.jedis.Jedis;
 
 /**
  * Created by gustavo on 26/08/16.
@@ -32,15 +32,16 @@ public class LunchHandler extends BaseStatelessHandler {
     private static final BotLogger LOGGER = BotLogger.getLogger(JenkinsHandlers.class.getName());
     private List<String[]> actions = Arrays.asList(new String[]{"Restaurant", Emoji.CONSTRUCTION_SIGN.toString()},
             new String[]{"Event", Emoji.BUS_STOP.toString()}, new String[]{"Order", Emoji.DELIVERY_TRUCK.toString()},new String[]{"Poll", Emoji.TELEVISION.toString()});
+	
+    private Jedis jedis;
 
     public LunchHandler(){
         super();
+        jedis = new Jedis("localhost");
     }
-
 
     @Override
     public List<String[]> getActions() {
-
 
         return this.actions;
     }
@@ -116,8 +117,10 @@ public class LunchHandler extends BaseStatelessHandler {
     	List<String[]> restaurantActions = new ArrayList<>();
     	for (int i = 0; i < restaurants.length(); i++) {
     		JSONObject restaurant = restaurants.getJSONObject(i);
-    		restaurantActions.add(new String[] {restaurant.getString("name"), Emoji.BLACK_NIB.toString()});
+    		restaurantActions.add(new String[] {restaurant.getString("name"),""});
 		}
+    	
+    	jedis.set(message.getChatId().toString(), "1");
     	
     	SendMessage sendMessage = new SendMessage();
 		sendMessage.setText("Testttt");
@@ -141,4 +144,40 @@ public class LunchHandler extends BaseStatelessHandler {
     public SendMessage handleOrder(Message message) {
         return buildMessage(message, getDefaultKeyboard());
     }
+
+	@Override
+	protected BotApiMethod doHandleMessage(Message message) {
+		
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target("http://demo5329197.mockable.io/restaurants");
+    	Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
+    	JSONArray restaurants = new JSONObject(response.readEntity(String.class)).getJSONArray("restaurants");
+		
+		String level = jedis.get(message.getChatId().toString());
+
+		List<String[]> dishesActions = new ArrayList<>();
+		if (level.equals("1")) {
+			for (int i = 0; i < restaurants.length(); i++) {
+	    		JSONObject restaurant = restaurants.getJSONObject(i);
+	    		if (restaurant.getString("name").equals(message.getText())) {
+	    			JSONArray dishes = restaurant.getJSONArray("dishes");
+	    			
+	    	    	for (int j = 0; j < dishes.length(); j++) {
+	    	    		JSONObject dish = dishes.getJSONObject(j);
+	    	    		dishesActions.add(new String[] {dish.getString("type"), Emoji.BLACK_NIB.toString()});
+	    			}
+	    			
+	    		}
+			}
+		}
+		
+		jedis.set(message.getChatId().toString(), "2");
+    	
+    	SendMessage sendMessage = new SendMessage();
+		sendMessage.setText("Testttt");
+		sendMessage.setChatId(message.getChatId());
+		sendMessage.setReplayMarkup(getActionKeyboards(dishesActions));
+		
+		return sendMessage;
+	}
 }
