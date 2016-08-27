@@ -110,7 +110,7 @@ public class LunchHandler extends BaseStatelessHandler {
 
 	public SendMessage handleRestaurant(Message message) {
 
-		WebTarget target = client.target("http://54.208.135.33:8081/restaurants");
+		WebTarget target = client.target("http://172.30.0.162:8081/restaurants");
 
 		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
 
@@ -148,7 +148,7 @@ public class LunchHandler extends BaseStatelessHandler {
 	protected BotApiMethod doHandleMessage(Message message) {
 
 		
-		WebTarget target = client.target("http://54.208.135.33:8081/restaurants");
+		WebTarget target = client.target("http://172.30.0.162:8081/restaurants");
 		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
 		JSONArray restaurants = new JSONArray(response.readEntity(String.class));
 
