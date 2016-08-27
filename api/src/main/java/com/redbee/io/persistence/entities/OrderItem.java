@@ -1,4 +1,4 @@
-package persistence.entities;
+package com.redbee.io.persistence.entities;
 
 
 public class OrderItem {

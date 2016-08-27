@@ -1,11 +1,11 @@
 package com.redbee.io.service;
 
 import com.redbee.io.converter.RestaurantConverter;
+import com.redbee.io.persistence.entities.Restaurant;
+import com.redbee.io.persistence.repositories.RestaurantRepository;
 import com.redbee.io.representation.RestaurantRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import persistence.entities.Restaurant;
-import persistence.repositories.RestaurantRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +17,10 @@ import java.util.List;
 public class RestaurantService {
 
 
-    private RestaurantConverter converter;
-    private RestaurantRepository repo;
-
     @Autowired
-    RestaurantService(RestaurantConverter converter, RestaurantRepository repo){
-        this.converter = converter;
-        this.repo = repo;
-    }
+    private RestaurantConverter converter;
+    @Autowired
+    private RestaurantRepository repo;
 
     public List<Restaurant> getAll() {
         return repo.findAll();

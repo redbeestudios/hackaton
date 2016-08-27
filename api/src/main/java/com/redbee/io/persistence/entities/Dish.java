@@ -1,4 +1,4 @@
-package persistence.entities;
+package com.redbee.io.persistence.entities;
 
 import org.springframework.data.annotation.Id;
 

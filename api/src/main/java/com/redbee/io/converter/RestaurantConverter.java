@@ -1,10 +1,10 @@
 package com.redbee.io.converter;
 
+import com.redbee.io.persistence.entities.Dish;
+import com.redbee.io.persistence.entities.Restaurant;
 import com.redbee.io.representation.DishRepresentation;
 import com.redbee.io.representation.RestaurantRepresentation;
 import org.springframework.stereotype.Component;
-import persistence.entities.Dish;
-import persistence.entities.Restaurant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,18 +21,19 @@ public class RestaurantConverter {
         result.setName(restaurant.getName());
         List<DishRepresentation> dishes = new ArrayList<DishRepresentation>();
 //        restaurant.getDishes().forEach(dish ->
-//                dishes.add(new DishRepresentation(dish.getType(), dish.getFlavour()))
+//                dishes.add(new DishRepresentation(dish.getName(), dish.getType()))
 //        );
         result.setDishes(dishes);
         return result;
     }
 
     public Restaurant convert(RestaurantRepresentation restaurantRepresentation) {
-        Restaurant result = new Restaurant(restaurantRepresentation.getName());
+        Restaurant result = new Restaurant();
         result.setId(restaurantRepresentation.getId());
+        result.setName(restaurantRepresentation.getName());
         List<Dish> dishes = new ArrayList<Dish>();
 //        restaurantRepresentation.getDishes().forEach(dish ->
-//         dishes.add(new Dish(dish.getType(), dish.getFlavour()))
+//         dishes.add(new Dish(dish.getName(), dish.getType()))
 //        );
         result.setDishes(dishes);
         return result;

@@ -1,10 +1,7 @@
-package persistence.entities;
+package com.redbee.io.persistence.entities;
 
 
 import org.springframework.data.annotation.Id;
-
-import javax.jws.soap.SOAPBinding;
-
 public class Vote {
     @Id
     private String id;
