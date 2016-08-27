@@ -1,4 +1,4 @@
-package org.telegram;
+package io.redbee;
 
 import org.telegram.updateshandlers.JenkinsHandlers;
 import org.telegram.updateshandlers.LunchHandler;
