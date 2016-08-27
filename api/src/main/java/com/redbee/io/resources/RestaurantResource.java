@@ -1,11 +1,11 @@
 package com.redbee.io.resources;
 
-import com.redbee.io.domain.Restaurant;
 import com.redbee.io.representation.RestaurantRepresentation;
 import com.redbee.io.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import persistence.entities.Restaurant;
 
 import java.util.List;
 
@@ -34,9 +34,8 @@ public class RestaurantResource {
 
     @RequestMapping(method = POST)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public void create(@RequestBody RestaurantRepresentation restaurant){
-        restaurantService.create(restaurant);
-
+    public RestaurantRepresentation create(@RequestBody RestaurantRepresentation restaurant){
+        return restaurantService.create(restaurant);
     }
 
     @RequestMapping(method = PUT)

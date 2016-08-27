@@ -1,10 +1,11 @@
 package com.redbee.io.service;
 
 import com.redbee.io.converter.RestaurantConverter;
-import com.redbee.io.domain.Restaurant;
 import com.redbee.io.representation.RestaurantRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import persistence.entities.Restaurant;
+import persistence.repositories.RestaurantRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,28 +21,22 @@ public class RestaurantService {
     private RestaurantRepository repo;
 
     @Autowired
-    RestaurantService(RestaurantConverter converter, RestaurantRepository repository){
+    RestaurantService(RestaurantConverter converter, RestaurantRepository repo){
         this.converter = converter;
-        this.repo = repository;
+        this.repo = repo;
     }
 
     public List<Restaurant> getAll() {
-        //return repo.findAll();
-        List<Restaurant> result = new ArrayList<>();
-        Restaurant item = new Restaurant();
-        item.setName("Kentucky");
-        item.setId("1");
-        result.add(item);
-        return result;
+        return repo.findAll();
     }
 
-    public void create(RestaurantRepresentation restaurantRespresentation) {
+    public RestaurantRepresentation create(RestaurantRepresentation restaurantRespresentation) {
        Restaurant restaurant = converter.convert(restaurantRespresentation);
-        repo.save(restaurant);
+       return converter.convert(repo.insert(restaurant));
     }
 
     public void update(RestaurantRepresentation representation) {
         Restaurant restaurant = converter.convert(representation);
-        repo.update(restaurant);
+        repo.save(restaurant);
     }
 }

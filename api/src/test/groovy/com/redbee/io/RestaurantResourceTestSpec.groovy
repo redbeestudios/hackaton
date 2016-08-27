@@ -1,8 +1,10 @@
 package com.redbee.io
 
-import com.redbee.io.domain.Restaurant
+import com.redbee.io.representation.RestaurantRepresentation
 import com.redbee.io.resources.RestaurantResource
 import com.redbee.io.service.RestaurantService
+import persistence.entities.Restaurant
+import persistence.repositories.RestaurantRepository
 import spock.lang.Specification
 
 /**
@@ -12,7 +14,6 @@ class RestaurantResourceTestSpec extends Specification{
 
     def restaurantResource = new RestaurantResource()
     def mockedService =  Mock(RestaurantService)
-    def mockedRepo = Mock(RestaurantRepository)
 
     public "getAll"() {
 
@@ -24,19 +25,20 @@ class RestaurantResourceTestSpec extends Specification{
 
         then:
         result.size() == 1
-        1 * mockedService.getAll() >> {return [new Restaurant()]}
+        1 * mockedService.getAll() >> {return [new Restaurant("El palacio de la pizza")]}
     }
 
     public "create"() {
         setup:
         restaurantResource.restaurantService = mockedService
-        restaurantResource.restaurantService.restaurantRepository = mockedRepo
-        Restaurant rest = new Restaurant([])
+        Restaurant rest = new Restaurant("El palacio de la pizza")
 
         when:
-        def result = restaurantResource.create()
+        def result = restaurantResource.create(new RestaurantRepresentation([name: "El palacio de la pizza"]))
 
         then:
-        result.
+        1 * mockedService.create(_) >> {return new RestaurantRepresentation([name: "El palacio de la pizza"])}
+        result.name == "El palacio de la pizza"
+
     }
 }
