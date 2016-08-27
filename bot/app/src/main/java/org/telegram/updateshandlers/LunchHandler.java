@@ -87,7 +87,11 @@ public class LunchHandler extends BaseStatelessHandler {
         return sendMessage;
     }
 
+    public SendMessage handleRestaurant(Message message) {
+        return buildMessage(message, getDefaultKeyboard());
+    }
 
+    
 
     public SendMessage handleEvent(Message message) {
         return buildMessage(message, getDefaultKeyboard());
