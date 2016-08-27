@@ -1,5 +1,6 @@
 package org.telegram.updateshandlers;
 
+import io.redbee.utils.GroupingCollector;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.SenderHelper;
@@ -75,18 +76,19 @@ public class LunchHandler extends BaseStatelessHandler {
 
         List<List<String>> keyboard = new ArrayList<>();
 
-        List<String> keyboardFirstRow = new ArrayList<>();
-        for (String[] action : actions) {
-        	keyboardFirstRow.add(lformat(action));
-		}
-        
-//        keyboardFirstRow.add(lformat(actions.get(1)));
 
-//        List<String> keyboardSecondRow = new ArrayList<>();
-//        keyboardSecondRow.add(lformat(actions.get(2)));
+        List<List<String[]>> pages = actions.stream().collect(new GroupingCollector<>(3));
 
-        keyboard.add(keyboardFirstRow);
-//        keyboard.add(keyboardSecondRow);
+        List<String> keyboardFirstRow = new ArrayList<>(0);
+
+        for(List<String[]> page : pages) {
+            keyboardFirstRow = new ArrayList<>();
+            for (String[] action : page) {
+
+                keyboardFirstRow.add(lformat(action));
+            }
+            keyboard.add(keyboardFirstRow);
+        }
 
         replyKeyboardMarkup.setKeyboard(keyboard);
 
@@ -116,7 +118,7 @@ public class LunchHandler extends BaseStatelessHandler {
     	List<String[]> restaurantActions = new ArrayList<>();
     	for (int i = 0; i < restaurants.length(); i++) {
     		JSONObject restaurant = restaurants.getJSONObject(i);
-    		restaurantActions.add(new String[] {restaurant.getString("name"), Emoji.BLACK_NIB.toString()});
+    		restaurantActions.add(new String[] {restaurant.getString("name"),"" });//Emoji.BLACK_NIB.toString()
 		}
     	
     	SendMessage sendMessage = new SendMessage();
