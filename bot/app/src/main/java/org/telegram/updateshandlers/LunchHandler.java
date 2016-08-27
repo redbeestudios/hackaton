@@ -40,7 +40,7 @@ public class LunchHandler extends BaseStatelessHandler {
 
 	public LunchHandler() {
 		super();
-		jedis = new Jedis("localhost");
+		jedis = new Jedis("172.30.0.162");
 		client = ClientBuilder.newClient();
 	}
 
@@ -110,7 +110,7 @@ public class LunchHandler extends BaseStatelessHandler {
 
 	public SendMessage handleRestaurant(Message message) {
 
-		WebTarget target = client.target("http://demo5329197.mockable.io/restaurants");
+		WebTarget target = client.target("http://54.208.135.33:8081/restaurants");
 
 		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
 
@@ -148,7 +148,7 @@ public class LunchHandler extends BaseStatelessHandler {
 	protected BotApiMethod doHandleMessage(Message message) {
 
 		
-		WebTarget target = client.target("http://demo5329197.mockable.io/restaurants");
+		WebTarget target = client.target("http://54.208.135.33:8081/restaurants");
 		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
 		JSONArray restaurants = new JSONObject(response.readEntity(String.class)).getJSONArray("restaurants");
 
