@@ -85,9 +85,15 @@ dependencies {
     compile "org.springframework:spring-aspects:4.2.5.RELEASE"
     compile group: 'com.redbee', name: 'beertual-tom-repository', version: '1.2.0'
 
+    compile 'org.codehaus.groovy:groovy-all:2.4.5'
+
     //Test dependencies
     testCompile 'cglib:cglib-nodep:3.1'
     compile 'net.logstash.logback:logstash-logback-encoder:4.5.1'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test',
+            'junit:junit:4.12',
+            'org.spockframework:spock-core:1.0-groovy-2.4', 'cglib:cglib:3.1')
 }
 
 jacocoTestReport {
@@ -123,7 +129,7 @@ task buildDocker(type: Docker, dependsOn: build) {
     volume("/tmp", "/newrelic", "/log")
     addFile("${jar.baseName}-${project.version}.jar", "app.jar")
     runCommand("bash -c 'touch /app.jar'")
-    entryPoint(["java","-Djava.security.egd=file:/dev/./urandom", "-javaagent:/newrelic/newrelic.jar","-jar","/app.jar"])
+    entryPoint(["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"])
 }
 
 

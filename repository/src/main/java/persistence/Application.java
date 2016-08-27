@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import persistence.repositories.DishRepository;
 import persistence.repositories.RestaurantRepository;
+import persistence.repositories.UserRepository;
 
 
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class Application implements CommandLineRunner {
 
     @Autowired
     private DishRepository dishRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -36,6 +39,7 @@ public class Application implements CommandLineRunner {
 
         restaurantRepository.deleteAll();
         dishRepository.deleteAll();
+        userRepository.deleteAll();
 
         Dish muzzaPalacio = new Dish("Porción Muzzarella","Pizza");
         Dish fainaPalacio = new Dish("Porción Faina","Pizza");
