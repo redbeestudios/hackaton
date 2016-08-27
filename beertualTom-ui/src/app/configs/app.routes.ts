@@ -1,7 +1,10 @@
 
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { EventsComponent } from '../components/events.cmpt';
+import { EventsComposeComponent } from '../components/eventsCompose.cmpt';
+
 import { RestaurantsComponent } from '../components/restaurants.cmpt';
+
 
 const routes: RouterConfig = [
     {
@@ -11,6 +14,10 @@ const routes: RouterConfig = [
     {
         path: 'events',
         component: EventsComponent
+    },
+    {
+        path: 'events/compose',
+        component: EventsComposeComponent
     },
     {
         path: 'restaurants',
