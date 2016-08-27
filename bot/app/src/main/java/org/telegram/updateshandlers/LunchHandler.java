@@ -1,7 +1,18 @@
 package org.telegram.updateshandlers;
 
+<<<<<<< HEAD
 import static org.telegram.services.LocalisationService.lformat;
-
+=======
+import io.redbee.utils.GroupingCollector;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.telegram.SenderHelper;
+import org.telegram.api.methods.Constants;
+import org.telegram.api.methods.SendMessage;
+import org.telegram.api.objects.Message;
+import org.telegram.api.objects.ReplyKeyboardMarkup;
+import org.telegram.services.BotLogger;
+import org.telegram.services.Emoji;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -76,18 +87,19 @@ public class LunchHandler extends BaseStatelessHandler {
 
         List<List<String>> keyboard = new ArrayList<>();
 
-        List<String> keyboardFirstRow = new ArrayList<>();
-        for (String[] action : actions) {
-        	keyboardFirstRow.add(lformat(action));
-		}
-        
-//        keyboardFirstRow.add(lformat(actions.get(1)));
 
-//        List<String> keyboardSecondRow = new ArrayList<>();
-//        keyboardSecondRow.add(lformat(actions.get(2)));
+        List<List<String[]>> pages = actions.stream().collect(new GroupingCollector<>(3));
 
-        keyboard.add(keyboardFirstRow);
-//        keyboard.add(keyboardSecondRow);
+        List<String> keyboardFirstRow = new ArrayList<>(0);
+
+        for(List<String[]> page : pages) {
+            keyboardFirstRow = new ArrayList<>();
+            for (String[] action : page) {
+
+                keyboardFirstRow.add(lformat(action));
+            }
+            keyboard.add(keyboardFirstRow);
+        }
 
         replyKeyboardMarkup.setKeyboard(keyboard);
 
