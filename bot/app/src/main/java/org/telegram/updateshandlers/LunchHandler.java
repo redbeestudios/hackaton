@@ -155,7 +155,7 @@ public class LunchHandler extends BaseStatelessHandler {
 		String level = jedis.get(message.getChatId().toString());
 
 		List<String[]> dishesActions = new ArrayList<>();
-		if (level.equals("1")) {
+		if (level != null && level.equals("1")) {
 			for (int i = 0; i < restaurants.length(); i++) {
 				JSONObject restaurant = restaurants.getJSONObject(i);
 				if (restaurant.getString("name").equals(message.getText())) {
