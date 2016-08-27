@@ -3,6 +3,7 @@ package persistence.entities;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Restaurant {
@@ -11,10 +12,11 @@ public class Restaurant {
 
     private String name;
 
-    private Collection<Dish> dishes;
+    private Collection<Dish> dishes=new ArrayList<Dish>();
 
-    public Restaurant(String name) {
-        this.name=name;
+    public Restaurant(String name, Collection<Dish> dishes) {
+        this.name = name;
+        this.dishes = dishes;
     }
 
     public String getId() {
@@ -39,5 +41,9 @@ public class Restaurant {
 
     public void setDishes(Collection<Dish> dishes) {
         this.dishes = dishes;
+    }
+
+    public void addDish(Dish dish){
+        dishes.add(dish);
     }
 }

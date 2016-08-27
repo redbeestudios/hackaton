@@ -1,11 +1,7 @@
 package persistence.repositories;
 
-import persistence.entities.Dish;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import persistence.entities.Dish;
 
-/**
- * Created by manuel.camisas.gays on 8/26/16.
- */
 public interface DishRepository extends MongoRepository<Dish, String> {
-
 }

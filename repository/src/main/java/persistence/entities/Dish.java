@@ -2,9 +2,6 @@ package persistence.entities;
 
 import org.springframework.data.annotation.Id;
 
-/**
- * Created by manuel.camisas.gays on 8/26/16.
- */
 
 public class Dish {
     @Id
@@ -12,7 +9,26 @@ public class Dish {
 
     private String name;
 
-    public Dish(String name) {
+    private String type;
+
+    public Dish(String name, String type) {
+        this.name = name;
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 }
