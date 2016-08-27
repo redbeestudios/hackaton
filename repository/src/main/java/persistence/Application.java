@@ -1,12 +1,19 @@
-package hello;
+package persistence;
 
+import hello.Customer;
+import hello.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import persistence.entities.Dish;
+import persistence.repositories.DishRepository;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
+
+    @Autowired
+    private DishRepository dishRepo;
 
     @Autowired
     private CustomerRepository repository;
@@ -20,13 +27,14 @@ public class Application implements CommandLineRunner {
 
 //        repository.deleteAll();
         // save a couple of customers
+        dishRepo.save(new Dish("Porcion de Fugazzeta"));
         repository.save(new Customer("Aliceaaa", "Smith"));
         repository.save(new Customer("Bobaaaa", "Smith"));
 
         // fetch all customers
         System.out.println("Customers found with findAll():");
         System.out.println("-------------------------------");
-        for (Customer customer : repository.findAll()) {
+        for (Customer customer : dishRepo.findAll()) {
             System.out.println(customer);
         }
         System.out.println();
