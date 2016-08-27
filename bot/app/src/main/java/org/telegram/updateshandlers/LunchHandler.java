@@ -40,7 +40,7 @@ public class LunchHandler extends BaseStatelessHandler {
 
 	public LunchHandler() {
 		super();
-		jedis = new Jedis("localhost");
+		jedis = new Jedis("172.30.0.162");
 		client = ClientBuilder.newClient();
 	}
 
