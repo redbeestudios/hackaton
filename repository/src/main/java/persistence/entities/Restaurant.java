@@ -45,7 +45,7 @@ public class Restaurant {
         return dishes;
     }
 
-    public void setDishes(List<Dish> dishes) {
+    public void setDishes(Collection<Dish> dishes) {
         this.dishes = dishes;
     }
 }
