@@ -40,7 +40,7 @@ public class LunchHandler extends BaseStatelessHandler {
 
 	public LunchHandler() {
 		super();
-		jedis = new Jedis("172.30.0.162");
+		jedis = new Jedis("localhost");
 		client = ClientBuilder.newClient();
 	}
 
@@ -114,7 +114,7 @@ public class LunchHandler extends BaseStatelessHandler {
 
 		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
 
-		JSONArray restaurants = new JSONObject(response.readEntity(String.class)).getJSONArray("restaurants");
+		JSONArray restaurants = new JSONArray(response.readEntity(String.class));
 
 		List<String[]> restaurantActions = new ArrayList<>();
 		for (int i = 0; i < restaurants.length(); i++) {
@@ -150,7 +150,7 @@ public class LunchHandler extends BaseStatelessHandler {
 		
 		WebTarget target = client.target("http://54.208.135.33:8081/restaurants");
 		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
-		JSONArray restaurants = new JSONObject(response.readEntity(String.class)).getJSONArray("restaurants");
+		JSONArray restaurants = new JSONArray(response.readEntity(String.class));
 
 		String level = jedis.get(message.getChatId().toString());
 
