@@ -24,6 +24,8 @@ public class Event {
 
     private EventState state;
 
+    public Event() {
+    }
 
     public Event(Date date, Collection<Restaurant> restaurants, Collection<User> voters, Restaurant chosenRestaurant,
                  Collection<Vote> votes, Collection<Order> orders, EventState state) {
