@@ -39,6 +39,7 @@ public abstract class BaseStatelessHandler implements UpdatesCallback {
 
   @Override
   public void onUpdateReceived(Update update) {
+	  LOGGER.info("Message: " + update.getMessage());
     try {
       BotApiMethod botApiMethod = handleIncomingMessage(Optional.ofNullable(update.getMessage()));
       SenderHelper.SendApiMethod(botApiMethod, Constants.BOT_TOKEN);
@@ -62,7 +63,7 @@ public abstract class BaseStatelessHandler implements UpdatesCallback {
   public BotApiMethod handleMessage(Message message) {
     if (message.hasText()) {
       for (String[] action : getActions()) {
-        if (message.getText().equals(lformat(action))) {
+        if (message.getText().equalsIgnoreCase(lformat(action))) {
 
           try {
             Method handler = this.getClass().getMethod("handle" + capitalize(action[0]), Message.class);
@@ -75,9 +76,13 @@ public abstract class BaseStatelessHandler implements UpdatesCallback {
         }
       }
     }
+    
+    return doHandleMessage(message);
 
-    return buildErrorMsg(message);
+//    return buildErrorMsg(message);
   }
+  
+  protected abstract BotApiMethod doHandleMessage(Message message);
 
   private String capitalize(String str) {
     return str.substring(0, 1).toUpperCase() + str.substring(1);

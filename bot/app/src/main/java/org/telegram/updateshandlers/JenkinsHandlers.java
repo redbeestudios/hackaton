@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.telegram.api.methods.BotApiMethod;
 import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
 import org.telegram.api.objects.ReplyKeyboardMarkup;
@@ -90,4 +91,10 @@ public class JenkinsHandlers extends BaseStatelessHandler {
   public List<String[]> getActions() {
     return actions;
   }
+
+@Override
+protected BotApiMethod doHandleMessage(Message message) {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
