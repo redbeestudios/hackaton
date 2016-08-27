@@ -9,17 +9,13 @@ public class Restaurant {
     @Id
     private String id;
 
-
     private String name;
 
     private Collection<Dish> dishes;
 
-
-
     public Restaurant(String name) {
         this.name=name;
     }
-
 
     public String getId() {
         return id;
@@ -36,7 +32,6 @@ public class Restaurant {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public Collection<Dish> getDishes() {
         return dishes;

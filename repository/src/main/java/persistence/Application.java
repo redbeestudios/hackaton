@@ -1,14 +1,21 @@
 package persistence;
 
 import persistence.entities.Restaurant;
+
+import persistence.entities.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import persistence.entities.Dish;
+import persistence.repositories.DishRepository;
 import persistence.repositories.RestaurantRepository;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
+
+    @Autowired
+    private DishRepository dishRepo;
 
     @Autowired
     private RestaurantRepository repository;
@@ -22,6 +29,7 @@ public class Application implements CommandLineRunner {
 
 //        repository.deleteAll();
         // save a couple of customers
+        dishRepo.save(new Dish("Porcion de Fugazzeta"));
         repository.save(new Restaurant("El Palacio de la Pizza"));
         repository.save(new Restaurant("El Buen Libro"));
 
