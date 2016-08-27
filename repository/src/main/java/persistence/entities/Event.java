@@ -1,4 +1,4 @@
 package persistence.entities;
 
-public class Dish {
+public class Event {
 }

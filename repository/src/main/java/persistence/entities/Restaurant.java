@@ -4,7 +4,6 @@ package persistence.entities;
 import org.springframework.data.annotation.Id;
 
 import java.util.Collection;
-import java.util.List;
 
 public class Restaurant {
     @Id
@@ -16,8 +15,6 @@ public class Restaurant {
     private Collection<Dish> dishes;
 
 
-    public Restaurant() {
-    }
 
     public Restaurant(String name) {
         this.name=name;
