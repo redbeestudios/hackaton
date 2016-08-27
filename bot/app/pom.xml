@@ -161,7 +161,52 @@
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
+
+				<plugin>
+					<groupId>com.spotify</groupId>
+					<artifactId>docker-maven-plugin</artifactId>
+					<version>0.4.11</version>
+					<configuration>
+						<imageName>beebot</imageName>
+						<baseImage>java:8</baseImage>
+						<!-- <dockerDirectory>docker</dockerDirectory> -->
+						<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+						<resources>
+							<resource>
+								<targetPath>/</targetPath>
+								<directory>${project.build.directory}</directory>
+								<include>${project.build.finalName}.jar</include>
+							</resource>
+						</resources>
+						<imageTags>
+							<imageTag>${project.version}</imageTag>
+							<imageTag>latest</imageTag>
+						</imageTags>
+					</configuration>
+				</plugin>
+
+
 			</plugins>
 		</pluginManagement>
 	</build>
+	<repositories>
+		<repository>
+			<id>sonatype-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>sonatype-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
 </project>
