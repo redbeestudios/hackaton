@@ -1,4 +1,4 @@
-package persistence.entities;
+package com.redbee.io.persistence.entities;
 
 
 import org.springframework.data.annotation.Id;
@@ -9,14 +9,6 @@ public class User {
     private String id;
     private String phoneNumber;
     private String name;
-
-
-    public User(){}
-
-    public User(String phoneNumber, String name) {
-        this.phoneNumber = phoneNumber;
-        this.name = name;
-    }
 
     public String getId() {
         return id;

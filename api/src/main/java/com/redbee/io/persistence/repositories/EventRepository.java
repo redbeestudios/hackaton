@@ -1,6 +1,6 @@
-package persistence.repositories;
+package com.redbee.io.persistence.repositories;
 
-import persistence.entities.Event;
+import com.redbee.io.persistence.entities.Event;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 

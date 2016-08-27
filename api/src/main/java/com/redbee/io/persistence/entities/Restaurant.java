@@ -1,10 +1,8 @@
-package persistence.entities;
-
-
+package com.redbee.io.persistence.entities;
 import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 public class Restaurant {
     @Id
@@ -12,15 +10,7 @@ public class Restaurant {
 
     private String name;
 
-    private Collection<Dish> dishes=new ArrayList<Dish>();
-
-    public Restaurant(){}
-
-
-    public Restaurant(String name, Collection<Dish> dishes) {
-        this.name = name;
-        this.dishes = dishes;
-    }
+    private List<Dish> dishes=new ArrayList<>();
 
     public String getId() {
         return id;
@@ -38,11 +28,11 @@ public class Restaurant {
         this.name = name;
     }
 
-    public Collection<Dish> getDishes() {
+    public List<Dish> getDishes() {
         return dishes;
     }
 
-    public void setDishes(Collection<Dish> dishes) {
+    public void setDishes(List<Dish> dishes) {
         this.dishes = dishes;
     }
 

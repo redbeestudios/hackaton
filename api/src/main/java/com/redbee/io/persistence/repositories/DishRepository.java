@@ -1,7 +1,7 @@
-package persistence.repositories;
+package com.redbee.io.persistence.repositories;
 
+import com.redbee.io.persistence.entities.Dish;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import persistence.entities.Dish;
 
 public interface DishRepository extends MongoRepository<Dish, String> {
 }

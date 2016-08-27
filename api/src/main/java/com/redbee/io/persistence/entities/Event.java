@@ -1,8 +1,8 @@
-package persistence.entities;
+package com.redbee.io.persistence.entities;
 
 import org.springframework.data.annotation.Id;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 public class Event {
@@ -12,30 +12,19 @@ public class Event {
 
     private Date date;
 
-    private Collection<Restaurant> restaurants;
+    private List<Restaurant> restaurants;
 
-    private Collection<User> voters;
+    private List<User> voters;
 
     private Restaurant chosenRestaurant;
 
-    private Collection<Vote> votes;
+    private List<Vote> votes;
 
-    private Collection<Order> orders;
+    private List<Order> orders;
 
     private EventState state;
 
     public Event() {
-    }
-
-    public Event(Date date, Collection<Restaurant> restaurants, Collection<User> voters, Restaurant chosenRestaurant,
-                 Collection<Vote> votes, Collection<Order> orders, EventState state) {
-        this.date = date;
-        this.restaurants = restaurants;
-        this.voters = voters;
-        this.chosenRestaurant = chosenRestaurant;
-        this.votes = votes;
-        this.orders = orders;
-        this.state = state;
     }
 
     public String getId() {
@@ -54,19 +43,19 @@ public class Event {
         this.date = date;
     }
 
-    public Collection<Restaurant> getRestaurants() {
+    public List<Restaurant> getRestaurants() {
         return restaurants;
     }
 
-    public void setRestaurants(Collection<Restaurant> restaurants) {
+    public void setRestaurants(List<Restaurant> restaurants) {
         this.restaurants = restaurants;
     }
 
-    public Collection<User> getVoters() {
+    public List<User> getVoters() {
         return voters;
     }
 
-    public void setVoters(Collection<User> voters) {
+    public void setVoters(List<User> voters) {
         this.voters = voters;
     }
 
@@ -78,19 +67,19 @@ public class Event {
         this.chosenRestaurant = chosenRestaurant;
     }
 
-    public Collection<Vote> getVotes() {
+    public List<Vote> getVotes() {
         return votes;
     }
 
-    public void setVotes(Collection<Vote> votes) {
+    public void setVotes(List<Vote> votes) {
         this.votes = votes;
     }
 
-    public Collection<Order> getOrders() {
+    public List<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(Collection<Order> orders) {
+    public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
 

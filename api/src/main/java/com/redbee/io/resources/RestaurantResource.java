@@ -1,11 +1,11 @@
 package com.redbee.io.resources;
 
+import com.redbee.io.persistence.entities.Restaurant;
 import com.redbee.io.representation.RestaurantRepresentation;
 import com.redbee.io.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import persistence.entities.Restaurant;
 
 import java.util.List;
 
