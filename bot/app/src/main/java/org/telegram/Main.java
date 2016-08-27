@@ -1,6 +1,5 @@
 package org.telegram;
 
-import org.telegram.updateshandlers.JenkinsHandlers;
 import org.telegram.updateshandlers.UpdatesCallback;
 
 public class Main {
@@ -11,7 +10,9 @@ public class Main {
     }
 
     private static void initBots() {
-//      UpdatesCallback holaBot = new HolaHandlers();
-      UpdatesCallback holaBot = new JenkinsHandlers();
+      UpdatesCallback holaBot = new HolaHandlers();
+
+      
+//      UpdatesCallback holaBot = new JenkinsHandlers();
     }
 }
