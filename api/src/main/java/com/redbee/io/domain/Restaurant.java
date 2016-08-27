@@ -1,5 +1,7 @@
 package com.redbee.io.domain;
 
+import java.util.List;
+
 /**
  * Created by channo on 26/08/16.
  */
@@ -7,18 +9,18 @@ public class Restaurant {
 
     private String id;
     private String name;
-    private String description;
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    private List<Dish> dishes;
 
     public String getId() {
         return id;
+    }
+
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
     }
 
     public void setId(String id) {
@@ -32,6 +34,7 @@ public class Restaurant {
     public void setName(String name) {
         this.name = name;
     }
+
 
 
 }
