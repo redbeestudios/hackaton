@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-import static org.springframework.web.bind.annotation.RequestMethod.PUT;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 /**
  * Created by Channo  26/08/16.
@@ -32,15 +30,28 @@ public class RestaurantResource {
         return restaurantService.getAll();
     }
 
+    @RequestMapping( method = GET,value = "/{id}")
+    public Restaurant getRestaurant(@PathVariable("id")  String id){
+        return restaurantService.get(id);
+    }
+
+
     @RequestMapping(method = POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public RestaurantRepresentation create(@RequestBody RestaurantRepresentation restaurant){
         return restaurantService.create(restaurant);
     }
 
-    @RequestMapping(method = PUT)
+    @RequestMapping(method = PUT,value = "/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public void update(@RequestBody RestaurantRepresentation restaurant) {
-        restaurantService.update(restaurant);
+    public void update(@RequestBody RestaurantRepresentation restaurant,@PathVariable("id") String id) {
+        restaurantService.update(restaurant,id);
     }
+
+    @RequestMapping(method = DELETE,value = "/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public void delete(@PathVariable("id") String id){
+        restaurantService.delete(id);
+    }
+
 }
