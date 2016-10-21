@@ -23,6 +23,7 @@ import org.telegram.services.Emoji;
 
 import io.redbee.domain.Event;
 import io.redbee.services.TomApiServiceImpl;
+import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.GroupingCollector;
 import redis.clients.jedis.Jedis;
@@ -32,7 +33,7 @@ import redis.clients.jedis.Jedis;
  */
 public class LunchHandler extends BaseStatelessHandler {
 
-  private static final TomApiService tomApiService = new TomApiServiceImpl();
+  private static final TomApiService tomApiService = TomApiServiceFactory.getInstance();
 
 	private static final BotLogger LOGGER = BotLogger.getLogger(LunchHandler.class.getName());
 	private List<String[]> actions = Arrays.asList(new String[] { "Restaurant", Emoji.CONSTRUCTION_SIGN.toString() },
@@ -57,47 +58,10 @@ public class LunchHandler extends BaseStatelessHandler {
 
 	@Override
 	public ReplyKeyboardMarkup getDefaultKeyboard() {
-    Event event = null; //tomApiService.find...
-
-    if (event == null) {
-      return keyboardNullEvent();
-    }
-
-    if (event.getStatus().equals(Event.Status.VOTING)) {
-      return keyboardVoting();
-    }
-
-    if (event.getStatus().equals(Event.Status.ORDERING)) {
-      return keyboardOrdering();
-    }
-
     return keyboardNullEvent();
 	}
 
   public ReplyKeyboardMarkup keyboardNullEvent() {
-    return null;
-  }
-
-  public ReplyKeyboardMarkup keyboardVoting() {
-    ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-    replyKeyboardMarkup.setSelective(true);
-    replyKeyboardMarkup.setResizeKeyboard(true);
-    replyKeyboardMarkup.setOneTimeKeyboad(false);
-    List<List<String>> keyboard = new ArrayList<>();
-    List<String> keyboardFirstRow = new ArrayList<>();
-    keyboardFirstRow.add(lformat(this.actions.get(0)));
-    keyboardFirstRow.add(lformat(this.actions.get(1)));
-    List<String> keyboardSecondRow = new ArrayList<>();
-    keyboardSecondRow.add(lformat(this.actions.get(2)));
-    keyboardSecondRow.add(lformat(this.actions.get(3)));
-    keyboard.add(keyboardFirstRow);
-    keyboard.add(keyboardSecondRow);
-    replyKeyboardMarkup.setKeyboard(keyboard);
-
-    return replyKeyboardMarkup;
-  }
-
-  public ReplyKeyboardMarkup keyboardOrdering() {
     ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
     replyKeyboardMarkup.setSelective(true);
     replyKeyboardMarkup.setResizeKeyboard(true);
@@ -145,102 +109,12 @@ public class LunchHandler extends BaseStatelessHandler {
 
 	}
 
-  /**
-   * Construye un mensaje de respuesta con un keyboard en base a un mensaje de entrada
-   *
-   * @param inputMsg
-   * @param keyboard
-   * @return
-   */
-	private SendMessage buildMessage(Message inputMsg, ReplyKeyboardMarkup keyboard) {
-		SendMessage sendMessage = new SendMessage();
-		sendMessage.setChatId(inputMsg.getChatId());
-		sendMessage.enableMarkdown(true);
-		sendMessage.setReplayToMessageId(inputMsg.getMessageId());
-		sendMessage.setReplayMarkup(keyboard);
-		return sendMessage;
-	}
-
-	public SendMessage handleRestaurant(Message message) {
-
-		WebTarget target = client.target("http://demo5329197.mockable.io/restaurants");
-
-		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
-
-		JSONArray restaurants = new JSONArray(response.readEntity(String.class));
-
-		List<String[]> restaurantActions = new ArrayList<>();
-		for (int i = 0; i < restaurants.length(); i++) {
-			JSONObject restaurant = restaurants.getJSONObject(i);
-			restaurantActions.add(new String[] { restaurant.getString("name"), "" });
-		}
-
-		jedis.set(message.getChatId().toString(), "1");
-
-		SendMessage sendMessage = new SendMessage();
-		sendMessage.setText("Testttt");
-		sendMessage.setChatId(message.getChatId());
-		sendMessage.setReplayMarkup(getActionKeyboards(restaurantActions));
-
-		return sendMessage;
-	}
-
-	public SendMessage handleEvent(Message message) {
-		return buildMessage(message, getDefaultKeyboard());
-	}
-
-	public SendMessage handlePoll(Message message) {
-		return buildMessage(message, getDefaultKeyboard());
-	}
-
-	public SendMessage handleOrder(Message message) {
-		return buildMessage(message, getDefaultKeyboard());
-	}
-
 	@Override
 	protected BotApiMethod doHandleMessage(Message message) {
-//
-//
-//
-//		WebTarget target = client.target("http://demo5329197.mockable.io/restaurants");
-//		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
-//		JSONArray restaurants = new JSONArray(response.readEntity(String.class));
-//
-//		String level = jedis.get(message.getChatId().toString());
-//
-//		List<String[]> dishesActions = new ArrayList<>();
-//		if (level != null && level.equals("1")) {
-//			for (int i = 0; i < restaurants.length(); i++) {
-//				JSONObject restaurant = restaurants.getJSONObject(i);
-//				if (restaurant.getString("name").equals(message.getText())) {
-//					JSONArray dishes = restaurant.getJSONArray("dishes");
-//
-//					for (int j = 0; j < dishes.length(); j++) {
-//						JSONObject dish = dishes.getJSONObject(j);
-//						dishesActions.add(new String[] { dish.getString("type"), Emoji.BLACK_NIB.toString() });
-//					}
-//
-//				}
-//			}
-//		}
-//
-//		if (!dishesActions.isEmpty()) {
-//
-//			jedis.set(message.getChatId().toString(), "2");
-//
-//			SendMessage sendMessage = new SendMessage();
-//			sendMessage.setText("Testttt");
-//			sendMessage.setChatId(message.getChatId());
-//			sendMessage.setReplayMarkup(getActionKeyboards(dishesActions));
-//
-//			return sendMessage;
-//		}
 
-    SendMessage replyMessage = buildMessage(message, getDefaultKeyboard());
-    replyMessage.setText("Testttt");
-    replyMessage.setChatId(message.getChatId());
+    Event event = tomApiService.findActiveEvent();
 
+    return event.buildReplyMessage(message);
 
-		return replyMessage;
 	}
 }

@@ -16,15 +16,15 @@ public class EventRepresentation {
 
     private Date date;
 
-    private List<Restaurant> restaurants;
+    private List<RestaurantRepresentation> restaurants;
 
-    private List<User> voters;
+    private List<UserRepresentation> voters;
 
-    private Restaurant chosenRestaurant;
+    private RestaurantRepresentation chosenRestaurant;
 
-    private List<Vote> votes;
+    private List<VoteRepresentation> votes;
 
-    private List<Order> orders;
+    private List<OrderRepresentation> orders;
 
     private EventState state;
 
@@ -44,43 +44,43 @@ public class EventRepresentation {
         this.date = date;
     }
 
-    public List<Restaurant> getRestaurants() {
+    public List<RestaurantRepresentation> getRestaurants() {
         return restaurants;
     }
 
-    public void setRestaurants(List<Restaurant> restaurants) {
+    public void setRestaurants(List<RestaurantRepresentation> restaurants) {
         this.restaurants = restaurants;
     }
 
-    public List<User> getVoters() {
+    public List<UserRepresentation> getVoters() {
         return voters;
     }
 
-    public void setVoters(List<User> voters) {
+    public void setVoters(List<UserRepresentation> voters) {
         this.voters = voters;
     }
 
-    public Restaurant getChosenRestaurant() {
+    public RestaurantRepresentation getChosenRestaurant() {
         return chosenRestaurant;
     }
 
-    public void setChosenRestaurant(Restaurant chosenRestaurant) {
+    public void setChosenRestaurant(RestaurantRepresentation chosenRestaurant) {
         this.chosenRestaurant = chosenRestaurant;
     }
 
-    public List<Vote> getVotes() {
+    public List<VoteRepresentation> getVotes() {
         return votes;
     }
 
-    public void setVotes(List<Vote> votes) {
+    public void setVotes(List<VoteRepresentation> votes) {
         this.votes = votes;
     }
 
-    public List<Order> getOrders() {
+    public List<OrderRepresentation> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<OrderRepresentation> orders) {
         this.orders = orders;
     }
 
