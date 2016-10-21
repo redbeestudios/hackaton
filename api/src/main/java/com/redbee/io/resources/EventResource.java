@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
 @RestController
@@ -25,21 +26,27 @@ public class EventResource {
         return eventService.getAll();
     }
 
-//    @RequestMapping(method = RequestMethod.GET,value = "/{id}")
-//    public Event getEvent(@PathVariable String id){
-//       return eventService.findOne(id);
-//    }
+    @RequestMapping(method = RequestMethod.GET,value = "/{id}")
+    public Event getEvent(@PathVariable String id){
+       return eventService.get(id);
+    }
 
-//    @RequestMapping(method = PUT,value = "/{id}")
-//    @ResponseStatus(value = HttpStatus.OK)
-//    public void update(@RequestBody EventRepresentation eventRepresentation, @PathVariable("id") String id) {
-//        return eventService.update(eventRepresentation,id);
-//    }
-//
-//    @RequestMapping(method = DELETE,value = "/{id}")
-//    @ResponseStatus(value = HttpStatus.OK)
-//    public void delete(@PathVariable("id") String id){
-//        eventService.delete(id);
-//    }
+    @RequestMapping(method = PUT,value = "/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public void update(@RequestBody EventRepresentation eventRepresentation, @PathVariable("id") String id) {
+        eventService.update(eventRepresentation,id);
+    }
+
+    @RequestMapping(method = DELETE,value = "/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public void delete(@PathVariable("id") String id){
+        eventService.delete(id);
+    }
+
+    @RequestMapping(method = POST)
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public EventRepresentation create(@RequestBody EventRepresentation eventRepresentation){
+        return eventService.create(eventRepresentation);
+    }
 
 }
