@@ -10,12 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 export var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'app works!';
+        this.title = 'HackaTom';
     }
     AppComponent = __decorate([
         Component({
             selector: 'app-root',
-            template: "\n  <h1>\n    {{title}}\n  </h1>\n  <restaurant-cmpt></restaurant-cmpt>\n  ",
+            template: "\n  <br>\n  <div class=\"container\">\n    <div class=\"card\">\n      <h1 style=\"text-align: center\">\n        {{title}}\n      </h1>\n    </div>\n  </div>\n  <restaurant-cmpt></restaurant-cmpt>\n  ",
             styles: [""]
         }), 
         __metadata('design:paramtypes', [])

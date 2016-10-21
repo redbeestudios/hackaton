@@ -23,7 +23,7 @@ export var RestaurantComponent = (function () {
     RestaurantComponent = __decorate([
         Component({
             selector: 'restaurant-cmpt',
-            template: "\n    <div class=\"container\">\n      <div  *ngFor=\"let restaurant of restaurants\"class=\"card\">\n        <div class=\"card-block\">\n          <h4 class=\"card-title\">{{ restaurant.id }} - {{ restaurant.name }}</h4>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>\n          <a href=\"#\" class=\"btn btn-danger\">Borrar</a>\n        </div>\n      </div>\n    </div>\n  ",
+            template: "\n    <div class=\"container\">\n      <h1>\n        Restaurants\n      </h1>\n\n      <button type=\"button\" class=\"btn btn-success block\" styles=\"text-align:right\">Crear</button>\n      <br><br>\n      <div  *ngFor=\"let restaurant of restaurants\"class=\"card\">\n        <div class=\"card-block\">\n          <h4 class=\"card-title\">{{ restaurant.id }} - {{ restaurant.name }}</h4>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>\n          <a href=\"#\" class=\"btn btn-primary\">Ver</a>\n          <a href=\"#\" class=\"btn btn-danger\">Borrar</a>\n        </div>\n      </div>\n    </div>\n  ",
             styles: [""],
             providers: [RestaurantService]
         }), 
