@@ -14,19 +14,19 @@ export var RestaurantComponent = (function () {
         this.restaurantService = restaurantService;
     }
     RestaurantComponent.prototype.ngOnInit = function () {
-        this.restaurants = this.getRestaurants();
+        this.getRestaurants();
     };
     RestaurantComponent.prototype.getRestaurants = function () {
-        var restaurants = [{ id: '2', name: 'Petalo', dishes: [{ name: 'muzza', type: 'pizza' }] },
-            { id: '3', name: 'Hamburgo', dishes: [{ name: 'muzza', type: 'pizza' }] }
-        ];
-        return restaurants;
+        var self = this;
+        this.restaurantService.getRestaurants().subscribe(function (res) {
+            self.restaurants = res;
+        });
     };
     RestaurantComponent = __decorate([
         Component({
             selector: 'restaurant-cmpt',
-            template: "\n    <div class=\"container\">\n      <h1>\n        Restaurants\n      </h1>\n      <a routerLink=\"/restaurant/new\" type=\"button\" class=\"btn btn-success block\" styles=\"text-align:right\">Crear</a>\n      <br><br>\n      <div *ngFor=\"let restaurant of restaurants\"class=\"card\">\n        <div class=\"card-block\">\n          <span>\n            <span class=\"card-title\">{{ restaurant.id }} - {{ restaurant.name }}</span>\n            <div style=\"float: right\">\n              <a href=\"#\" class=\"btn btn-primary block\">Editar</a>\n              <a href=\"#\" class=\"btn btn-danger block\">Borrar</a>\n            </div>\n          </span>\n        </div>\n      </div>\n    </div>\n  ",
-            styles: [""],
+            template: "\n    <div class=\"container\">\n      <span  class=\"title\"> Restaurants</span>\n      <a routerLink=\"/restaurant/new\" class=\"btn btn-success block\" style=\"float: right\">Crear</a>\n      <br><br>\n      <div *ngFor=\"let restaurant of restaurants\"class=\"card\">\n        <div class=\"card-block\">\n          <span>\n            <span class=\"card-title\">{{ restaurant.id }} - {{ restaurant.name }}</span>\n            <div style=\"float: right\">\n              <button class=\"btn btn-primary block\">Editar</button>\n              <button class=\"btn btn-danger block\" data-toggle=\"modal\" data-target=\"#myModal\">Borrar</button>\n            </div>\n          </span>\n        </div>\n      </div>\n\n      <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n              <h4 class=\"modal-title\" id=\"myModalLabel\">Eliminar Restaurante</h4>\n            </div>\n            <div class=\"modal-body\">\n              Estas seguro que queres eliminar este restaurant?\n            </div>\n            <div class=\"modal-footer\">\n              <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\n              <button type=\"button\" class=\"btn btn-danger\">Eliminar</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  ",
+            styles: ["\n    .title {\n      font-size: 36px;\n    }\n    "],
             providers: [RestaurantService]
         }), 
         __metadata('design:paramtypes', [RestaurantService])
