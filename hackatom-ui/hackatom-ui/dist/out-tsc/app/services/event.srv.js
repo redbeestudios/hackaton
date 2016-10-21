@@ -59,4 +59,4 @@ RestaurantService = __decorate([
     __metadata("design:paramtypes", [Http])
 ], RestaurantService);
 export { RestaurantService };
-//# sourceMappingURL=../../../../src/app/services/restaurant.srv.js.map
+//# sourceMappingURL=../../../../src/app/services/event.srv.js.map

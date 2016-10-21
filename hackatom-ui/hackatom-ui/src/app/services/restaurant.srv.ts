@@ -10,17 +10,39 @@ export class RestaurantService {
 
   constructor(private http: Http) {}
 
-  getRestaurants(): Array<Restaurant> {
-    return null;
+  getRestaurants(): Observable<Restaurant[]> {
+    return this.http.get(this.restaurantUrl)
+                    .map(this.extractData)
+                    .catch(this.handleError);
   }
 
   getRestaurant(id: String): Observable<Restaurant> {
 
-    return this.http.get(this.restaurantUrl)
+    return this.http.get(this.restaurantUrl + '/' + id)
                     .map(this.extractData)
                     .catch(this.handleError);
-
   }
+
+  saveRestaurant(restaurant: Restaurant): Observable<Restaurant> {
+    let body = JSON.stringify(restaurant);
+    return this.http.post(this.restaurantUrl, body)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  updateRestaurant(restaurant: Restaurant): Observable<Restaurant> {
+    let body = JSON.stringify(restaurant);
+    return this.http.put(this.restaurantUrl + '/' + restaurant.id, body)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  deleteRestaurant(id: String): Observable<Response> {
+    return this.http.delete(this.restaurantUrl + '/' + id)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
   private extractData(res: Response) {
     let body = res.json();
 
@@ -35,11 +57,5 @@ export class RestaurantService {
       console.error(errMsg); // log to console instead
       return Observable.throw(errMsg);
     }
-
-  saveRestaurants(restaurant: Restaurant): void {}
-
-  deleteRestaurant(id: string): void {}
-
-  editRestaurant(id: string): void {}
 
 }
