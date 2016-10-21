@@ -147,6 +147,7 @@ public class LunchHandler extends BaseStatelessHandler {
 	@Override
 	protected BotApiMethod doHandleMessage(Message message) {
 
+
 		
 		WebTarget target = client.target("http://172.30.0.162:8081/restaurants");
 		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();

@@ -17,8 +17,6 @@ import org.telegram.api.objects.ReplyKeyboardMarkup;
 import org.telegram.api.objects.Update;
 import org.telegram.services.BotLogger;
 import org.telegram.services.Emoji;
-import org.telegram.updateshandlers.states.CommandState;
-import org.telegram.updateshandlers.states.DefaultCommandState;
 import org.telegram.updatesreceivers.UpdatesThread;
 
 /**
@@ -29,12 +27,9 @@ public abstract class BaseStatelessHandler implements UpdatesCallback {
   public static final String DEFAULT_LANG = "es";
   private static final BotLogger LOGGER = BotLogger.getLogger(BaseStatelessHandler.class.getName());
 
-  private CommandState currentState;
-
   public BaseStatelessHandler() {
     SenderHelper.SendWebhook("", Constants.BOT_TOKEN);
     new UpdatesThread(Constants.BOT_TOKEN, this);
-    this.currentState = new DefaultCommandState();
   }
 
   @Override

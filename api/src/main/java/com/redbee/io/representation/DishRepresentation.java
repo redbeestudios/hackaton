@@ -7,6 +7,8 @@ public class DishRepresentation {
     private String name;
     private String type;
 
+    public DishRepresentation(){}
+
     public DishRepresentation(String name, String type) {
         this.name = name;
         this.type = type;
