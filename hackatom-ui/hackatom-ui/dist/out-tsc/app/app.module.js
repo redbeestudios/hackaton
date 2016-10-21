@@ -7,19 +7,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
-export var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'app works!';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { AppComponent } from './app.component';
+import { RestaurantComponent } from './components/restaurant.cmpt';
+export var AppModule = (function () {
+    function AppModule() {
     }
-    AppComponent = __decorate([
-        Component({
-            selector: 'app-root',
-            template: "\n  <h1>\n    {{title}}\n  </h1>\n  <restaurant-cmpt></restaurant-cmpt>\n  ",
-            styles: [""]
+    AppModule = __decorate([
+        NgModule({
+            declarations: [
+                AppComponent,
+                RestaurantComponent
+            ],
+            imports: [
+                BrowserModule,
+                FormsModule,
+                HttpModule
+            ],
+            providers: [],
+            bootstrap: [AppComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], AppModule);
+    return AppModule;
 }());
-//# sourceMappingURL=../../../src/app/app.component.js.map
+//# sourceMappingURL=../../../src/app/app.module.js.map
