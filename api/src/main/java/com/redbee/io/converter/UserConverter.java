@@ -2,6 +2,7 @@ package com.redbee.io.converter;
 
 import com.redbee.io.persistence.entities.User;
 import com.redbee.io.representation.UserRepresentation;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,6 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Created by martin on 21/10/16.
  */
+@Component
 public class UserConverter {
 
     public User convert(UserRepresentation userRepresentation){
