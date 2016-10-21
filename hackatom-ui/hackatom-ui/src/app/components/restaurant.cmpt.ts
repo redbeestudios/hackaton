@@ -5,8 +5,14 @@ import { RestaurantService } from '../services/restaurant.srv';
 @Component({
   selector: 'restaurant-cmpt',
   template: `
-    <div *ngFor="let restaurant of restaurants">
-      {{  restaurant.id }}
+    <div class="container">
+      <div  *ngFor="let restaurant of restaurants"class="card">
+        <div class="card-block">
+          <h4 class="card-title">{{ restaurant.id }} - {{ restaurant.name }}</h4>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <a href="#" class="btn btn-danger">Borrar</a>
+        </div>
+      </div>
     </div>
   `,
   styles: [``],
