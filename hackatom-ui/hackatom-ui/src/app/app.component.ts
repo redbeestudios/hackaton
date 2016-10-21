@@ -5,13 +5,20 @@ import { RestaurantComponent } from './components/restaurant.cmpt';
 @Component({
   selector: 'app-root',
   template: `
-  <h1>
-    {{title}}
-  </h1>
-  <restaurant-cmpt></restaurant-cmpt>
+  <br>
+  <div class="container">
+    <div class="card">
+      <h1 style="text-align: center">
+        {{title}}
+      </h1>
+    </div>
+  </div>
+
+  <!-- Routed views go here -->
+  <router-outlet></router-outlet>
   `,
   styles: [``]
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'HackaTom';
 }
