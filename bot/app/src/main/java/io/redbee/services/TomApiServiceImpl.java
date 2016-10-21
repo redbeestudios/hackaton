@@ -7,9 +7,9 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import io.redbee.domain.Dish;
+import io.redbee.domain.Event;
 import io.redbee.domain.Restaurant;
 import io.redbee.services.interfaces.TomApiService;
 
@@ -20,7 +20,7 @@ public class TomApiServiceImpl implements TomApiService {
 	
 
 	@Override
-	public String findActiveEvent() {
+	public Event findActiveEvent() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -31,8 +31,17 @@ public class RestaurantService {
        return converter.convert(repo.insert(restaurant));
     }
 
-    public void update(RestaurantRepresentation representation) {
+    public void update(RestaurantRepresentation representation,String id) {
+        representation.setId(id);
         Restaurant restaurant = converter.convert(representation);
         repo.save(restaurant);
+    }
+
+    public void delete(String id) {
+        repo.delete(id);
+    }
+
+    public Restaurant get(String id) {
+        return repo.findOne(id);
     }
 }
