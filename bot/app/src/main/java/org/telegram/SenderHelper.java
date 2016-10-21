@@ -1,5 +1,11 @@
 package org.telegram;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -12,15 +18,11 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
-import org.telegram.api.methods.*;
+import org.telegram.api.methods.BotApiMethod;
+import org.telegram.api.methods.Constants;
+import org.telegram.api.methods.SetWebhook;
 import org.telegram.services.BotLogger;
 import org.telegram.updateshandlers.SentCallback;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.InvalidObjectException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * @author Ruben Bermudez

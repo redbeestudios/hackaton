@@ -2,7 +2,6 @@ package io.redbee.services.interfaces;
 
 import java.util.List;
 
-
 import io.redbee.domain.Dish;
 import io.redbee.domain.Event;
 import io.redbee.domain.Restaurant;
