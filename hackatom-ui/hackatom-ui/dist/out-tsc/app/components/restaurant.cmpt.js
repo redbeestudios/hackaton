@@ -17,7 +17,9 @@ export var RestaurantComponent = (function () {
         this.restaurants = this.getRestaurants();
     };
     RestaurantComponent.prototype.getRestaurants = function () {
-        var restaurants = [{ id: '2', name: 'petalo', dishes: [{ name: 'muzza', type: 'pizza' }] }];
+        var restaurants = [{ id: '2', name: 'Petalo', dishes: [{ name: 'muzza', type: 'pizza' }] },
+            { id: '3', name: 'Hamburgo', dishes: [{ name: 'muzza', type: 'pizza' }] }
+        ];
         return restaurants;
     };
     RestaurantComponent = __decorate([

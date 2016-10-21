@@ -36,7 +36,9 @@ export class RestaurantComponent implements OnInit {
   }
 
   getRestaurants(): Array<Restaurant> {
-    let restaurants = [ {id: '2', name: 'petalo', dishes: [{ name: 'muzza', type: 'pizza' }]} ];
+    let restaurants = [ {id: '2', name: 'Petalo', dishes: [{ name: 'muzza', type: 'pizza' }]},
+       {id: '3', name: 'Hamburgo', dishes: [{ name: 'muzza', type: 'pizza' }]}
+   ];
     //return this.restaurantService.getRestaurants();
     return restaurants;
   }

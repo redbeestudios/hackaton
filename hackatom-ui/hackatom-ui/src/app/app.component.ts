@@ -13,7 +13,9 @@ import { RestaurantComponent } from './components/restaurant.cmpt';
       </h1>
     </div>
   </div>
-  <restaurant-cmpt></restaurant-cmpt>
+
+  <!-- Routed views go here -->
+  <router-outlet></router-outlet>
   `,
   styles: [``]
 })

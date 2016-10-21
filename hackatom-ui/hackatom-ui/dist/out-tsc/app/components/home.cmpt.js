@@ -8,18 +8,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-export var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'HackaTom';
+export var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    AppComponent = __decorate([
+    HomeComponent = __decorate([
         Component({
-            selector: 'app-root',
-            template: "\n  <br>\n  <div class=\"container\">\n    <div class=\"card\">\n      <h1 style=\"text-align: center\">\n        {{title}}\n      </h1>\n    </div>\n  </div>\n\n  <!-- Routed views go here -->\n  <router-outlet></router-outlet>\n  ",
+            selector: 'selector-cmpt',
+            template: "\n    <div class=\"container\">\n      <div class=\"col-md-6\">\n        <a routerLink=\"/restaurants\" class=\"btn btn-success block\" styles=\"text-align:right\">Restaurants</a>\n      </div>\n      <div class=\"col-md-6\">\n        <a routerLink=\"/restaurants\" type=\"button\" class=\"btn btn-success block\" styles=\"text-align:right\">Evento</a>\n      </div>\n        <router-outlet></router-outlet>\n    </div>\n  ",
             styles: [""]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HomeComponent);
+    return HomeComponent;
 }());
-//# sourceMappingURL=../../../src/app/app.component.js.map
+//# sourceMappingURL=../../../../src/app/components/home.cmpt.js.map
