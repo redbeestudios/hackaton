@@ -35,7 +35,7 @@ public class EventConverter {
         result.setId(event.getId());
         result.setDate(event.getDate());
         result.setState(event.getState());
-        result.setRestaurants(restaurantConverter.convertList(event.getRestaurants()));
+        result.setRestaurants(restaurantConverter.convertModelList(event.getRestaurants()));
 //        result.setVoters(userConverter.convertList(event.getVoters()));
 //        result.setChosenRestaurant(restaurantConverter.convert(event.getChosenRestaurant()));
 //        result.setOrders(orderConverter.convert(event.getOrders()));
@@ -48,7 +48,7 @@ public class EventConverter {
         result.setId(eventRepresentation.getId());
         result.setDate(eventRepresentation.getDate());
         result.setState(eventRepresentation.getState());
-        result.setRestaurants(restaurantConverter.convertList(eventRepresentation.getRestaurants()));
+        result.setRestaurants(restaurantConverter.convertRepresentationList(eventRepresentation.getRestaurants()));
         //result.setVoters(userConverter.convertList(eventRepresentation.getVoters()));
         //result.setChosenRestaurant(restaurantConverter.convert(eventRepresentation.getChosenRestaurant()));
         //result.setOrders(orderConverter.convert(eventRepresentation.getOrders()));
