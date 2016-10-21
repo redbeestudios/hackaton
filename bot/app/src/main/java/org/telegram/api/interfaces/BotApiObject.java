@@ -1,7 +1,6 @@
 package org.telegram.api.interfaces;
 
 import com.fasterxml.jackson.databind.JsonSerializable;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 /**
  * @author Ruben Bermudez

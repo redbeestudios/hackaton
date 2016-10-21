@@ -14,9 +14,10 @@ hs_err_pid*
 .idea
 .*
 *.iml
-
+api/log
 /log
 
 .idea/*
 *.log
+
 
