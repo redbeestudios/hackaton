@@ -15,7 +15,7 @@ export var AppComponent = (function () {
     AppComponent = __decorate([
         Component({
             selector: 'app-root',
-            template: "\n  <h1>\n    {{title}}\n  </h1>",
+            template: "\n  <h1>\n    {{title}}\n  </h1>\n  <restaurant-cmpt></restaurant-cmpt>\n  ",
             styles: [""]
         }), 
         __metadata('design:paramtypes', [])

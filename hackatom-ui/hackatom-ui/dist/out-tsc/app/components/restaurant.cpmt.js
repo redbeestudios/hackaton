@@ -14,15 +14,16 @@ export var RestaurantComponent = (function () {
         this.restaurantService = restaurantService;
     }
     RestaurantComponent.prototype.ngOnInit = function () {
-        this.getRestaurants();
+        this.restaurants = this.getRestaurants();
     };
     RestaurantComponent.prototype.getRestaurants = function () {
-        return this.restaurantService.getRestaurants();
+        var restaurants = [{ id: '2', name: 'petalo', dishes: [{ name: 'muzza', type: 'pizza' }] }];
+        return restaurants;
     };
     RestaurantComponent = __decorate([
         Component({
             selector: 'restaurant-cmpt',
-            template: "\n  ",
+            template: "\n    <div *ngFor=\"let restaurant of restaurants\">\n      {{  restaurant.id }}\n    </div>\n  ",
             styles: [""],
             providers: [RestaurantService]
         }), 

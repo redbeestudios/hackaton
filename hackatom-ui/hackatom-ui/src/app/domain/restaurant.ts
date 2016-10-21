@@ -1,8 +1,8 @@
-import { Product } from './product'
+import { Dish } from './dish'
 
 export class Restaurant {
-
-	name: String;
-	products: Array<Product>;
+	id: string;
+	name: string;
+	dishes: Array<Dish>;
 
 }
