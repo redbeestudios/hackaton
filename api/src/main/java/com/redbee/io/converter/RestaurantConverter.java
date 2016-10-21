@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created by martin on 26/08/16.
@@ -42,5 +43,10 @@ public class RestaurantConverter {
         result.setDishes(dishes);
         return result;
 
+    }
+
+
+    public List<RestaurantRepresentation> convertList(List <Restaurant> restaurantList) {
+        return restaurantList.stream().map(this::convert).collect(Collectors.toList());
     }
 }

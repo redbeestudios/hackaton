@@ -21,7 +21,6 @@
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>${FILE_LOG_PATTERN}</Pattern>
         </encoder>
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
     </appender>
 
     <logger name="io.redbee.rest.template.request" level="INFO">
