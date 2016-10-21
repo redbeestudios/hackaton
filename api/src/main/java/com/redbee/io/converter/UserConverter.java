@@ -3,6 +3,9 @@ package com.redbee.io.converter;
 import com.redbee.io.persistence.entities.User;
 import com.redbee.io.representation.UserRepresentation;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Created by martin on 21/10/16.
  */
@@ -22,5 +25,11 @@ public class UserConverter {
         userRepresentation.setName(user.getName());
         userRepresentation.setPhoneNumber(user.getPhoneNumber());
         return userRepresentation;
+    }
+
+    public List<UserRepresentation> convertList(List <User> restaurantList) {
+        return restaurantList.stream()
+                .map(this::convert)
+                .collect(Collectors.toList());
     }
 }
