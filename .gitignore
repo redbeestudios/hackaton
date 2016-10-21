@@ -20,3 +20,8 @@ hs_err_pid*
 .idea/*
 *.log
 
+
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+api/log/media.log
