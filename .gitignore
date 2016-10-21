@@ -14,14 +14,10 @@ hs_err_pid*
 .idea
 .*
 *.iml
-
+api/log
 /log
 
 .idea/*
 *.log
 
 
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
-api/log/media.log
