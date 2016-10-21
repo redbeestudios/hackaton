@@ -26,7 +26,7 @@ public class EventService {
     public Event get(String id) {
         return repo.findOne(id);
     }
-    
+
     public EventRepresentation create(EventRepresentation eventRespresentation) {
         Event Event = converter.convert(eventRespresentation);
         return converter.convert(repo.insert(Event));
