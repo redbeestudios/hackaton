@@ -8,7 +8,7 @@ import io.redbee.domain.Restaurant;
 
 public interface TomApiService {
 	
-	public String getEventId();
+	public String findActiveEvent();
 	public List<Restaurant> findRestaurants(String eventId);
 	public List<Dish> findDishesForEvent(String eventId, String restaurantId);
 	public boolean voteRestaurantForEvent(String eventId, String restaurantId);
