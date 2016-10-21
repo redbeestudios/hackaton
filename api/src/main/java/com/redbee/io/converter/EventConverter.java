@@ -35,24 +35,24 @@ public class EventConverter {
 
 
         result.setRestaurants(restaurantConverter.convertList(Event.getRestaurants()));
-        result.setVoters(Event.getVoters());
-        result.setChosenRestaurant(Event.getChosenRestaurant());
-        result.setOrders(Event.getOrders());
-        result.setVotes(Event.getVotes());
-        List<DishRepresentation> dishes = new ArrayList<DishRepresentation>();
-        result.setDishes(dishes);
+//        result.setVoters(Event.getVoters());
+//        result.setChosenRestaurant(Event.getChosenRestaurant());
+//        result.setOrders(Event.getOrders());
+//        result.setVotes(Event.getVotes());
+//        List<DishRepresentation> dishes = new ArrayList<DishRepresentation>();
+//        result.setDishes(dishes);
         return result;
     }
 
     public Event convert(EventRepresentation EventRepresentation) {
         Event result = new Event();
         result.setId(EventRepresentation.getId());
-        result.setName(EventRepresentation.getName());
-        List<Dish> dishes = new ArrayList<Dish>();
+//        result.setName(EventRepresentation.getName());
+//        List<Dish> dishes = new ArrayList<Dish>();
 //        EventRepresentation.getDishes().forEach(dish ->
 //         dishes.add(new Dish(dish.getName(), dish.getType()))
 //        );
-        result.setDishes(dishes);
+//        result.setDishes(dishes);
         return result;
 
     }
