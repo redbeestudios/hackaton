@@ -1,7 +1,7 @@
 package org.telegram.updateshandlers;
 
-import org.telegram.api.objects.Update;
 import org.telegram.api.methods.BotApiMethod;
+import org.telegram.api.objects.Update;
 
 /**
  * @author Ruben Bermudez

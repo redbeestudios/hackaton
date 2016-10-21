@@ -10,7 +10,6 @@ import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
 import org.telegram.api.objects.ReplyKeyboardMarkup;
 import org.telegram.services.Emoji;
-import org.telegram.services.LocalisationService;
 
 /**
  * Created by herve on 4/17/16.

@@ -1,8 +1,9 @@
 package org.telegram.api.methods;
 
-import com.fasterxml.jackson.databind.JsonSerializable;
 import org.json.JSONObject;
 import org.telegram.api.interfaces.IToJson;
+
+import com.fasterxml.jackson.databind.JsonSerializable;
 
 /**
  * @author Ruben Bermudez

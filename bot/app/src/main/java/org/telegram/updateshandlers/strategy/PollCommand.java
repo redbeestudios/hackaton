@@ -1,10 +1,10 @@
 package org.telegram.updateshandlers.strategy;
 
+import static org.telegram.services.LocalisationService.lformat;
+
 import org.telegram.api.methods.BotApiMethod;
 import org.telegram.api.objects.Message;
 import org.telegram.services.Emoji;
-
-import static org.telegram.services.LocalisationService.lformat;
 
 /**
  * Created by herve on 4/17/16.

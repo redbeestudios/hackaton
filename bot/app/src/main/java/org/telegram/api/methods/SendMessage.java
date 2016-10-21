@@ -1,13 +1,14 @@
 package org.telegram.api.methods;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
+import java.io.IOException;
+
 import org.json.JSONObject;
 import org.telegram.api.objects.Message;
 import org.telegram.api.objects.ReplyKeyboard;
 
-import java.io.IOException;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
 
 /**
  * @author Ruben Bermudez
