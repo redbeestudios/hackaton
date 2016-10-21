@@ -3,6 +3,7 @@ package com.redbee.io.service;
 
 import com.redbee.io.converter.EventConverter;
 import com.redbee.io.persistence.entities.Event;
+import com.redbee.io.persistence.entities.Restaurant;
 import com.redbee.io.persistence.repositories.EventRepository;
 import com.redbee.io.representation.EventRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +28,18 @@ public class EventService {
         return repo.findOne(id);
     }
 
-    public EventRepresentation create(EventRepresentation eventRespresentation) {
-        Event Event = converter.convert(eventRespresentation);
-        return converter.convert(repo.insert(Event));
+    public void update(EventRepresentation eventRepresentation, String id) {
+        eventRepresentation.setId(id);
+        Event event = converter.converter(eventRepresentation);
+        repo.save(event);
     }
 
-    public void update(EventRepresentation representation) {
-        Event Event = converter.convert(representation);
-        repo.save(Event);
+    public void delete(String id) {
+        repo.delete(id);
     }
-    
+
+    public EventRepresentation create(EventRepresentation eventRepresentation) {
+        Event event = converter.convert(eventRepresentation);
+        return converter.convert(repo.insert(event)).id;
+    }
 }
