@@ -12,7 +12,6 @@ import javax.ws.rs.core.MediaType;
 
 import io.redbee.domain.Dish;
 import io.redbee.domain.Event;
-import io.redbee.domain.EventVoting;
 import io.redbee.domain.Restaurant;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.EventFactory;
