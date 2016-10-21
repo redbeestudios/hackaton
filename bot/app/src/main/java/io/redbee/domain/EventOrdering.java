@@ -34,14 +34,14 @@ public class EventOrdering extends Event {
 
     Event event = service.findActiveEvent();
 
-    List<Restaurant> restaurants = service.findRestaurants(event.getEventId());
+    List<Dish> dishes = service.findDishesForEvent(event.getEventId());
 
     List<List<String>> keyboard = new ArrayList<>();
     List<String> keyboardFirstRow = new ArrayList<>();
 
-    for (Restaurant restaurant : restaurants) {
+    for (Dish dish : dishes) {
 
-      keyboardFirstRow.add(restaurant.getDescription());
+      keyboardFirstRow.add(dish.getDescription());
 
     }
     keyboard.add(keyboardFirstRow);
