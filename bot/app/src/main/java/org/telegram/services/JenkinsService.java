@@ -1,7 +1,5 @@
 package org.telegram.services;
 
-import static org.telegram.services.LocalisationService.lstring;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,7 +13,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.updateshandlers.JenkinsHandlers;
 
 /**
  * @author Ruben Bermudez
