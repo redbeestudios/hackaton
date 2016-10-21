@@ -16,11 +16,14 @@ import java.util.List;
 @Service
 public class RestaurantService {
 
+    private RestaurantConverter converter;
+    private RestaurantRepository repo;
 
     @Autowired
-    private RestaurantConverter converter;
-    @Autowired
-    private RestaurantRepository repo;
+    public RestaurantService(RestaurantConverter converter, RestaurantRepository repo) {
+        this.converter = converter;
+        this.repo = repo;
+    }
 
     public List<Restaurant> getAll() {
         return repo.findAll();
