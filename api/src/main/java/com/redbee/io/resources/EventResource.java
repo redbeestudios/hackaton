@@ -43,10 +43,10 @@ public class EventResource {
         eventService.delete(id);
     }
 
-    @RequestMapping(method = POST)
-    @ResponseStatus(value = HttpStatus.CREATED)
-    public EventRepresentation create(@RequestBody EventRepresentation eventRepresentation){
-        return eventService.create(eventRepresentation);
-    }
+//    @RequestMapping(method = POST)
+//    @ResponseStatus(value = HttpStatus.CREATED)
+//    public EventRepresentation create(@RequestBody EventRepresentation eventRepresentation){
+//        return eventService.create(eventRepresentation);
+//    }
 
 }
