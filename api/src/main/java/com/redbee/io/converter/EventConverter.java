@@ -27,33 +27,29 @@ public class EventConverter {
         this.restaurantConverter = converter;
     }
 
-    public EventRepresentation convert(Event Event){
+    public EventRepresentation convert(Event event){
         EventRepresentation result = new EventRepresentation();
-        result.setId(Event.getId());
-        result.setDate(Event.getDate());
-        result.setState(Event.getState());
-
-
-        result.setRestaurants(restaurantConverter.convertList(Event.getRestaurants()));
-        result.setVoters(Event.getVoters());
-        result.setChosenRestaurant(Event.getChosenRestaurant());
-        result.setOrders(Event.getOrders());
-        result.setVotes(Event.getVotes());
-        List<DishRepresentation> dishes = new ArrayList<DishRepresentation>();
-        result.setDishes(dishes);
+        result.setId(event.getId());
+        result.setDate(event.getDate());
+        result.setState(event.getState());
+        result.setRestaurants(restaurantConverter.convertList(event.getRestaurants()));
+        result.setVoters(userConverter.convertList(event.getVoters()));
+        result.setChosenRestaurant(restaurantConverter.convert(event.getChosenRestaurant()));
+        result.setOrders(orderConverter.convert(event.getOrders()));
+        result.setVotes(voteConverter.convertList(event.getVotes()));
         return result;
     }
 
-    public Event convert(EventRepresentation EventRepresentation) {
+    public Event convert(EventRepresentation eventRepresentation) {
         Event result = new Event();
-        result.setId(EventRepresentation.getId());
-        result.setName(EventRepresentation.getName());
-        List<Dish> dishes = new ArrayList<Dish>();
-//        EventRepresentation.getDishes().forEach(dish ->
-//         dishes.add(new Dish(dish.getName(), dish.getType()))
-//        );
-        result.setDishes(dishes);
+        result.setId(eventRepresentation.getId());
+        result.setDate(eventRepresentation.getDate());
+        result.setState(eventRepresentation.getState());
+        result.setRestaurants(restaurantConverter.convertList(eventRepresentation.getRestaurants()));
+        result.setVoters(userConverter.convertList(eventRepresentation.getVoters()));
+        result.setChosenRestaurant(restaurantConverter.convert(eventRepresentation.getChosenRestaurant()));
+        result.setOrders(orderConverter.convert(eventRepresentation.getOrders()));
+        result.setVotes(voteConverter.convertList(eventRepresentation.getVotes()));
         return result;
-
     }
 }
