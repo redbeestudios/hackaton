@@ -8,15 +8,12 @@ import java.util.List;
 public class Order {
     @Id
     private String id;
-    private Event event;
     private User user;
-    private List<OrderItem> detail;
+    private Dish dish;
 
-    public Order(){}
-    public Order(Event event, User user, List<OrderItem> detail) {
-        this.event = event;
+    public Order(User user,  Dish dish) {
         this.user = user;
-        this.detail = detail;
+        this.dish = dish;
     }
 
     public String getId() {
@@ -27,14 +24,6 @@ public class Order {
         this.id = id;
     }
 
-    public Event getEvent() {
-        return event;
-    }
-
-    public void setEvent(Event event) {
-        this.event = event;
-    }
-
     public User getUser() {
         return user;
     }
@@ -43,11 +32,11 @@ public class Order {
         this.user = user;
     }
 
-    public List<OrderItem> getDetail() {
-        return detail;
+    public Dish getDish() {
+        return dish;
     }
 
-    public void setDetail(List<OrderItem> detail) {
-        this.detail = detail;
+    public void setDish(Dish dish) {
+        this.dish = dish;
     }
 }
