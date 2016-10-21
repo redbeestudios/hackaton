@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api.iml" filepath="$PROJECT_DIR$/.idea/modules/api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_main.iml" filepath="$PROJECT_DIR$/.idea/modules/api_main.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_test.iml" filepath="$PROJECT_DIR$/.idea/modules/api_test.iml" group="api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/giu-oauth.iml" filepath="$PROJECT_DIR$/.idea/modules/giu-oauth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/giu-oauth_main.iml" filepath="$PROJECT_DIR$/.idea/modules/giu-oauth_main.iml" group="giu-oauth" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/giu-oauth_test.iml" filepath="$PROJECT_DIR$/.idea/modules/giu-oauth_test.iml" group="giu-oauth" />
       <module fileurl="file://$PROJECT_DIR$/api/src/main/main.iml" filepath="$PROJECT_DIR$/api/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/sso/src/main/main1.iml" filepath="$PROJECT_DIR$/sso/src/main/main1.iml" />
       <module fileurl="file://$PROJECT_DIR$/bot/app/src/main/main2.iml" filepath="$PROJECT_DIR$/bot/app/src/main/main2.iml" />
