@@ -2,7 +2,11 @@ package io.redbee.domain;
 
 import java.util.List;
 
-public class Event {
+import org.telegram.api.methods.SendMessage;
+import org.telegram.api.objects.Message;
+import org.telegram.api.objects.ReplyKeyboardMarkup;
+
+public abstract class Event {
 
   public enum Status {
       PENDING("PENDING"), VOTING("VOTING"), ORDERING("ORDERING"), CANCELLED("CANCELLED"), CLOSED("CLOSED");
@@ -44,4 +48,21 @@ public class Event {
 		this.status = status;
 	}
 
+  public abstract SendMessage buildReplyMessage(Message message);
+
+  /**
+   * Construye un mensaje de respuesta con un keyboard en base a un mensaje de entrada
+   *
+   * @param inputMsg
+   * @param keyboard
+   * @return
+   */
+  protected SendMessage buildMessage(Message inputMsg, ReplyKeyboardMarkup keyboard) {
+    SendMessage sendMessage = new SendMessage();
+    sendMessage.setChatId(inputMsg.getChatId());
+    sendMessage.enableMarkdown(true);
+    sendMessage.setReplayToMessageId(inputMsg.getMessageId());
+    sendMessage.setReplayMarkup(keyboard);
+    return sendMessage;
+  }
 }
