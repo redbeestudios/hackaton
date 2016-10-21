@@ -12,10 +12,23 @@ import java.util.List;
 public class EventService {
 
     @Autowired
+    private EventConverter converter;
+
+    @Autowired
     private EventRepository repo;
 
     public List<Event> getAll() {
         return repo.findAll();
     }
 
+    public EventRepository create(EventRepository eventRespresentation) {
+        Event Event = converter.convert(eventRespresentation);
+        return converter.convert(repo.insert(Event));
+    }
+
+    public void update(EventRepository representation) {
+        Event Event = converter.convert(representation);
+        repo.save(Event);
+    }
+    
 }
