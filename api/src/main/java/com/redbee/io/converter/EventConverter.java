@@ -33,10 +33,10 @@ public class EventConverter {
         result.setDate(event.getDate());
         result.setState(event.getState());
         result.setRestaurants(restaurantConverter.convertList(event.getRestaurants()));
-        result.setVoters(userConverter.convertList(event.getVoters()));
-        result.setChosenRestaurant(restaurantConverter.convert(event.getChosenRestaurant()));
-        result.setOrders(orderConverter.convert(event.getOrders()));
-        result.setVotes(voteConverter.convertList(event.getVotes()));
+//        result.setVoters(userConverter.convertList(event.getVoters()));
+//        result.setChosenRestaurant(restaurantConverter.convert(event.getChosenRestaurant()));
+//        result.setOrders(orderConverter.convert(event.getOrders()));
+//        result.setVotes(voteConverter.convertList(event.getVotes()));
         return result;
     }
 
@@ -46,10 +46,10 @@ public class EventConverter {
         result.setDate(eventRepresentation.getDate());
         result.setState(eventRepresentation.getState());
         result.setRestaurants(restaurantConverter.convertList(eventRepresentation.getRestaurants()));
-        result.setVoters(userConverter.convertList(eventRepresentation.getVoters()));
-        result.setChosenRestaurant(restaurantConverter.convert(eventRepresentation.getChosenRestaurant()));
-        result.setOrders(orderConverter.convert(eventRepresentation.getOrders()));
-        result.setVotes(voteConverter.convertList(eventRepresentation.getVotes()));
+        //result.setVoters(userConverter.convertList(eventRepresentation.getVoters()));
+        //result.setChosenRestaurant(restaurantConverter.convert(eventRepresentation.getChosenRestaurant()));
+        //result.setOrders(orderConverter.convert(eventRepresentation.getOrders()));
+        //result.setVotes(voteConverter.convertList(eventRepresentation.getVotes()));
         return result;
     }
 }

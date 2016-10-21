@@ -47,7 +47,8 @@ public class RestaurantConverter {
 
 
     public List<RestaurantRepresentation> convertList(List <Restaurant> restaurantList) {
-        return restaurantList.stream().map(this::convert).collect(Collectors.toList());
+        List<RestaurantRepresentation> result = restaurantList.stream().map(this::convert).collect(Collectors.toList());
+        return result;
     }
 
     public List<Restaurant> convertList(List <RestaurantRepresentation> restaurantRepresentationList) {

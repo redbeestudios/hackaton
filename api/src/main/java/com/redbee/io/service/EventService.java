@@ -38,8 +38,8 @@ public class EventService {
         repo.delete(id);
     }
 
-    public String create(EventRepresentation eventRepresentation) {
+    public EventRepresentation create(EventRepresentation eventRepresentation) {
         Event event = converter.convert(eventRepresentation);
-        return converter.convert(repo.insert(event)).getId();
+        return converter.convert(repo.insert(event));
     }
 }
