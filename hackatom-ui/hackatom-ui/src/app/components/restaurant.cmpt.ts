@@ -9,15 +9,17 @@ import { RestaurantService } from '../services/restaurant.srv';
       <h1>
         Restaurants
       </h1>
-
-      <button type="button" class="btn btn-success block" styles="text-align:right">Crear</button>
+      <a routerLink="/restaurant/new" type="button" class="btn btn-success block" styles="text-align:right">Crear</a>
       <br><br>
-      <div  *ngFor="let restaurant of restaurants"class="card">
+      <div *ngFor="let restaurant of restaurants"class="card">
         <div class="card-block">
-          <h4 class="card-title">{{ restaurant.id }} - {{ restaurant.name }}</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          <a href="#" class="btn btn-primary">Ver</a>
-          <a href="#" class="btn btn-danger">Borrar</a>
+          <span>
+            <span class="card-title">{{ restaurant.id }} - {{ restaurant.name }}</span>
+            <div style="float: right">
+              <a href="#" class="btn btn-primary block">Editar</a>
+              <a href="#" class="btn btn-danger block">Borrar</a>
+            </div>
+          </span>
         </div>
       </div>
     </div>
