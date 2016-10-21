@@ -30,7 +30,7 @@ public class EventService {
 
     public void update(EventRepresentation eventRepresentation, String id) {
         eventRepresentation.setId(id);
-        Event event = converter.converter(eventRepresentation);
+        Event event = converter.convert(eventRepresentation);
         repo.save(event);
     }
 
@@ -38,8 +38,8 @@ public class EventService {
         repo.delete(id);
     }
 
-    public EventRepresentation create(EventRepresentation eventRepresentation) {
+    public String create(EventRepresentation eventRepresentation) {
         Event event = converter.convert(eventRepresentation);
-        return converter.convert(repo.insert(event)).id;
+        return converter.convert(repo.insert(event)).getId();
     }
 }
