@@ -8,6 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable } from '@angular/core';
+import { Restaurant } from '../domain/restaurant';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 var RestaurantService = (function () {
@@ -16,9 +17,31 @@ var RestaurantService = (function () {
         this.restaurantUrl = '/restaurants';
     }
     RestaurantService.prototype.getRestaurants = function () {
-        return this.http.get(this.restaurantUrl)
-            .map(this.extractData)
-            .catch(this.handleError);
+        var restaurant = new Restaurant('1', 'Petalo', [
+            {
+                "name": "Milanesa",
+                "type": "Plato Principal"
+            },
+            {
+                "name": "Creme Brulee",
+                "type": "Postre"
+            }
+        ]);
+        var restaurant2 = new Restaurant('2', 'Arepaepa', [
+            {
+                "name": "caca",
+                "type": "Plato Principal"
+            },
+            {
+                "name": "polenta",
+                "type": "Postre"
+            }
+        ]);
+        var restaurants = [];
+        restaurants.push(restaurant);
+        restaurants.push(restaurant2);
+        var obs = Observable.of(restaurants);
+        return obs;
     };
     RestaurantService.prototype.getRestaurant = function (id) {
         return this.http.get(this.restaurantUrl + '/' + id)

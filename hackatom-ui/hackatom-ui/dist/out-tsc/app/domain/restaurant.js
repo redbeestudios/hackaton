@@ -1,5 +1,8 @@
 export var Restaurant = (function () {
-    function Restaurant() {
+    function Restaurant(id, name, dishes) {
+        this.id = id;
+        this.name = name;
+        this.dishes = dishes;
     }
     return Restaurant;
 }());

@@ -9,26 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { RestaurantService } from '../services/restaurant.srv';
-export var RestaurantComponent = (function () {
+var RestaurantComponent = (function () {
     function RestaurantComponent(restaurantService) {
         this.restaurantService = restaurantService;
     }
     RestaurantComponent.prototype.ngOnInit = function () {
-        this.restaurants = this.getRestaurants();
+        this.getRestaurants();
     };
     RestaurantComponent.prototype.getRestaurants = function () {
-        var restaurants = [{ id: '2', name: 'petalo', dishes: [{ name: 'muzza', type: 'pizza' }] }];
-        return restaurants;
+        var self = this;
+        this.restaurantService.getRestaurants().subscribe(function (res) {
+            self.restaurants = res;
+        });
     };
-    RestaurantComponent = __decorate([
-        Component({
-            selector: 'restaurant-cmpt',
-            template: "\n    <div class=\"container\">\n      <div  *ngFor=\"let restaurant of restaurants\"class=\"card\">\n        <div class=\"card-block\">\n          <h4 class=\"card-title\">{{ restaurant.id }} - {{ restaurant.name }}</h4>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>\n          <a href=\"#\" class=\"btn btn-danger\">Borrar</a>\n        </div>\n      </div>\n    </div>\n  ",
-            styles: [""],
-            providers: [RestaurantService]
-        }), 
-        __metadata('design:paramtypes', [RestaurantService])
-    ], RestaurantComponent);
     return RestaurantComponent;
 }());
+RestaurantComponent = __decorate([
+    Component({
+        selector: 'restaurant-cmpt',
+        template: "\n    <div class=\"container\">\n      <div  *ngFor=\"let restaurant of restaurants\"class=\"card\">\n        <div class=\"card-block\">\n          <h4 class=\"card-title\">{{ restaurant.id }} - {{ restaurant.name }}</h4>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>\n          <a href=\"#\" class=\"btn btn-danger\">Borrar</a>\n        </div>\n      </div>\n    </div>\n  ",
+        styles: [""],
+        providers: [RestaurantService]
+    }),
+    __metadata("design:paramtypes", [RestaurantService])
+], RestaurantComponent);
+export { RestaurantComponent };
 //# sourceMappingURL=../../../../src/app/components/restaurant.cmpt.js.map
