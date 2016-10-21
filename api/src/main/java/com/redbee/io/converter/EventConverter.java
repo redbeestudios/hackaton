@@ -21,10 +21,13 @@ public class EventConverter {
 
 
     private RestaurantConverter restaurantConverter;
+    private UserConverter userConverter;
 
     @Autowired
-    public EventConverter(RestaurantConverter converter) {
-        this.restaurantConverter = converter;
+    public EventConverter(RestaurantConverter converter1,
+                          UserConverter converter2) {
+        this.restaurantConverter = converter1;
+        this.userConverter = converter2;
     }
 
     public EventRepresentation convert(Event event){
