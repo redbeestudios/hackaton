@@ -21,8 +21,8 @@ public class TomApiServiceImpl implements TomApiService {
 
 	@Override
 	public Event findActiveEvent() {
-		// TODO Auto-generated method stub
-		return null;
+		WebTarget target = client.target("http://demo2545284.mockable.io/event");
+		return target.request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<Event>(){});
 	}
 
 	@Override
