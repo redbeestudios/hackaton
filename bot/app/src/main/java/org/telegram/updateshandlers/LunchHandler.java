@@ -58,41 +58,10 @@ public class LunchHandler extends BaseStatelessHandler {
 
 	@Override
 	public ReplyKeyboardMarkup getDefaultKeyboard() {
-    Event event = null; //tomApiService.find...
-
-    if (event == null) {
-      return keyboardNullEvent();
-    }
-
-    if (event.getStatus().equals(Event.Status.ORDERING)) {
-      return keyboardOrdering();
-    }
-
     return keyboardNullEvent();
 	}
 
   public ReplyKeyboardMarkup keyboardNullEvent() {
-    ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-    replyKeyboardMarkup.setSelective(true);
-    replyKeyboardMarkup.setResizeKeyboard(true);
-    replyKeyboardMarkup.setOneTimeKeyboad(false);
-    List<List<String>> keyboard = new ArrayList<>();
-    List<String> keyboardFirstRow = new ArrayList<>();
-    keyboardFirstRow.add(lformat(this.actions.get(0)));
-    keyboardFirstRow.add(lformat(this.actions.get(1)));
-    List<String> keyboardSecondRow = new ArrayList<>();
-    keyboardSecondRow.add(lformat(this.actions.get(2)));
-    keyboardSecondRow.add(lformat(this.actions.get(3)));
-    keyboard.add(keyboardFirstRow);
-    keyboard.add(keyboardSecondRow);
-    replyKeyboardMarkup.setKeyboard(keyboard);
-
-    return replyKeyboardMarkup;
-  }
-
-
-
-  public ReplyKeyboardMarkup keyboardOrdering() {
     ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
     replyKeyboardMarkup.setSelective(true);
     replyKeyboardMarkup.setResizeKeyboard(true);
@@ -138,30 +107,6 @@ public class LunchHandler extends BaseStatelessHandler {
 
 		return replyKeyboardMarkup;
 
-	}
-
-	public SendMessage handleRestaurant(Message message) {
-
-		WebTarget target = client.target("http://demo5329197.mockable.io/restaurants");
-
-		Response response = target.request(MediaType.APPLICATION_JSON_TYPE).get();
-
-		JSONArray restaurants = new JSONArray(response.readEntity(String.class));
-
-		List<String[]> restaurantActions = new ArrayList<>();
-		for (int i = 0; i < restaurants.length(); i++) {
-			JSONObject restaurant = restaurants.getJSONObject(i);
-			restaurantActions.add(new String[] { restaurant.getString("name"), "" });
-		}
-
-		jedis.set(message.getChatId().toString(), "1");
-
-		SendMessage sendMessage = new SendMessage();
-		sendMessage.setText("Testttt");
-		sendMessage.setChatId(message.getChatId());
-		sendMessage.setReplayMarkup(getActionKeyboards(restaurantActions));
-
-		return sendMessage;
 	}
 
 	@Override
