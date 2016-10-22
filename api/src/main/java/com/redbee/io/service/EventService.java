@@ -2,6 +2,7 @@ package com.redbee.io.service;
 
 
 import com.redbee.io.converter.EventConverter;
+import com.redbee.io.exception.EntityCantBeChange;
 import com.redbee.io.persistence.entities.Event;
 import com.redbee.io.persistence.entities.EventState;
 import com.redbee.io.persistence.repositories.EventRepository;
@@ -11,8 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 @Service
 public class EventService {
@@ -35,13 +34,9 @@ public class EventService {
                 .findFirst();
     }
 
-
-
-
     public Event get(String id) {
         return repo.findOne(id);
     }
-
     public void update(EventRepresentation eventRepresentation, String id) {
         eventRepresentation.setId(id);
         Event event = converter.convert(eventRepresentation);
@@ -55,5 +50,16 @@ public class EventService {
     public EventRepresentation create(EventRepresentation eventRepresentation) {
         Event event = converter.convert(eventRepresentation);
         return converter.convert(repo.insert(event));
+    }
+
+    public Event switchState(EventState state, String id) {
+        try {
+            Optional.ofNullable(state);
+            Event event = repo.findOne(id);
+            event.setState(state);
+            return repo.save(event);
+        } catch (Exception e) {
+            throw new EntityCantBeChange();
+        }
     }
 }
