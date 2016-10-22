@@ -52,6 +52,7 @@ export class RestaurantComponent implements OnInit {
 
   ngOnInit() {
      this.getRestaurants();
+    //  this.getRestaurant();
   }
 
 
@@ -64,10 +65,17 @@ export class RestaurantComponent implements OnInit {
 
   getRestaurants() {
     let self = this;
-    this.restaurantService.getRestaurants().subscribe( res => {
+    this.restaurantService.restaurants().subscribe( res => {
       self.restaurants = res;
     });
     // return restaurants;
+  }
+
+  getRestaurant(id: String) {
+    let self = this;
+    this.restaurantService.get(id).subscribe( res => {
+      self.restaurants.push(res);
+    });
   }
 
 }
