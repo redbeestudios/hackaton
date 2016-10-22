@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -42,8 +43,8 @@ public class EventConverter {
         result.setDate(event.getDate());
         result.setState(event.getState());
         result.setRestaurants(restaurantConverter.convertModelList(event.getRestaurants()));
-//        result.setVoters(userConverter.convertList(event.getVoters()));
-//        result.setChosenRestaurant(restaurantConverter.convert(event.getChosenRestaurant()));
+        result.setVoters(userConverter.convertListModel(event.getVoters()));
+        result.setChosenRestaurant(restaurantConverter.convert(event.getChosenRestaurant()));
         result.setOrders(orderConverter.convertList(event.getOrders()));
         result.setVotes(voteConverter.convertList(event.getVotes()));
         return result;
@@ -51,14 +52,29 @@ public class EventConverter {
 
     public Event convert(EventRepresentation eventRepresentation) {
         Event result = new Event();
-        result.setId(eventRepresentation.getId());
+        if(Optional.ofNullable(eventRepresentation.getId()).isPresent()){
+            result.setId(eventRepresentation.getId());
+        }
+        if(Optional.ofNullable(eventRepresentation.getState()).isPresent()) {
+            result.setState(eventRepresentation.getState());
+        }
+
         result.setDate(eventRepresentation.getDate());
-        result.setState(eventRepresentation.getState());
         result.setRestaurants(restaurantConverter.convertRepresentationList(eventRepresentation.getRestaurants()));
-        //result.setVoters(userConverter.convertList(eventRepresentation.getVoters()));
-        //result.setChosenRestaurant(restaurantConverter.convert(eventRepresentation.getChosenRestaurant()));
-        result.setOrders(orderConverter.convertListRepresentation(eventRepresentation.getOrders()));
-        result.setVotes(voteConverter.convertListRepresentation(eventRepresentation.getVotes()));
+
+        if(Optional.ofNullable(eventRepresentation.getVoters()).isPresent()) {
+            result.setVoters(userConverter.convertListRepresentation(eventRepresentation.getVoters()));
+        }
+        if(Optional.ofNullable(eventRepresentation.getChosenRestaurant()).isPresent()) {
+            result.setChosenRestaurant(restaurantConverter.convert(eventRepresentation.getChosenRestaurant()));
+        }
+
+        if(Optional.ofNullable(eventRepresentation.getOrders()).isPresent()) {
+            result.setOrders(orderConverter.convertListRepresentation(eventRepresentation.getOrders()));
+        }
+        if(Optional.ofNullable(eventRepresentation.getVotes()).isPresent()) {
+            result.setVotes(voteConverter.convertListRepresentation(eventRepresentation.getVotes()));
+        }
         return result;
     }
 }

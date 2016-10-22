@@ -30,7 +30,13 @@ public class UserConverter {
         return userRepresentation;
     }
 
-    public List<UserRepresentation> convertList(List <User> restaurantList) {
+    public List<UserRepresentation> convertListModel(List <User> restaurantList) {
+        return restaurantList.stream()
+                .map(this::convert)
+                .collect(Collectors.toList());
+    }
+
+    public List<User> convertListRepresentation(List <UserRepresentation> restaurantList) {
         return restaurantList.stream()
                 .map(this::convert)
                 .collect(Collectors.toList());
