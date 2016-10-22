@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class RestaurantService {
-  private restaurantUrl = 'localhost/restaurants';
+  private restaurantUrl = 'http://52.90.47.124:8081/restaurants';
   private restaurantsMock = {};
 
   constructor(private http: Http) {}
@@ -29,8 +29,8 @@ export class RestaurantService {
   save(restaurant: Restaurant): Observable<Restaurant> {
     let body = JSON.stringify(restaurant);
     return this.http.post(this.restaurantUrl, body)
-      .map(this.extractData)
-      .catch(this.handleError);
+      .map(this.extractData);
+      //.catch(this.handleError);
   }
 
   update(restaurant: Restaurant): Observable<Restaurant> {
@@ -47,7 +47,12 @@ export class RestaurantService {
   }
 
   private extractData(res: Response) {
+
+    console.log(res);
+
     let body = res.json();
+
+    console.log(''+ body);
 
     return body.data || {};
   }
