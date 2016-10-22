@@ -3,13 +3,16 @@ package com.redbee.io.service;
 
 import com.redbee.io.converter.EventConverter;
 import com.redbee.io.persistence.entities.Event;
-import com.redbee.io.persistence.entities.Restaurant;
+import com.redbee.io.persistence.entities.EventState;
 import com.redbee.io.persistence.repositories.EventRepository;
 import com.redbee.io.representation.EventRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service
 public class EventService {
@@ -20,10 +23,20 @@ public class EventService {
     @Autowired
     private EventRepository repo;
 
-
     public List<Event> getAll() {
         return repo.findAll();
     }
+
+    public Optional<Event> getEvent() {
+        return getAll()
+                .stream()
+                .filter(event -> event.getState().equals(EventState.ORDERING) ||
+                        event.getState().equals(EventState.VOTING))
+                .findFirst();
+    }
+
+
+
 
     public Event get(String id) {
         return repo.findOne(id);
@@ -41,8 +54,6 @@ public class EventService {
 
     public EventRepresentation create(EventRepresentation eventRepresentation) {
         Event event = converter.convert(eventRepresentation);
-        repo.save(event);
-        eventRepresentation.setId(event.getId());
-        return eventRepresentation;
-        }
-        }
+        return converter.convert(repo.insert(event));
+    }
+}
