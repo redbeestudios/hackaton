@@ -6,6 +6,8 @@ import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
 import org.telegram.api.objects.ReplyKeyboardMarkup;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Event {
 
   public enum Status {
@@ -17,10 +19,11 @@ public class Event {
       }
   }
 
+  @JsonProperty("id")
 	private String eventId;
-	private String description;
+	private String name;
 	private List<Restaurant> restaurants;
-	private Status status;
+	private Status state;
 
 
 	public String getEventId() {
@@ -29,11 +32,11 @@ public class Event {
 	public void setEventId(String eventId) {
 		this.eventId = eventId;
 	}
-	public String getDescription() {
-		return description;
+	public String getName() {
+		return name;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public List<Restaurant> getRestaurants() {
 		return restaurants;
@@ -41,11 +44,11 @@ public class Event {
 	public void setRestaurants(List<Restaurant> restaurants) {
 		this.restaurants = restaurants;
 	}
-	public Status getStatus() {
-		return status;
+	public Status getState() {
+		return state;
 	}
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setState(Status state) {
+		this.state = state;
 	}
 
   public  SendMessage buildReplyMessage(Message message){

@@ -14,7 +14,7 @@ public class EventFactory {
 	
 	public static <T extends Event> T getEvent(Event event) throws InstantiationException, IllegalAccessException, InvocationTargetException{
 		
-		switch(event.getStatus()){
+		switch(event.getState()){
 		
 		case VOTING :
 			return  cloneEvent(event, EventVoting.class);
