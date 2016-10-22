@@ -23,11 +23,11 @@ public class EventService {
     @Autowired
     private EventRepository repo;
 
-    public List<Event> getAll() {
-        return repo.findAll();
+    public List<EventRepresentation> getAll() {
+        return converter.convertList(repo.findAll());
     }
 
-    public Optional<Event> getEvent() {
+    public Optional<EventRepresentation> getEvent() {
         return getAll()
                 .stream()
                 .filter(event -> event.getState().equals(EventState.ORDERING) ||
@@ -35,11 +35,8 @@ public class EventService {
                 .findFirst();
     }
 
-
-
-
-    public Event get(String id) {
-        return repo.findOne(id);
+    public EventRepresentation get(String id) {
+        return converter.convert(repo.findOne(id));
     }
 
     public void update(EventRepresentation eventRepresentation, String id) {

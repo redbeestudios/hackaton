@@ -24,12 +24,12 @@ public class EventResource {
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Event> list(){
+    public List<EventRepresentation> list(){
         return eventService.getAll();
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/{id}")
-    public Event getEvent(@PathVariable String id){
+    public EventRepresentation getEvent(@PathVariable String id){
        return eventService.get(id);
     }
 

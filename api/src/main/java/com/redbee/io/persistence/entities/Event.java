@@ -16,7 +16,7 @@ public class Event {
 
     private List<User> voters;
 
-    private Restaurant chosenRestaurant;
+    private String chosenRestaurant;
 
     private List<Vote> votes;
 
@@ -59,11 +59,11 @@ public class Event {
         this.voters = voters;
     }
 
-    public Restaurant getChosenRestaurant() {
+    public String getChosenRestaurant() {
         return chosenRestaurant;
     }
 
-    public void setChosenRestaurant(Restaurant chosenRestaurant) {
+    public void setChosenRestaurant(String chosenRestaurant) {
         this.chosenRestaurant = chosenRestaurant;
     }
 
