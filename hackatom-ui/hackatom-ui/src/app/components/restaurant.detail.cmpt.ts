@@ -26,7 +26,7 @@ import { Location } from '@angular/common';
             
             <input type="text"  [(ngModel)]="dish.name"
              name="name"
-            #name="ngModel"
+             #name="ngModel"
              class="form-control" placeholder="Metele un plato..." name="dish">
              
              <button (click)="addDish()">
@@ -47,7 +47,7 @@ import { Location } from '@angular/common';
 })
 export class RestaurantDetailComponent implements OnInit {
 
-    restaurant: Restaurant;
+    restaurant: Restaurant
     dish: Dish;
 
     constructor(private restaurantService:  RestaurantService,
@@ -57,23 +57,30 @@ export class RestaurantDetailComponent implements OnInit {
 
     ngOnInit() {
 
-        this.restaurant = new Restaurant('','', []);
+        this.route.params.forEach((params: Params) => {
 
-        /*this.route.params.forEach((params: Params) => {
+            this.dish = new Dish();
 
-             let id = params['id'];
+            let id = params['id'];
 
-             this.restaurantService.get(id)
-                 .subscribe((restaurant) => this.restaurant = restaurant);
-        });*/
+            if (id !== 'new') {
+                this.restaurantService.get(id)
+                    .subscribe((restaurant) => this.restaurant = restaurant);
+            } else {
+                this.restaurant = new Restaurant('','', []);
+            }
+        });
     }
 
     submit() {
+
         console.log(this.restaurant.name)
     }
 
     addDish() {
+
         this.restaurant.dishes.push(this.dish);
+        this.dish = new Dish();
     }
 
 }

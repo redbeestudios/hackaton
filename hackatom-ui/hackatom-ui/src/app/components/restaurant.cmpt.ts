@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   template: `
     <div class="container">
       <span  class="title"> Restaurants</span>
-      <a routerLink="/restaurants/new" class="btn btn-success block" style="float: right; margin-top: 1%; margin-right: 23px;">Crear</a>
+      <button (click)="gotoRestaurant({id:'new'})" class="btn btn-success block" style="float: right; margin-top: 1%; margin-right: 23px;">Crear</button>
       <br><br>
       <div *ngFor="let restaurant of restaurants" class="card">
           <restaurant-card [restaurant]="restaurant" (click)="gotoRestaurant(restaurant)"></restaurant-card>
