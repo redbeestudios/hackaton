@@ -1,7 +1,5 @@
 package io.redbee.domain;
 
-import static org.telegram.services.LocalisationService.lformat;
-
 import java.util.ArrayList;
 import java.util.List;
 

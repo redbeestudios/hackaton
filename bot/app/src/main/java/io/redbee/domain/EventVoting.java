@@ -23,7 +23,9 @@ public class EventVoting extends Event {
     SendMessage outgoingMsg = buildMessage(message, keyboard(restaurants));
     outgoingMsg.setChatId(message.getChatId());
 
-    if (messageIsVote(message, restaurants)) {
+    Restaurant votedRestaurant = extractVotedRestaurant(message, restaurants);
+    if (votedRestaurant != null) {
+      service.voteRestaurantForEvent(event.getEventId(), votedRestaurant.getRestaurantId());
       outgoingMsg.setText("Tu voto está registrado ahora en " + message.getText());
     } else {
       outgoingMsg.setText("¿A qué lugar le pedimos comida?");
@@ -32,14 +34,14 @@ public class EventVoting extends Event {
     return outgoingMsg;
   }
 
-  public boolean messageIsVote(Message message, List<Restaurant> restaurants) {
+  public Restaurant extractVotedRestaurant(Message message, List<Restaurant> restaurants) {
     if (message.hasText()) {
       for (Restaurant restaurant : restaurants) {
-        if (message.getText().equals(restaurant.getDescription())) return true;
+        if (message.getText().equals(restaurant.getDescription())) return restaurant;
       }
     }
 
-    return false;
+    return null;
   }
 
   public ReplyKeyboardMarkup keyboard(List<Restaurant> restaurants) {
