@@ -13,7 +13,7 @@ public class OrderRepresentation {
     @Id
     private String id;
     private String user;
-    private List<Dish> dish;
+    private List<DishRepresentation> dish;
 
     public String getId() {
         return id;
@@ -31,11 +31,11 @@ public class OrderRepresentation {
         this.user = user;
     }
 
-    public List<Dish> getDish() {
+    public List<DishRepresentation> getDish() {
         return dish;
     }
 
-    public void setDish(List<Dish> dish) {
+    public void setDish(List<DishRepresentation> dish) {
         this.dish = dish;
     }
 }

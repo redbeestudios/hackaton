@@ -29,16 +29,16 @@ public class OrderConverter {
     public OrderRepresentation convert(Order order){
         OrderRepresentation result = new OrderRepresentation();
         result.setId(order.getId());
-        result.setDish(dishConverter.convert(order.getDish()));
-        result.setUser(userConverter.convert(order.getUser()));
+        result.setDish(dishConverter.convertList(order.getDish()));
+        result.setUser(order.getUser());
         return result;
     }
 
     public Order convertrepresentation(OrderRepresentation orderRepresentation) {
         Order result = new Order();
         result.setId(orderRepresentation.getId());
-        result.setUser(userConverter.convert(orderRepresentation.getUser()));
-        result.setDish(dishConverter.convert(orderRepresentation.getDish()));
+        result.setUser(orderRepresentation.getUser());
+        result.setDish(dishConverter.convertListRepresentation(orderRepresentation.getDish()));
         return result;
     }
 
