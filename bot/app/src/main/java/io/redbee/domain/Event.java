@@ -6,7 +6,7 @@ import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
 import org.telegram.api.objects.ReplyKeyboardMarkup;
 
-public abstract class Event {
+public class Event {
 
   public enum Status {
       PENDING("PENDING"), VOTING("VOTING"), ORDERING("ORDERING"), CANCELLED("CANCELLED"), CLOSED("CLOSED");
@@ -48,7 +48,9 @@ public abstract class Event {
 		this.status = status;
 	}
 
-  public abstract SendMessage buildReplyMessage(Message message);
+  public  SendMessage buildReplyMessage(Message message){
+	return  null;
+  }
 
   /**
    * Construye un mensaje de respuesta con un keyboard en base a un mensaje de entrada
