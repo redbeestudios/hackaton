@@ -4,6 +4,8 @@ import io.redbee.domain.Event;
 import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
 
+import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
+import org.telegram.telegrambots.api.methods.BotApiMethod;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -27,9 +29,14 @@ public class LunchHandler extends TelegramLongPollingBot {
     Event event = tomApiService.findActiveEvent();
 
     try {
-      SendMessage botApiMethod = event.buildReplyMessage(update.getMessage());
+      BotApiMethod botApiMethod = event.buildReplyMessage(update);
 
-      sendMessage(botApiMethod);
+      if (botApiMethod instanceof AnswerCallbackQuery) {
+        answerCallbackQuery((AnswerCallbackQuery) botApiMethod);
+      }
+      if (botApiMethod instanceof SendMessage) {
+        sendMessage((SendMessage) botApiMethod);
+      }
     } catch (Exception e) {
       BotLogger.error("Error manejando mensaje", e);
     }

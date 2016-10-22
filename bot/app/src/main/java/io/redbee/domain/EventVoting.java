@@ -7,8 +7,10 @@ import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.GroupingCollector;
 
+import org.telegram.telegrambots.api.methods.BotApiMethod;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
+import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 
@@ -18,7 +20,8 @@ public class EventVoting extends Event {
   private static final TomApiService service = TomApiServiceFactory.getInstance();
 
   @Override
-  public SendMessage buildReplyMessage(Message message) {
+  public BotApiMethod buildReplyMessage(Update update) {
+    Message message = update.getMessage();
 
     Event event = service.findActiveEvent();
     List<Restaurant> restaurants = service.findRestaurants(event.getEventId());
