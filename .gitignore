@@ -20,3 +20,5 @@ hs_err_pid*
 .idea/*
 *.log
 
+dist/
+node_modules/
