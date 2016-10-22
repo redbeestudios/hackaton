@@ -32,20 +32,23 @@ public class EventOrdering extends Event {
 
     Event event = service.findActiveEvent();
 
-    List<Restaurant> restaurants = service.findRestaurants(event.getEventId());
+    if (event.getStatus().equals(Status.ORDERING)) {
 
-    List<List<String>> keyboard = new ArrayList<>();
-    List<String> keyboardFirstRow = new ArrayList<>();
+      List<Dish> dishes = service.findDishesForEvent(event.getEventId());
 
-    for (Restaurant restaurant : restaurants) {
+      List<List<String>> keyboard = new ArrayList<>();
+      List<String> keyboardFirstRow = new ArrayList<>();
 
-      keyboardFirstRow.add(restaurant.getDescription());
+      for (Dish dish : dishes) {
+
+        keyboardFirstRow.add(dish.getDescription());
+
+      }
+      keyboard.add(keyboardFirstRow);
+
+      replyKeyboardMarkup.setKeyboard(keyboard);
 
     }
-    keyboard.add(keyboardFirstRow);
-
-    replyKeyboardMarkup.setKeyboard(keyboard);
-
     return replyKeyboardMarkup;
   }
 }
