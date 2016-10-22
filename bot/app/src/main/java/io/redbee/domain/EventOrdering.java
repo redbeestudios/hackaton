@@ -1,12 +1,11 @@
 package io.redbee.domain;
 
-import static org.telegram.services.LocalisationService.lformat;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
+import io.redbee.utils.GroupingCollector;
 
 import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
@@ -19,35 +18,61 @@ public class EventOrdering extends Event {
   @Override
   public SendMessage buildReplyMessage(Message message) {
 
-    SendMessage replyMessage = buildMessage(message, keyboard());
-    replyMessage.setText("A que lugar le pedimos comida?");
-    replyMessage.setChatId(message.getChatId());
+    Event event = service.findActiveEvent();
+    List<Dish> dishes = service.findDishesForEvent(event.getEventId());
 
-    return replyMessage;
+    SendMessage outgoingMsg = buildMessage(message, keyboard(event, dishes));
+    outgoingMsg.setChatId(message.getChatId());
+
+    Dish votedDish = extractVotedDish(message, dishes);
+    if (votedDish != null) {
+      service.selectDishForEvent(event.getEventId(), votedDish.getDishId(), message.getFrom().getUserName());
+      outgoingMsg.setText("Seleccionaste la siguiente comida " + message.getText());
+    } else {
+      outgoingMsg.setText("¿Qué comida querés?");
+    }
+
+    return outgoingMsg;
+
+    }
+
+  public Dish extractVotedDish(Message message, List<Dish> dishes) {
+    if (message.hasText()) {
+      for (Dish dish : dishes) {
+        if (message.getText().equals(dish.getDescription())) return dish;
+      }
+    }
+
+    return null;
   }
 
-  public ReplyKeyboardMarkup keyboard() {
+  public ReplyKeyboardMarkup keyboard(Event event, List<Dish> dishes) {
     ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
     replyKeyboardMarkup.setSelective(true);
     replyKeyboardMarkup.setResizeKeyboard(true);
     replyKeyboardMarkup.setOneTimeKeyboad(false);
 
-    Event event = service.findActiveEvent();
+    if (event.getStatus().equals(Status.ORDERING)) {
 
-    List<Restaurant> restaurants = service.findRestaurants(event.getEventId());
+      List<List<String>> keyboard = new ArrayList<>();
+      List<String> keyboardFirstRow = null;
+      
+      List<List<Dish>> pages = dishes.stream().collect(new GroupingCollector<>(3));
 
-    List<List<String>> keyboard = new ArrayList<>();
-    List<String> keyboardFirstRow = new ArrayList<>();
+      for(List<Dish> page : pages){
 
-    for (Restaurant restaurant : restaurants) {
-
-      keyboardFirstRow.add(restaurant.getDescription());
+    	  keyboardFirstRow = new ArrayList<>();
+    	  
+	      for (Dish dish : page) {
+	
+	        keyboardFirstRow.add(dish.getDescription());
+	
+	      }
+	      keyboard.add(keyboardFirstRow);
+      }
+      replyKeyboardMarkup.setKeyboard(keyboard);
 
     }
-    keyboard.add(keyboardFirstRow);
-
-    replyKeyboardMarkup.setKeyboard(keyboard);
-
     return replyKeyboardMarkup;
   }
 }

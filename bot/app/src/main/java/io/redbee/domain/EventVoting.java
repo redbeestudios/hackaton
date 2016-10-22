@@ -5,6 +5,7 @@ import java.util.List;
 
 import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
+import io.redbee.utils.GroupingCollector;
 
 import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
@@ -23,7 +24,9 @@ public class EventVoting extends Event {
     SendMessage outgoingMsg = buildMessage(message, keyboard(restaurants));
     outgoingMsg.setChatId(message.getChatId());
 
-    if (messageIsVote(message, restaurants)) {
+    Restaurant votedRestaurant = extractVotedRestaurant(message, restaurants);
+    if (votedRestaurant != null) {
+      service.voteRestaurantForEvent(event.getEventId(), votedRestaurant.getRestaurantId(), message.getFrom().getUserName());
       outgoingMsg.setText("Tu voto está registrado ahora en " + message.getText());
     } else {
       outgoingMsg.setText("¿A qué lugar le pedimos comida?");
@@ -32,14 +35,14 @@ public class EventVoting extends Event {
     return outgoingMsg;
   }
 
-  public boolean messageIsVote(Message message, List<Restaurant> restaurants) {
+  public Restaurant extractVotedRestaurant(Message message, List<Restaurant> restaurants) {
     if (message.hasText()) {
       for (Restaurant restaurant : restaurants) {
-        if (message.getText().equals(restaurant.getDescription())) return true;
+        if (message.getText().equals(restaurant.getDescription())) return restaurant;
       }
     }
 
-    return false;
+    return null;
   }
 
   public ReplyKeyboardMarkup keyboard(List<Restaurant> restaurants) {
@@ -49,14 +52,23 @@ public class EventVoting extends Event {
     replyKeyboardMarkup.setOneTimeKeyboad(false);
 
     List<List<String>> keyboard = new ArrayList<>();
-    List<String> keyboardFirstRow = new ArrayList<>();
+    List<String> keyboardFirstRow = null;
+    
+    List<List<Restaurant>> pages = restaurants.stream().collect(new GroupingCollector<>(3));
 
-    for (Restaurant restaurant : restaurants) {
+    for(List<Restaurant> page : pages){
+    	
+    	keyboardFirstRow = new ArrayList<>();
+    
+	    for (Restaurant restaurant : page) {
+	
+	      keyboardFirstRow.add(restaurant.getDescription());
+	
+	    }
 
-      keyboardFirstRow.add(restaurant.getDescription());
-
+	    keyboard.add(keyboardFirstRow);
+    
     }
-    keyboard.add(keyboardFirstRow);
 
     replyKeyboardMarkup.setKeyboard(keyboard);
 

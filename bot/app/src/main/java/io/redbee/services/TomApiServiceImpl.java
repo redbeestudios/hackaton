@@ -12,6 +12,8 @@ import javax.ws.rs.core.MediaType;
 
 import io.redbee.domain.Dish;
 import io.redbee.domain.Event;
+import io.redbee.domain.EventOrdering;
+import io.redbee.domain.EventVoting;
 import io.redbee.domain.Restaurant;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.EventFactory;
@@ -20,7 +22,7 @@ public class TomApiServiceImpl implements TomApiService {
 	
 	private Client client = ClientBuilder.newClient();
 	
-	
+	private String intIP = "172.16.21.38";
 
 	@Override
 	public Event findActiveEvent() {
@@ -55,15 +57,30 @@ public class TomApiServiceImpl implements TomApiService {
 	}
 
 	@Override
-	public List<Dish> findDishesForEvent(String eventId, String restaurantId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Dish> findDishesForEvent(String eventId) {
+		List<Dish> dishes = new ArrayList<>();
+    Dish empa = new Dish();
+    empa.setDescription("Empanada de jamon");
+    empa.setDishId("12");
+    dishes.add(empa);
+
+    Dish empa1 = new Dish();
+    empa1.setDescription("Pizza de Choclo");
+    empa1.setDishId("12");
+    dishes.add(empa1);
+
+
+		return dishes;
 	}
 
-	@Override
-	public boolean voteRestaurantForEvent(String eventId, String restaurantId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+  @Override
+  public boolean voteRestaurantForEvent(String eventId, String restaurantId, String userId) {
+    return false;
+  }
+
+  @Override
+  public boolean selectDishForEvent(String eventId, String dishId, String userId) {
+    return false;
+  }
 
 }
