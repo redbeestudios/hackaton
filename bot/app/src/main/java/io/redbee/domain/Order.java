@@ -12,6 +12,7 @@ public class Order implements Serializable {
 
 	private List<String> dishes;
 	private String userId;
+  private boolean submitted = false;
 
   public Order() {}
 
@@ -38,5 +39,11 @@ public class Order implements Serializable {
 		this.userId = userId;
 	}
 
-	
+  public boolean isSubmitted() {
+    return submitted;
+  }
+
+  public void setSubmitted(boolean submitted) {
+    this.submitted = submitted;
+  }
 }

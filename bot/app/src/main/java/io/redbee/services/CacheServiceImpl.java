@@ -1,10 +1,10 @@
 package io.redbee.services;
 
-import com.google.gson.Gson;
-
 import io.redbee.domain.Order;
 import io.redbee.services.interfaces.CacheService;
 import redis.clients.jedis.Jedis;
+
+import com.google.gson.Gson;
 
 public class CacheServiceImpl implements CacheService {
 	
@@ -27,8 +27,6 @@ public class CacheServiceImpl implements CacheService {
 		Gson gson = new Gson();
 		String json = gson.toJson(order);
 		String resp = jedis.set(key,json);
-		
-		
 		
 		return !resp.isEmpty();
 	}

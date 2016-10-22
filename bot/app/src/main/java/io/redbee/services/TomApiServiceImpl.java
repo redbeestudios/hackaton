@@ -47,15 +47,6 @@ public class TomApiServiceImpl implements TomApiService {
 
 		List<Restaurant> restaurants = target.request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<List<Restaurant>>(){});
 
-//    List<Restaurant> restaurants = new ArrayList<>();
-//    Restaurant ke = new Restaurant();
-//    ke.setName("Kentucky");
-//
-//    restaurants.add(ke);
-//    Restaurant pa = new Restaurant();
-//    pa.setName("Palacio");
-//    restaurants.add(pa);
-
 		return restaurants;
 	}
 
@@ -84,13 +75,10 @@ public class TomApiServiceImpl implements TomApiService {
 	  
 	  VotingResto resto = new VotingResto(restaurantId,userId);
 	  
-	
-		
 		Entity<VotingResto> entity =  Entity.entity(resto, MediaType.APPLICATION_JSON_TYPE);
 		
 		Response resp = target.request(MediaType.APPLICATION_JSON_TYPE).post(entity);
-		
-		
+
 		return (Boolean) resp.getEntity();
 
   }

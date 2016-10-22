@@ -45,7 +45,7 @@ public class EventOrdering extends Event {
       Order order = updateOrder(callbackQuery, event);
 
       EditMessageText edit = new EditMessageText();
-      edit.setText(buildOrderMessage(callbackQuery, event));
+      edit.setText(buildOrderMessage(order));
       edit.setChatId(String.valueOf(callbackQuery.getMessage().getChatId()));
       edit.setMessageId(callbackQuery.getMessage().getMessageId());
       edit.setInlineMessageId(callbackQuery.getInlineMessageId());
@@ -69,20 +69,28 @@ public class EventOrdering extends Event {
     String data = callbackQuery.getData();
     if (Dish.BORRAR.getName().equals(data)) {
       order.getDishes().clear();
+      cache.addOrderEntry(key, order);
+    } else if (Dish.ENVIAR.getName().equals(data)) {
+      order.setSubmitted(true);
+      service.selectDishForEvent(event.getEventId(), order.getDishes(), callbackQuery.getMessage().getFrom().getUserName());
+      cache.deleteOrderEntries(key);
     } else {
       order.getDishes().add(data);
+      cache.addOrderEntry(key, order);
     }
 
-    cache.addOrderEntry(key, order);
 
     return order;
   }
 
-  private String buildOrderMessage(CallbackQuery callbackQuery, Event event) {
-    Order order = getOrder(callbackQuery, event);
-
-
+  private String buildOrderMessage(Order order) {
     StringBuffer message = new StringBuffer();
+
+    if (order.isSubmitted()) {
+      message.append("¡Ya se envió el pedido!");
+      return message.toString();
+    }
+
     if (order.getDishes() == null || order.getDishes().size() == 0)
       message.append("Su pedido está vacío");
 
