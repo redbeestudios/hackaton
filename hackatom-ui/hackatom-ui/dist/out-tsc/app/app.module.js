@@ -13,8 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { RestaurantComponent } from './components/restaurant.cmpt';
 import { HomeComponent } from './components/home.cmpt';
+import { RestaurantComponent } from './components/restaurant.cmpt';
+import { RestaurantCardComponent } from './components/restaurant-card.cmpt';
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -23,6 +24,7 @@ export var AppModule = (function () {
             declarations: [
                 AppComponent,
                 RestaurantComponent,
+                RestaurantCardComponent,
                 HomeComponent
             ],
             imports: [

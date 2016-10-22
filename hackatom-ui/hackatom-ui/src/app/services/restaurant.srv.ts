@@ -11,9 +11,36 @@ export class RestaurantService {
   constructor(private http: Http) {}
 
   getRestaurants(): Observable<Restaurant[]> {
-    return this.http.get(this.restaurantUrl)
-                    .map(this.extractData)
-                    .catch(this.handleError);
+    let restaurant = new Restaurant('1', 'Petalo', [
+  		{
+  		"name": "Milanesa",
+  		"type": "Plato Principal"
+  		},
+  		{
+  		"name": "Creme Brulee",
+  		"type": "Postre"
+  		}
+  	]);
+    let restaurant2 = new Restaurant('2', 'Arepaepa', [
+  		{
+  		"name": "caca",
+  		"type": "Plato Principal"
+  		},
+  		{
+  		"name": "polenta",
+  		"type": "Postre"
+  		}
+  	]);
+    let restaurants = [];
+    restaurants.push(restaurant);
+    restaurants.push(restaurant2);
+    let obs = Observable.of(restaurants);
+
+    return obs;
+
+    // return this.http.get(this.restaurantUrl)
+                    // .map(this.extractData)
+                    // .catch(this.handleError);
   }
 
   get(id: String): Observable<Restaurant> {

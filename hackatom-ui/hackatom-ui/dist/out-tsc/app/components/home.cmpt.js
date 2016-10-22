@@ -14,8 +14,8 @@ export var HomeComponent = (function () {
     HomeComponent = __decorate([
         Component({
             selector: 'selector-cmpt',
-            template: "\n    <div class=\"container\">\n      <div class=\"col-md-6\">\n        <a routerLink=\"/restaurants\" class=\"btn btn-success block\" styles=\"text-align:right\">Restaurants</a>\n      </div>\n      <div class=\"col-md-6\">\n        <a routerLink=\"/restaurants\" type=\"button\" class=\"btn btn-success block\" styles=\"text-align:right\">Evento</a>\n      </div>\n        <router-outlet></router-outlet>\n    </div>\n  ",
-            styles: [""]
+            template: "\n    <div class=\"container\">\n      <div class=\"col-md-6 padding-tam-1\">\n        <a routerLink=\"/restaurants\" class=\"btn btn-success block tom-button\">Restaurants</a>\n      </div>\n      <div class=\"col-md-6 padding-tam-1\">\n        <a routerLink=\"/restaurants\" class=\"btn btn-success block tom-button\">Evento</a>\n      </div>\n        <router-outlet></router-outlet>\n    </div>\n  ",
+            styles: ["\n    .padding-tam-1{\n      padding-top: 40%;\n    }\n    .tom-button {\n      position:  absolute;\n      left: 20%;\n      top: 50%;\n      min-height: 100px;\n      min-width: 300px;\n\n      text-align: center;\n      font-size: 18px;\n\n      padding-top: 6% !important;\n    }\n\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComponent);
