@@ -3,8 +3,10 @@ package io.redbee.domain;
 import java.io.Serializable;
 import java.util.List;
 
+import org.telegram.telegrambots.api.methods.BotApiMethod;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
+import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboard;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -57,7 +59,7 @@ public class Event implements Serializable{
 		this.state = state;
 	}
 
-  public  SendMessage buildReplyMessage(Message message){
+  public BotApiMethod buildReplyMessage(Update update){
 	return  null;
   }
 
