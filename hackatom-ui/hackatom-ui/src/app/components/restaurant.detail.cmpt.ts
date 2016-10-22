@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
       <h1>
         Restaurants
       </h1>
-      <form #restaurantForm="ngForm" (ngSubmit)="submit()">
+      <form #restaurantForm="ngForm" (ngSubmit)="submit()" *ngIf="restaurant">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" 
@@ -70,7 +70,10 @@ export class RestaurantDetailComponent implements OnInit {
 
             if (id !== 'new') {
                 this.restaurantService.get(id)
-                    .subscribe((restaurant) => this.restaurant = restaurant);
+                    .subscribe((restaurant) => {
+                        console.log('sdjaksdj '+restaurant);
+                        this.restaurant = restaurant
+                    });
             } else {
                 this.restaurant = new Restaurant('','', []);
             }

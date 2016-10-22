@@ -21,8 +21,8 @@ export class RestaurantService {
   get(id: String): Observable<Restaurant> {
 
     return this.http.get(this.restaurantUrl + '/' + id)
-                    .map(this.extractData)
-                    .catch(this.handleError);
+                    .map(this.extractData);
+//                    .catch(this.handleError);
 
   }
 
@@ -54,7 +54,7 @@ export class RestaurantService {
 
     console.log(''+ body);
 
-    return body.data || {};
+    return body || {};
   }
 
   private handleError (error: any) {
