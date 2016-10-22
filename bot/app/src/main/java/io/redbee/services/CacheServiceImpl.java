@@ -1,4 +1,6 @@
-package io.redbee.services.factory;
+package io.redbee.services;
+
+import com.google.gson.Gson;
 
 import io.redbee.domain.Order;
 import io.redbee.services.interfaces.CacheService;
@@ -14,20 +16,29 @@ public class CacheServiceImpl implements CacheService {
 
 	@Override
 	public boolean deleteOrderEntries(String key) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		Long resp = jedis.del(key);
+		return (resp > 0);
 	}
 
 	@Override
 	public boolean addOrderEntry(String key, Order order) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		Gson gson = new Gson();
+		String json = gson.toJson(order);
+		String resp = jedis.set(key,json);
+		
+		
+		
+		return !resp.isEmpty();
 	}
 
 	@Override
 	public Order getOrderEntry(String key) {
-		// TODO Auto-generated method stub
-		return null;
+		Gson gson = new Gson();
+		String json = jedis.get(key);
+		Order object=gson.fromJson(json, Order.class);
+		return object;
 	}
 
 }
