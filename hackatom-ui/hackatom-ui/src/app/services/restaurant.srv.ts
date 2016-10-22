@@ -53,7 +53,7 @@ export class RestaurantService {
                     .map(this.extractData)
                     .catch(this.handleError);*/
 
-    return Observable.of(new Restaurant('new', 'new', []));
+    return Observable.of(new Restaurant('', '', []));
   }
 
   saveRestaurant(restaurant: Restaurant): Observable<Restaurant> {

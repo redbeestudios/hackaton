@@ -24,13 +24,18 @@ import { Location } from '@angular/common';
           <div class="form-group">
             <label for="name">Agregar menú</label>
             
-            <input type="text" 
+            <input type="text"  [(ngModel)]="dish.name"
+             name="name"
+            #name="ngModel"
              class="form-control" placeholder="Metele un plato..." name="dish">
              
              <button (click)="addDish()">
                 Agregar
                 </button>
-            
+          </div>
+          
+          <div *ngFor="let dish of restaurant.dishes" class="card">
+            <span>{{dish.name}}</span>
           </div>
           
           <button type="submit" class="btn btn-default">Submit</button>
@@ -52,17 +57,23 @@ export class RestaurantDetailComponent implements OnInit {
 
     ngOnInit() {
 
-        this.route.params.forEach((params: Params) => {
+        this.restaurant = new Restaurant();
+
+        /*this.route.params.forEach((params: Params) => {
 
              let id = params['id'];
 
              this.restaurantService.get(id)
                  .subscribe((restaurant) => this.restaurant = restaurant);
-        });
+        });*/
     }
 
     submit() {
         console.log(this.restaurant.name)
+    }
+
+    addDish() {
+        this.restaurant.dishes.push(this.dish);
     }
 
 }
