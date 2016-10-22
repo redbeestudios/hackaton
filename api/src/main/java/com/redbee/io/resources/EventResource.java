@@ -9,10 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
-import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-import static org.springframework.web.bind.annotation.RequestMethod.PUT;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 @RequestMapping("/events")
@@ -21,13 +20,15 @@ public class EventResource {
     @Autowired
     EventService eventService;
 
+
+
     @RequestMapping(method = RequestMethod.GET)
-    public List<Event> list(){
+    public List<EventRepresentation> list(){
         return eventService.getAll();
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/{id}")
-    public Event getEvent(@PathVariable String id){
+    public EventRepresentation getEvent(@PathVariable String id){
        return eventService.get(id);
     }
 

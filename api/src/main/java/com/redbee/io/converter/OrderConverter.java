@@ -5,7 +5,9 @@ import com.redbee.io.representation.OrderRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -41,10 +43,18 @@ public class OrderConverter {
     }
 
     public List<OrderRepresentation> convertList(List<Order> orders) {
-        return orders.stream().map(this::convert).collect(Collectors.toList());
+        if (orders != null){
+            return orders.stream().map(this::convert).collect(Collectors.toList());
+        }else {
+            return new ArrayList<>();
+        }
     }
 
     public List<Order> convertListRepresentation(List<OrderRepresentation> orders) {
-        return orders.stream().map(this::convertrepresentation).collect(Collectors.toList());
+        if (orders != null){
+            return orders.stream().map(this::convertrepresentation).collect(Collectors.toList());
+        }else {
+            return new ArrayList<>();
+        }
     }
 }

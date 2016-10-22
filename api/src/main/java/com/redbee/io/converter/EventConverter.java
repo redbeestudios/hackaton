@@ -43,8 +43,7 @@ public class EventConverter {
         result.setDate(event.getDate());
         result.setState(event.getState());
         result.setRestaurants(restaurantConverter.convertModelList(event.getRestaurants()));
-        result.setVoters(userConverter.convertListModel(event.getVoters()));
-        result.setChosenRestaurant(restaurantConverter.convert(event.getChosenRestaurant()));
+        result.setChosenRestaurant(event.getChosenRestaurant());
         result.setOrders(orderConverter.convertList(event.getOrders()));
         result.setVotes(voteConverter.convertList(event.getVotes()));
         return result;
@@ -62,11 +61,8 @@ public class EventConverter {
         result.setDate(eventRepresentation.getDate());
         result.setRestaurants(restaurantConverter.convertRepresentationList(eventRepresentation.getRestaurants()));
 
-        if(Optional.ofNullable(eventRepresentation.getVoters()).isPresent()) {
-            result.setVoters(userConverter.convertListRepresentation(eventRepresentation.getVoters()));
-        }
         if(Optional.ofNullable(eventRepresentation.getChosenRestaurant()).isPresent()) {
-            result.setChosenRestaurant(restaurantConverter.convert(eventRepresentation.getChosenRestaurant()));
+            result.setChosenRestaurant(eventRepresentation.getChosenRestaurant());
         }
 
         if(Optional.ofNullable(eventRepresentation.getOrders()).isPresent()) {
@@ -76,5 +72,9 @@ public class EventConverter {
             result.setVotes(voteConverter.convertListRepresentation(eventRepresentation.getVotes()));
         }
         return result;
+    }
+
+    public List<EventRepresentation> convertList(List<Event> all) {
+        return all.stream().map(this::convert).collect(Collectors.toList());
     }
 }

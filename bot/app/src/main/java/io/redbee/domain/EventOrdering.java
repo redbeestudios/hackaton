@@ -7,34 +7,50 @@ import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.GroupingCollector;
 
-import org.telegram.api.methods.SendMessage;
-import org.telegram.api.objects.Message;
-import org.telegram.api.objects.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
+import org.telegram.telegrambots.api.methods.BotApiMethod;
+import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.objects.CallbackQuery;
+import org.telegram.telegrambots.api.objects.Message;
+import org.telegram.telegrambots.api.objects.Update;
+import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 public class EventOrdering extends Event {
 
   private static final TomApiService service = TomApiServiceFactory.getInstance();
 
   @Override
-  public SendMessage buildReplyMessage(Message message) {
+  public BotApiMethod buildReplyMessage(Update update) {
+    Message message = update.getMessage();
 
     Event event = service.findActiveEvent();
     List<Dish> dishes = service.findDishesForEvent(event.getEventId());
 
-    SendMessage outgoingMsg = buildMessage(message, keyboard(event, dishes));
-    outgoingMsg.setChatId(message.getChatId());
+    if (update.hasCallbackQuery()) {
+      // ACA entra si se hizo click en un boton inline
+      CallbackQuery callbackQuery = update.getCallbackQuery();
 
-    Dish votedDish = extractVotedDish(message, dishes);
-    if (votedDish != null) {
-      service.selectDishForEvent(event.getEventId(), votedDish.getDishId(), message.getFrom().getUserName());
-      outgoingMsg.setText("Seleccionaste la siguiente comida " + message.getText());
+      AnswerCallbackQuery answer = new AnswerCallbackQuery();
+      answer.setCallbackQueryId(callbackQuery.getId());
+      answer.setText("+1 " + callbackQuery.getData());
+
+      return answer;
+
     } else {
+      SendMessage outgoingMsg = buildMessage(message, keyboard(event, dishes));
+      outgoingMsg.setChatId(message.getChatId().toString());
       outgoingMsg.setText("¿Qué comida querés?");
-    }
 
-    return outgoingMsg;
-
+      return outgoingMsg;
     }
+//    if (votedDish != null) {
+//      service.selectDishForEvent(event.getEventId(), votedDish.getDishId(), message.getFrom().getUserName());
+//      outgoingMsg.setText("Seleccionaste la siguiente comida " + message.getText());
+//    } else {
+//    }
+  }
+
 
   public Dish extractVotedDish(Message message, List<Dish> dishes) {
     if (message.hasText()) {
@@ -46,29 +62,31 @@ public class EventOrdering extends Event {
     return null;
   }
 
-  public ReplyKeyboardMarkup keyboard(Event event, List<Dish> dishes) {
-    ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-    replyKeyboardMarkup.setSelective(true);
-    replyKeyboardMarkup.setResizeKeyboard(true);
-    replyKeyboardMarkup.setOneTimeKeyboad(false);
+  public InlineKeyboardMarkup keyboard(Event event, List<Dish> dishes) {
+    InlineKeyboardMarkup replyKeyboardMarkup = new InlineKeyboardMarkup();
 
     if (event.getState().equals(Status.ORDERING)) {
 
-      List<List<String>> keyboard = new ArrayList<>();
-      List<String> keyboardFirstRow = null;
+      List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
+
+
+      List<InlineKeyboardButton> row = null;
 
       List<List<Dish>> pages = dishes.stream().collect(new GroupingCollector<>(3));
 
-      for(List<Dish> page : pages){
+      for (List<Dish> page : pages) {
 
-    	  keyboardFirstRow = new ArrayList<>();
+        row = new ArrayList();
 
-	      for (Dish dish : page) {
+        for (Dish dish : page) {
 
-	        keyboardFirstRow.add(dish.getName());
+          InlineKeyboardButton bt = new InlineKeyboardButton();
+          bt.setText(dish.getName());
+          bt.setCallbackData(dish.getName());
+          row.add(bt);
 
-	      }
-	      keyboard.add(keyboardFirstRow);
+        }
+        keyboard.add(row);
       }
       replyKeyboardMarkup.setKeyboard(keyboard);
 
