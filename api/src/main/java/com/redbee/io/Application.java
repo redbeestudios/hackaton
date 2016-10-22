@@ -17,17 +17,16 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
+
+
     public void configure(HttpSecurity http) throws Exception {
 
         http
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.NEVER)
-                .and()
 
                 .addFilterBefore(new CORSFilter(), AbstractPreAuthenticatedProcessingFilter.class)
                 .csrf().disable()
 
-                .authorizeRequests().anyRequest().permitAll();
+                .authorizeRequests().anyRequest().permitAll().and().httpBasic().disable();
 
     }
 
