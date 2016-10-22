@@ -61,7 +61,7 @@ public class EventService {
 
     public EventRepresentation create(EventRepresentation eventRepresentation) {
         Event event = converter.convert(eventRepresentation);
-        event.setState(EventState.ORDERING);
+        event.setState(EventState.PENDING);
         return converter.convert(repo.insert(event));
     }
 
