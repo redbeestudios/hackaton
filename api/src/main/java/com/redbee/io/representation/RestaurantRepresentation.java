@@ -1,6 +1,8 @@
 package com.redbee.io.representation;
 
 
+import org.springframework.data.annotation.Id;
+
 import java.util.List;
 
 /**
@@ -8,6 +10,7 @@ import java.util.List;
  */
 public class RestaurantRepresentation {
 
+    @Id
     private String id;
     private String name;
     private List<DishRepresentation> dishes;

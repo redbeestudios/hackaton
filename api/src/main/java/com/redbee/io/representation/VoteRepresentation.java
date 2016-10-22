@@ -1,12 +1,13 @@
 package com.redbee.io.representation;
 
-import com.redbee.io.persistence.entities.User;
+import org.springframework.data.annotation.Id;
 
 /**
  * Created by fabrizio on 21/10/16.
  */
 public class VoteRepresentation {
 
+    @Id
     private String id;
 
     private String user;

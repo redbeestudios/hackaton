@@ -1,9 +1,14 @@
 package com.redbee.io.representation;
 
+import org.springframework.data.annotation.Id;
+
 /**
  * Created by martin on 26/08/16.
  */
 public class DishRepresentation {
+
+    @Id
+    private String id;
     private String name;
     private String type;
 
@@ -13,6 +18,15 @@ public class DishRepresentation {
         this.name = name;
         this.type = type;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getType() {
         return type;
     }
