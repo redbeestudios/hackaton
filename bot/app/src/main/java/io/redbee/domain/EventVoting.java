@@ -5,6 +5,7 @@ import java.util.List;
 
 import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
+import io.redbee.utils.GroupingCollector;
 
 import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
@@ -51,14 +52,23 @@ public class EventVoting extends Event {
     replyKeyboardMarkup.setOneTimeKeyboad(false);
 
     List<List<String>> keyboard = new ArrayList<>();
-    List<String> keyboardFirstRow = new ArrayList<>();
+    List<String> keyboardFirstRow = null;
+    
+    List<List<Restaurant>> pages = restaurants.stream().collect(new GroupingCollector<>(3));
 
-    for (Restaurant restaurant : restaurants) {
+    for(List<Restaurant> page : pages){
+    	
+    	keyboardFirstRow = new ArrayList<>();
+    
+	    for (Restaurant restaurant : page) {
+	
+	      keyboardFirstRow.add(restaurant.getDescription());
+	
+	    }
 
-      keyboardFirstRow.add(restaurant.getDescription());
-
+	    keyboard.add(keyboardFirstRow);
+    
     }
-    keyboard.add(keyboardFirstRow);
 
     replyKeyboardMarkup.setKeyboard(keyboard);
 
