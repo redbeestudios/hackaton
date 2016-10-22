@@ -3,25 +3,27 @@ package com.redbee.io.persistence.entities;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 public class Order {
     @Id
     private String id;
-    private User user;
-    private Dish dish;
+    private String user;
+    private List<Dish> dish;
 
-    public User getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
-    public Dish getDish() {
+    public List<Dish> getDish() {
         return dish;
     }
 
-    public void setDish(Dish dish) {
+    public void setDish(List<Dish> dish) {
         this.dish = dish;
     }
 

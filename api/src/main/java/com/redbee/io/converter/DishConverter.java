@@ -7,6 +7,9 @@ import com.redbee.io.representation.OrderRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Created by fabrizio on 21/10/16.
  */
@@ -25,5 +28,13 @@ public class DishConverter {
         result.setName(dishRepresentation.getName());
         result.setType(dishRepresentation.getType());
         return result;
+    }
+
+    public List<DishRepresentation> convertList(List<Dish> all) {
+        return all.stream().map(this::convert).collect(Collectors.toList());
+    }
+
+    public List<Dish> convertListRepresentation(List<DishRepresentation> all) {
+        return all.stream().map(this::convert).collect(Collectors.toList());
     }
 }

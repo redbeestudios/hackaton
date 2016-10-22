@@ -17,7 +17,7 @@ public class OrderEventResource {
     @Autowired
     private EventService eventService;
 
-    @RequestMapping(method = RequestMethod.POST,value = "/{id}")
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public OrderRepresentation create(@RequestBody OrderRepresentation orderRepresentation, @PathVariable("id") String id){
         return eventService.order(orderRepresentation,id);
