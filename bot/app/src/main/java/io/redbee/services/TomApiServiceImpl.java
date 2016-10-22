@@ -24,7 +24,8 @@ public class TomApiServiceImpl implements TomApiService {
 
 	@Override
 	public Event findActiveEvent() {
-		WebTarget target = client.target("http://demo2545284.mockable.io/event");
+		WebTarget target = client.target(intIP + "/currentEvent");
+//		WebTarget target = client.target("http://demo2545284.mockable.io/event");
 		Event event = null ;
 		try {
 			event = EventFactory.getEvent( target.request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<Event>(){}));
