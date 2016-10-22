@@ -51,8 +51,8 @@ export class RestaurantComponent implements OnInit {
               private router: Router) {}
 
   ngOnInit() {
-     let restaurants = this.getRestaurants();
-     this.getRestaurant(restaurants[0].id);
+     this.getRestaurants();
+    //  this.getRestaurant();
   }
 
 
@@ -65,7 +65,7 @@ export class RestaurantComponent implements OnInit {
 
   getRestaurants() {
     let self = this;
-    this.restaurantService.getRestaurants().subscribe( res => {
+    this.restaurantService.restaurants().subscribe( res => {
       self.restaurants = res;
     });
     // return restaurants;
@@ -73,7 +73,7 @@ export class RestaurantComponent implements OnInit {
 
   getRestaurant(id: String) {
     let self = this;
-    this.restaurantService.getRestaurant(id).subscribe( res => {
+    this.restaurantService.get(id).subscribe( res => {
       self.restaurants.push(res);
     });
   }

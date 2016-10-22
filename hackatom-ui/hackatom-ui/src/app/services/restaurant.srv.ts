@@ -6,14 +6,15 @@ import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class RestaurantService {
-  private restaurantUrl = '52.90.47.124:8081/restaurants';
+  private restaurantUrl = 'localhost/restaurants';
   private restaurantsMock = {};
 
   constructor(private http: Http) {}
 
-  getRestaurants(): Observable<Restaurant[]> {
-    return this.http.get(this.restaurantUrl)
-                    .map(this.extractData)
+  restaurants(): Observable<Restaurant[]> {
+    let getResult = this.http.get(this.restaurantUrl)
+    console.log(getResult);
+    return getResult.map(this.extractData)
                     .catch(this.handleError);
   }
 
@@ -25,14 +26,14 @@ export class RestaurantService {
 
   }
 
-  saveRestaurant(restaurant: Restaurant): Observable<Restaurant> {
+  save(restaurant: Restaurant): Observable<Restaurant> {
     let body = JSON.stringify(restaurant);
     return this.http.post(this.restaurantUrl, body)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
-  updateRestaurant(restaurant: Restaurant): Observable<Restaurant> {
+  update(restaurant: Restaurant): Observable<Restaurant> {
     let body = JSON.stringify(restaurant);
     return this.http.put(this.restaurantUrl + '/' + restaurant.id, body)
       .map(this.extractData)
