@@ -18,6 +18,7 @@ public class DishConverter {
 
     public DishRepresentation convert(Dish dish){
         DishRepresentation result = new DishRepresentation();
+        result.setId(dish.getId());
         result.setType(dish.getType());
         result.setName(dish.getName());
         return result;
@@ -25,6 +26,7 @@ public class DishConverter {
 
     public Dish convert(DishRepresentation dishRepresentation) {
         Dish result = new Dish();
+        result.setId(dishRepresentation.getId());
         result.setName(dishRepresentation.getName());
         result.setType(dishRepresentation.getType());
         return result;
