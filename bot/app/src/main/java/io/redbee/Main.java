@@ -1,16 +1,21 @@
 package io.redbee;
 
-import org.telegram.SenderHelper;
-import org.telegram.api.methods.Constants;
-import org.telegram.updateshandlers.LunchHandler;
-import org.telegram.updateshandlers.UpdatesCallback;
-import org.telegram.updatesreceivers.UpdatesThread;
+import org.telegram.telegrambots.TelegramBotsApi;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 public class Main {
 
     public static void main(String[] args) {
-      UpdatesThread updatesThread = new UpdatesThread(Constants.BOT_TOKEN, new LunchHandler());
-      SenderHelper.SendWebhook("", Constants.BOT_TOKEN);
+//      UpdatesThread updatesThread = new UpdatesThread(Constants.BOT_TOKEN, new LunchHandler());
+//      SenderHelper.SendWebhook("", Constants.BOT_TOKEN);
+
+
+      TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
+      try {
+        telegramBotsApi.registerBot(new LunchHandler());
+      } catch (TelegramApiException e) {
+        e.printStackTrace();
+      }
     }
 
 }

@@ -7,9 +7,11 @@ import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.GroupingCollector;
 
-import org.telegram.api.methods.SendMessage;
-import org.telegram.api.objects.Message;
-import org.telegram.api.objects.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.objects.Message;
+import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
+
 
 public class EventVoting extends Event {
 
@@ -22,7 +24,7 @@ public class EventVoting extends Event {
     List<Restaurant> restaurants = service.findRestaurants(event.getEventId());
 
     SendMessage outgoingMsg = buildMessage(message, keyboard(restaurants));
-    outgoingMsg.setChatId(message.getChatId());
+    outgoingMsg.setChatId(message.getChatId().toString());
 
     Restaurant votedRestaurant = extractVotedRestaurant(message, restaurants);
     if (votedRestaurant != null) {
@@ -51,22 +53,22 @@ public class EventVoting extends Event {
     replyKeyboardMarkup.setResizeKeyboard(true);
     replyKeyboardMarkup.setOneTimeKeyboad(false);
 
-    List<List<String>> keyboard = new ArrayList<>();
-    List<String> keyboardFirstRow = null;
+    List<KeyboardRow> keyboard = new ArrayList<>();
+    KeyboardRow row = null;
     
     List<List<Restaurant>> pages = restaurants.stream().collect(new GroupingCollector<>(3));
 
     for(List<Restaurant> page : pages){
     	
-    	keyboardFirstRow = new ArrayList<>();
+    	row = new KeyboardRow();
     
 	    for (Restaurant restaurant : page) {
 	
-	      keyboardFirstRow.add(restaurant.getName());
+	      row.add(restaurant.getName());
 	
 	    }
 
-	    keyboard.add(keyboardFirstRow);
+	    keyboard.add(row);
     
     }
 

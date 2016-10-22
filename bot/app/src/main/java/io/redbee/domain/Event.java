@@ -2,9 +2,9 @@ package io.redbee.domain;
 
 import java.util.List;
 
-import org.telegram.api.methods.SendMessage;
-import org.telegram.api.objects.Message;
-import org.telegram.api.objects.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.objects.Message;
+import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboard;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -62,12 +62,12 @@ public class Event {
    * @param keyboard
    * @return
    */
-  protected SendMessage buildMessage(Message inputMsg, ReplyKeyboardMarkup keyboard) {
+  protected SendMessage buildMessage(Message inputMsg, ReplyKeyboard keyboard) {
     SendMessage sendMessage = new SendMessage();
-    sendMessage.setChatId(inputMsg.getChatId());
+    sendMessage.setChatId(inputMsg.getChatId().toString());
     sendMessage.enableMarkdown(true);
-    sendMessage.setReplayToMessageId(inputMsg.getMessageId());
-    sendMessage.setReplayMarkup(keyboard);
+    sendMessage.setReplyToMessageId(inputMsg.getMessageId());
+    sendMessage.setReplyMarkup(keyboard);
     return sendMessage;
   }
 }
