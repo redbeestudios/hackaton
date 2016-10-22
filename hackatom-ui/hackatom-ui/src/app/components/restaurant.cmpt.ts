@@ -8,25 +8,11 @@ import { Router } from '@angular/router';
   selector: 'restaurant-cmpt',
   template: `
     <div class="container">
-<<<<<<< HEAD
-      <h1>
-        Restaurants
-      </h1>
-
-      <button type="button" class="btn btn-success block" styles="text-align:right" (click)="gotoRestaurant({id:'new'})">Crear</button>
-      <br><br>
-      <div  *ngFor="let restaurant of restaurants"class="card">
-        <div class="card-block">
-          <h4 class="card-title">{{ restaurant.id }} - {{ restaurant.name }}</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          <button class="btn btn-primary" (click)="gotoRestaurant(restaurant)">Ver</button>
-          <a href="#" class="btn btn-danger">Borrar</a>
-=======
       <span  class="title"> Restaurants</span>
       <a routerLink="/restaurant/new" class="btn btn-success block" style="float: right; margin-top: 1%; margin-right: 23px;">Crear</a>
       <br><br>
       <div *ngFor="let restaurant of restaurants" class="card">
-          <restaurant-card [restaurant]="restaurant"></restaurant-card>
+          <restaurant-card [restaurant]="restaurant" (click)="gotoRestaurant(restaurant)"></restaurant-card>
       </div>
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -45,7 +31,6 @@ import { Router } from '@angular/router';
               <button type="button" class="btn btn-danger">Eliminar</button>
             </div>
           </div>
->>>>>>> 4c90e193935bb416b47281272daabcda9935923e
         </div>
       </div>
 
@@ -69,7 +54,7 @@ export class RestaurantComponent implements OnInit {
      this.getRestaurants();
   }
 
-<<<<<<< HEAD
+
   gotoRestaurant(restaurant) {
 
       let link = ['/restaurants', restaurant.id];
@@ -77,21 +62,12 @@ export class RestaurantComponent implements OnInit {
 
   }
 
-  getRestaurants(): Array<Restaurant> {
-    let restaurants = [ {id: '2', name: 'Petalo', dishes: [{ name: 'muzza', type: 'pizza' }]},
-       {id: '3', name: 'Hamburgo', dishes: [{ name: 'muzza', type: 'pizza' }]}
-   ];
-    //return this.restaurantService.getRestaurants();
-    return restaurants;
-  }
-=======
   getRestaurants() {
     let self = this;
     this.restaurantService.getRestaurants().subscribe( res => {
       self.restaurants = res;
     });
     // return restaurants;
-    }
->>>>>>> 4c90e193935bb416b47281272daabcda9935923e
+  }
 
 }

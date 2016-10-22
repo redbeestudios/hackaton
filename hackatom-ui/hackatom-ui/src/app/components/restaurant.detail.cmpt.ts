@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant }  from '../domain/restaurant';
+import { Dish }  from '../domain/dish';
 import { RestaurantService } from '../services/restaurant.srv';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
@@ -42,6 +43,7 @@ import { Location } from '@angular/common';
 export class RestaurantDetailComponent implements OnInit {
 
     restaurant: Restaurant;
+    dish: Dish;
 
     constructor(private restaurantService:  RestaurantService,
                 private route: ActivatedRoute,

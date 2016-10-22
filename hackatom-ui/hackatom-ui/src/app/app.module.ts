@@ -7,25 +7,18 @@ import { RouterModule }   from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-import { RestaurantComponent } from './components/restaurant.cmpt';
-import { RestaurantDetailComponent } from './components/restaurant.detail.cmpt';
-=======
->>>>>>> 4c90e193935bb416b47281272daabcda9935923e
 import { HomeComponent } from './components/home.cmpt';
 import { RestaurantComponent } from './components/restaurant.cmpt';
 import { RestaurantCardComponent } from './components/restaurant-card.cmpt';
+import { RestaurantDetailComponent } from './components/restaurant.detail.cmpt';
 
 @NgModule({
 
   declarations: [
     AppComponent,
     RestaurantComponent,
-<<<<<<< HEAD
     RestaurantDetailComponent,
-=======
     RestaurantCardComponent,
->>>>>>> 4c90e193935bb416b47281272daabcda9935923e
     HomeComponent
   ],
   imports: [

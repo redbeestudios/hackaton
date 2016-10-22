@@ -13,20 +13,24 @@ export class RestaurantService {
   getRestaurants(): Observable<Restaurant[]> {
     let restaurant = new Restaurant('1', 'Petalo', [
   		{
+            "id":1,
   		"name": "Milanesa",
   		"type": "Plato Principal"
   		},
   		{
+            "id":2,
   		"name": "Creme Brulee",
   		"type": "Postre"
   		}
   	]);
     let restaurant2 = new Restaurant('2', 'Arepaepa', [
   		{
+            "id":3,
   		"name": "caca",
   		"type": "Plato Principal"
   		},
   		{
+            "id":4,
   		"name": "polenta",
   		"type": "Postre"
   		}
@@ -49,9 +53,7 @@ export class RestaurantService {
                     .map(this.extractData)
                     .catch(this.handleError);*/
 
-    console.log('idddd '+id);
-
-    return Observable.of(new Restaurant());
+    return Observable.of(new Restaurant('new', 'new', []));
   }
 
   saveRestaurant(restaurant: Restaurant): Observable<Restaurant> {
