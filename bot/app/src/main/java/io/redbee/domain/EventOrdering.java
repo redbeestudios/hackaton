@@ -5,6 +5,7 @@ import java.util.List;
 
 import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.TomApiService;
+import io.redbee.utils.GroupingCollector;
 
 import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
@@ -54,15 +55,21 @@ public class EventOrdering extends Event {
     if (event.getStatus().equals(Status.ORDERING)) {
 
       List<List<String>> keyboard = new ArrayList<>();
-      List<String> keyboardFirstRow = new ArrayList<>();
+      List<String> keyboardFirstRow = null;
+      
+      List<List<Dish>> pages = dishes.stream().collect(new GroupingCollector<>(3));
 
-      for (Dish dish : dishes) {
+      for(List<Dish> page : pages){
 
-        keyboardFirstRow.add(dish.getDescription());
-
+    	  keyboardFirstRow = new ArrayList<>();
+    	  
+	      for (Dish dish : page) {
+	
+	        keyboardFirstRow.add(dish.getDescription());
+	
+	      }
+	      keyboard.add(keyboardFirstRow);
       }
-      keyboard.add(keyboardFirstRow);
-
       replyKeyboardMarkup.setKeyboard(keyboard);
 
     }
