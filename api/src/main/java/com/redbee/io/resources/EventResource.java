@@ -2,13 +2,13 @@ package com.redbee.io.resources;
 
 import com.redbee.io.persistence.entities.Event;
 import com.redbee.io.representation.EventRepresentation;
-import com.redbee.io.representation.RestaurantRepresentation;
 import com.redbee.io.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -21,13 +21,15 @@ public class EventResource {
     @Autowired
     EventService eventService;
 
+
+
     @RequestMapping(method = RequestMethod.GET)
-    public List<Event> list(){
+    public List<EventRepresentation> list(){
         return eventService.getAll();
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/{id}")
-    public Event getEvent(@PathVariable String id){
+    public EventRepresentation getEvent(@PathVariable String id){
        return eventService.get(id);
     }
 

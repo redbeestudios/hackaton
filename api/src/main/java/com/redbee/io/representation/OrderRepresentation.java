@@ -1,9 +1,13 @@
 package com.redbee.io.representation;
 
+import org.springframework.data.annotation.Id;
+
 /**
  * Created by fabrizio on 21/10/16.
  */
 public class OrderRepresentation {
+
+    @Id
     private String id;
     private UserRepresentation user;
     private DishRepresentation dish;

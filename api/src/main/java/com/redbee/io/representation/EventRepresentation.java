@@ -20,7 +20,7 @@ public class EventRepresentation {
 
     private List<UserRepresentation> voters;
 
-    private RestaurantRepresentation chosenRestaurant;
+    private String chosenRestaurant;
 
     private List<VoteRepresentation> votes;
 
@@ -60,11 +60,11 @@ public class EventRepresentation {
         this.voters = voters;
     }
 
-    public RestaurantRepresentation getChosenRestaurant() {
+    public String getChosenRestaurant() {
         return chosenRestaurant;
     }
 
-    public void setChosenRestaurant(RestaurantRepresentation chosenRestaurant) {
+    public void setChosenRestaurant(String chosenRestaurant) {
         this.chosenRestaurant = chosenRestaurant;
     }
 
