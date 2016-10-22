@@ -12,4 +12,9 @@ export class Event {
   chosenRestaurant: string;
   votes: Array<Vote>;
   orders:  Array<Order>;
+
+  constructor(id: string, date: Date) {
+    this.id = id;
+    this.date = date;
+  }
 }

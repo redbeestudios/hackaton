@@ -22,21 +22,26 @@ import { Location } from '@angular/common';
           </div>
           
           <div class="form-group">
-            <label for="name">Agregar menú</label>
-            
-            <input type="text"  [(ngModel)]="dish.name"
-             name="name"
-             #name="ngModel"
-             class="form-control" placeholder="Metele un plato..." name="dish">
-             
-             <button (click)="addDish()">
-                Agregar
-                </button>
+                <div class="input-group">
+                    <input type="text"  [(ngModel)]="dish.name"
+                     name="name"
+                     #name="ngModel"
+                     class="form-control" placeholder="Metele un plato..." name="dish">
+                  
+                  <span class="input-group-btn">
+                    <button (click)="addDish()" class="btn btn-default">Agregar</button>
+                  </span>
+                </div><!-- /input-group -->
           </div>
           
-          <div *ngFor="let dish of restaurant.dishes" class="card">
-            <span>{{dish.name}}</span>
-          </div>
+          <h3>Platos</h3>
+          
+          <ul>
+            <li *ngFor="let dish of restaurant.dishes">
+                <span>{{dish.name}}</span>
+            </li>
+          </ul>
+          
           
           <button type="submit" class="btn btn-default">Submit</button>
       </form>
@@ -79,8 +84,15 @@ export class RestaurantDetailComponent implements OnInit {
 
     addDish() {
 
-        this.restaurant.dishes.push(this.dish);
-        this.dish = new Dish();
+        if (this.dish.name && this.dish.name.length > 0) {
+            let duplicatedDishes = this.restaurant.dishes.filter((storedDish) => {
+                return storedDish.name === this.dish.name
+            })
+            if (duplicatedDishes.length === 0) {
+                this.restaurant.dishes.push(this.dish);
+                this.dish = new Dish();
+            }
+        }
     }
 
 }
