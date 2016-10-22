@@ -17,24 +17,41 @@ public class EventOrdering extends Event {
   @Override
   public SendMessage buildReplyMessage(Message message) {
 
-    SendMessage replyMessage = buildMessage(message, keyboard());
-    replyMessage.setText("A que lugar le pedimos comida?");
-    replyMessage.setChatId(message.getChatId());
+    Event event = service.findActiveEvent();
+    List<Dish> dishes = service.findDishesForEvent(event.getEventId());
 
-    return replyMessage;
+    SendMessage outgoingMsg = buildMessage(message, keyboard(event, dishes));
+    outgoingMsg.setChatId(message.getChatId());
+
+    Dish votedDish = extractVotedDish(message, dishes);
+    if (votedDish != null) {
+      service.selectDishForEvent(event.getEventId(), votedDish.getDishId(), message.getFrom().getUserName());
+      outgoingMsg.setText("Seleccionaste la siguiente comida " + message.getText());
+    } else {
+      outgoingMsg.setText("¿Qué comida querés?");
+    }
+
+    return outgoingMsg;
+
+    }
+
+  public Dish extractVotedDish(Message message, List<Dish> dishes) {
+    if (message.hasText()) {
+      for (Dish dish : dishes) {
+        if (message.getText().equals(dish.getDescription())) return dish;
+      }
+    }
+
+    return null;
   }
 
-  public ReplyKeyboardMarkup keyboard() {
+  public ReplyKeyboardMarkup keyboard(Event event, List<Dish> dishes) {
     ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
     replyKeyboardMarkup.setSelective(true);
     replyKeyboardMarkup.setResizeKeyboard(true);
     replyKeyboardMarkup.setOneTimeKeyboad(false);
 
-    Event event = service.findActiveEvent();
-
     if (event.getStatus().equals(Status.ORDERING)) {
-
-      List<Dish> dishes = service.findDishesForEvent(event.getEventId());
 
       List<List<String>> keyboard = new ArrayList<>();
       List<String> keyboardFirstRow = new ArrayList<>();

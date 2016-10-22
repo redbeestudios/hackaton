@@ -25,7 +25,7 @@ public class EventVoting extends Event {
 
     Restaurant votedRestaurant = extractVotedRestaurant(message, restaurants);
     if (votedRestaurant != null) {
-      service.voteRestaurantForEvent(event.getEventId(), votedRestaurant.getRestaurantId());
+      service.voteRestaurantForEvent(event.getEventId(), votedRestaurant.getRestaurantId(), message.getFrom().getUserName());
       outgoingMsg.setText("Tu voto está registrado ahora en " + message.getText());
     } else {
       outgoingMsg.setText("¿A qué lugar le pedimos comida?");

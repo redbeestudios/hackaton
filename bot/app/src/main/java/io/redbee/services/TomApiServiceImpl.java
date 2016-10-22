@@ -12,6 +12,8 @@ import javax.ws.rs.core.MediaType;
 
 import io.redbee.domain.Dish;
 import io.redbee.domain.Event;
+import io.redbee.domain.EventOrdering;
+import io.redbee.domain.EventVoting;
 import io.redbee.domain.Restaurant;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.EventFactory;
@@ -20,19 +22,20 @@ public class TomApiServiceImpl implements TomApiService {
 	
 	private Client client = ClientBuilder.newClient();
 	
-	
+	private String intIP = "172.16.21.38";
 
 	@Override
 	public Event findActiveEvent() {
-		WebTarget target = client.target("http://demo2545284.mockable.io/event");
-		Event event = null ;
-		try {
-			event = EventFactory.getEvent( target.request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<Event>(){}));
-		} catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return event;
+//		WebTarget target = client.target("http://demo2545284.mockable.io/event");
+//		Event event = null ;
+//		try {
+//			event = EventFactory.getEvent( target.request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<Event>(){}));
+//		} catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return event;
+    return new EventOrdering();
 	}
 
 	@Override
@@ -55,15 +58,19 @@ public class TomApiServiceImpl implements TomApiService {
 	}
 
 	@Override
-	public List<Dish> findDishesForEvent(String eventId, String restaurantId) {
+	public List<Dish> findDishesForEvent(String eventId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public boolean voteRestaurantForEvent(String eventId, String restaurantId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+  @Override
+  public boolean voteRestaurantForEvent(String eventId, String restaurantId, String userId) {
+    return false;
+  }
+
+  @Override
+  public boolean selectDishForEvent(String eventId, String dishId, String userId) {
+    return false;
+  }
 
 }
