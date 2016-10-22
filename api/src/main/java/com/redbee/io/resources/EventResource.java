@@ -1,5 +1,7 @@
 package com.redbee.io.resources;
 
+import com.redbee.io.persistence.entities.Event;
+import com.redbee.io.persistence.entities.EventState;
 import com.redbee.io.representation.EventRepresentation;
 import com.redbee.io.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
@@ -45,6 +48,12 @@ public class EventResource {
     @ResponseStatus(value = HttpStatus.CREATED)
     public EventRepresentation create(@RequestBody EventRepresentation eventRepresentation){
         return eventService.create(eventRepresentation);
+    }
+
+    @RequestMapping(method = PUT,value = "/state/{eventID}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public Event changeState(@PathVariable String eventID, @RequestBody EventState state){
+        return eventService.switchState(state,eventID);
     }
 
 }

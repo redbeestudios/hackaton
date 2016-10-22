@@ -7,6 +7,7 @@ import io.redbee.services.interfaces.TomApiService;
 import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.api.methods.BotApiMethod;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.logging.BotLogger;
@@ -37,6 +38,10 @@ public class LunchHandler extends TelegramLongPollingBot {
       if (botApiMethod instanceof SendMessage) {
         sendMessage((SendMessage) botApiMethod);
       }
+      if (botApiMethod instanceof EditMessageText) {
+        editMessageText((EditMessageText) botApiMethod);
+      }
+
     } catch (Exception e) {
       BotLogger.error("Error manejando mensaje", e);
     }

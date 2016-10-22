@@ -2,6 +2,7 @@ package com.redbee.io.service;
 
 
 import com.redbee.io.converter.EventConverter;
+import com.redbee.io.exception.EntityCantBeChange;
 import com.redbee.io.converter.OrderConverter;
 import com.redbee.io.converter.VoteConverter;
 import com.redbee.io.persistence.entities.Event;
@@ -16,6 +17,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service
 public class EventService {
@@ -83,5 +86,16 @@ public class EventService {
         repo.save(event);
         return orderRepresentation;
 
+    }
+
+    public Event switchState(EventState state, String id) {
+        try {
+            Optional.ofNullable(state);
+            Event event = repo.findOne(id);
+            event.setState(state);
+            return repo.save(event);
+        } catch (Exception e) {
+            throw new EntityCantBeChange();
+        }
     }
 }

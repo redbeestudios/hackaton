@@ -16,7 +16,7 @@ public class VoteEventRestaurantResource {
     @Autowired
     private EventService eventService;
 
-    @RequestMapping(method = RequestMethod.POST,value = "/{id}")
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public VoteRepresentation create(@RequestBody VoteRepresentation voteRepresentation, @PathVariable("id") String id){
         return eventService.vote(voteRepresentation,id);

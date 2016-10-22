@@ -8,6 +8,7 @@ import com.redbee.io.representation.VoteRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,7 +35,11 @@ public class VoteConverter {
     }
 
     public List<VoteRepresentation> convertList(List<Vote> votes) {
-        return votes.stream().map(this::convert).collect(Collectors.toList());
+        if(votes != null){
+            return votes.stream().map(this::convert).collect(Collectors.toList());
+        }else {
+            return new ArrayList<>();
+        }
     }
 
     public List<Vote> convertListRepresentation(List<VoteRepresentation> votes) {

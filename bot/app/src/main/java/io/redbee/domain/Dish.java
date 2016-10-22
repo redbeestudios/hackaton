@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Dish {
 
+  public final static Dish ENVIAR = new Dish("ENVIAR");
+
   @JsonIgnore
 	private String dishId;
 	private String name;
@@ -28,4 +30,9 @@ public class Dish {
 		this.type = type;
 	}
 
+  public Dish() {}
+
+  public Dish(String name) {
+    this.name = name;
+  }
 }
