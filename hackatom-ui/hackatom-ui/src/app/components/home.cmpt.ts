@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
         <a routerLink="/restaurants" class="btn btn-success block tom-button">Restaurants</a>
       </div>
       <div class="col-md-6 padding-tam-1">
-        <a routerLink="/restaurants" class="btn btn-success block tom-button">Evento</a>
+        <a routerLink="/events" class="btn btn-success block tom-button">Evento</a>
       </div>
         <router-outlet></router-outlet>
     </div>

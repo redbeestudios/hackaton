@@ -67,7 +67,6 @@ export class RestaurantComponent implements OnInit {
     this.restaurantService.getRestaurants().subscribe( res => {
       self.restaurants = res;
     });
-    // return restaurants;
   }
 
 }
