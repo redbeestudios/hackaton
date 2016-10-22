@@ -26,16 +26,15 @@ public class TomApiServiceImpl implements TomApiService {
 
 	@Override
 	public Event findActiveEvent() {
-//		WebTarget target = client.target("http://demo2545284.mockable.io/event");
-//		Event event = null ;
-//		try {
-//			event = EventFactory.getEvent( target.request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<Event>(){}));
-//		} catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return event;
-    return new EventOrdering();
+		WebTarget target = client.target("http://demo2545284.mockable.io/event");
+		Event event = null ;
+		try {
+			event = EventFactory.getEvent( target.request(MediaType.APPLICATION_JSON_TYPE).get(new GenericType<Event>(){}));
+		} catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return event;
 	}
 
 	@Override
@@ -59,8 +58,19 @@ public class TomApiServiceImpl implements TomApiService {
 
 	@Override
 	public List<Dish> findDishesForEvent(String eventId) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Dish> dishes = new ArrayList<>();
+    Dish empa = new Dish();
+    empa.setDescription("Empanada de jamon");
+    empa.setDishId("12");
+    dishes.add(empa);
+
+    Dish empa1 = new Dish();
+    empa1.setDescription("Pizza de Choclo");
+    empa1.setDishId("12");
+    dishes.add(empa1);
+
+
+		return dishes;
 	}
 
   @Override

@@ -1,14 +1,14 @@
 package org.telegram.updateshandlers;
 
+import io.redbee.domain.Event;
+import io.redbee.services.factory.TomApiServiceFactory;
+import io.redbee.services.interfaces.TomApiService;
+
 import org.telegram.SenderHelper;
 import org.telegram.api.methods.BotApiMethod;
 import org.telegram.api.methods.Constants;
 import org.telegram.api.objects.Update;
 import org.telegram.services.BotLogger;
-
-import io.redbee.domain.Event;
-import io.redbee.services.factory.TomApiServiceFactory;
-import io.redbee.services.interfaces.TomApiService;
 
 /**
  * Created by gustavo on 26/08/16.
