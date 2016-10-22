@@ -50,10 +50,5 @@ public class EventResource {
         return eventService.create(eventRepresentation);
     }
 
-    @RequestMapping(method = PUT,value = "/state/{eventID}")
-    @ResponseStatus(value = HttpStatus.OK)
-    public Event changeState(@PathVariable String eventID, @RequestBody EventState state){
-        return eventService.switchState(state,eventID);
-    }
 
 }
