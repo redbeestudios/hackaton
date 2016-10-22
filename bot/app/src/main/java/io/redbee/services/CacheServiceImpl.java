@@ -1,4 +1,4 @@
-package io.redbee.services.factory;
+package io.redbee.services;
 
 import com.google.gson.Gson;
 
