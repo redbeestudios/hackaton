@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Restaurant {
     @Id
     private String id;

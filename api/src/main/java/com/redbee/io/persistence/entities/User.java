@@ -3,6 +3,7 @@ package com.redbee.io.persistence.entities;
 
 import org.springframework.data.annotation.Id;
 
+
 public class User {
 
     @Id
