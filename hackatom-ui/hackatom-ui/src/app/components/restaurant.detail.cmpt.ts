@@ -57,7 +57,7 @@ export class RestaurantDetailComponent implements OnInit {
 
     ngOnInit() {
 
-        this.restaurant = new Restaurant();
+        this.restaurant = new Restaurant('','', []);
 
         /*this.route.params.forEach((params: Params) => {
 

@@ -5,8 +5,6 @@ export class Restaurant {
 	name: string;
 	dishes: Array<Dish>;
 
-	constructor(){}
-
 	constructor(id:string, name:string, dishes: Dish[]) {
 		this.id = id;
 		this.name = name;
