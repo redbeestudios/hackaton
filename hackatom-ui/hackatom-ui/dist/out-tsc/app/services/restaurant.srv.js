@@ -21,7 +21,7 @@ var RestaurantService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
-    RestaurantService.prototype.getRestaurant = function (id) {
+    RestaurantService.prototype.get = function (id) {
         return this.http.get(this.restaurantUrl + '/' + id)
             .map(this.extractData)
             .catch(this.handleError);

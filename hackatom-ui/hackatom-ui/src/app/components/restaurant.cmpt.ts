@@ -1,39 +1,66 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant }  from '../domain/restaurant';
+import { RestaurantCardComponent } from '../components/restaurant-card.cmpt';
 import { RestaurantService } from '../services/restaurant.srv';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'restaurant-cmpt',
   template: `
     <div class="container">
-      <h1>
-        Restaurants
-      </h1>
-
-      <button type="button" class="btn btn-success block" styles="text-align:right">Crear</button>
+      <span  class="title"> Restaurants</span>
+      <a routerLink="/restaurants/new" class="btn btn-success block" style="float: right; margin-top: 1%; margin-right: 23px;">Crear</a>
       <br><br>
-      <div  *ngFor="let restaurant of restaurants"class="card">
-        <div class="card-block">
-          <h4 class="card-title">{{ restaurant.id }} - {{ restaurant.name }}</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-          <a href="#" class="btn btn-primary">Ver</a>
-          <a href="#" class="btn btn-danger">Borrar</a>
+      <div *ngFor="let restaurant of restaurants" class="card">
+          <restaurant-card [restaurant]="restaurant" (click)="gotoRestaurant(restaurant)"></restaurant-card>
+      </div>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Eliminar Restaurante</h4>
+            </div>
+            <div class="modal-body">
+              Estas seguro que deas borrar este restaurant?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   `,
-  styles: [``],
+  styles: [`
+    .title {
+      font-size: 36px;
+    }
+    `],
   providers: [ RestaurantService ]
 })
 export class RestaurantComponent implements OnInit {
 
   restaurants: Array<Restaurant>;
 
-  constructor(private restaurantService:  RestaurantService) {}
+  constructor(private restaurantService:  RestaurantService,
+              private router: Router) {}
 
   ngOnInit() {
      let restaurants = this.getRestaurants();
      this.getRestaurant(restaurants[0].id);
+  }
+
+
+  gotoRestaurant(restaurant) {
+
+      let link = ['/restaurants', restaurant.id];
+      this.router.navigate(link);
+
   }
 
   getRestaurants() {
@@ -42,7 +69,7 @@ export class RestaurantComponent implements OnInit {
       self.restaurants = res;
     });
     // return restaurants;
-    }
+  }
 
   getRestaurant(id: String) {
     let self = this;

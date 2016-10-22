@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RestaurantComponent } from './components/restaurant.cmpt';
+import { RestaurantDetailComponent } from './components/restaurant.detail.cmpt';
 
 
 @Component({

@@ -12,17 +12,17 @@ export class RestaurantService {
   constructor(private http: Http) {}
 
   getRestaurants(): Observable<Restaurant[]> {
-
     return this.http.get(this.restaurantUrl)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
 
-  getRestaurant(id: String): Observable<Restaurant> {
+  get(id: String): Observable<Restaurant> {
 
     return this.http.get(this.restaurantUrl + '/' + id)
                     .map(this.extractData)
                     .catch(this.handleError);
+
   }
 
   saveRestaurant(restaurant: Restaurant): Observable<Restaurant> {
