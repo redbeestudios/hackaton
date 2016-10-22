@@ -1,9 +1,12 @@
 package io.redbee.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Dish {
-	
+
+  @JsonIgnore
 	private String dishId;
-	private String description;
+	private String name;
 	private String type;
 	
 	public String getDishId() {
@@ -12,11 +15,11 @@ public class Dish {
 	public void setDishId(String dishId) {
 		this.dishId = dishId;
 	}
-	public String getDescription() {
-		return description;
+	public String getName() {
+		return name;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getType() {
 		return type;

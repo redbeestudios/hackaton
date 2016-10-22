@@ -38,7 +38,7 @@ public class EventVoting extends Event {
   public Restaurant extractVotedRestaurant(Message message, List<Restaurant> restaurants) {
     if (message.hasText()) {
       for (Restaurant restaurant : restaurants) {
-        if (message.getText().equals(restaurant.getDescription())) return restaurant;
+        if (message.getText().equals(restaurant.getName())) return restaurant;
       }
     }
 
@@ -62,7 +62,7 @@ public class EventVoting extends Event {
     
 	    for (Restaurant restaurant : page) {
 	
-	      keyboardFirstRow.add(restaurant.getDescription());
+	      keyboardFirstRow.add(restaurant.getName());
 	
 	    }
 

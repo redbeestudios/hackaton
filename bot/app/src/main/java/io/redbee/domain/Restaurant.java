@@ -9,9 +9,7 @@ public class Restaurant {
 
   @JsonProperty("id")
   private String restaurantId;
-  @JsonProperty("descripcion")
-  private String description;
-  @JsonIgnore
+  private String name;
   private List<Dish> dishes;
 
   public List<Dish> getDishes() {
@@ -30,11 +28,11 @@ public class Restaurant {
     this.restaurantId = restaurantId;
   }
 
-  public String getDescription() {
-    return description;
+  public String getName() {
+    return name;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setName(String name) {
+    this.name = name;
   }
 }

@@ -38,7 +38,7 @@ public class EventOrdering extends Event {
   public Dish extractVotedDish(Message message, List<Dish> dishes) {
     if (message.hasText()) {
       for (Dish dish : dishes) {
-        if (message.getText().equals(dish.getDescription())) return dish;
+        if (message.getText().equals(dish.getName())) return dish;
       }
     }
 
@@ -58,7 +58,7 @@ public class EventOrdering extends Event {
 
       for (Dish dish : dishes) {
 
-        keyboardFirstRow.add(dish.getDescription());
+        keyboardFirstRow.add(dish.getName());
 
       }
       keyboard.add(keyboardFirstRow);
