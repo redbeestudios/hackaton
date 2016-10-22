@@ -2,23 +2,32 @@ package com.redbee.io.service;
 
 
 import com.redbee.io.converter.EventConverter;
+import com.redbee.io.converter.OrderConverter;
+import com.redbee.io.converter.VoteConverter;
 import com.redbee.io.persistence.entities.Event;
 import com.redbee.io.persistence.entities.EventState;
 import com.redbee.io.persistence.repositories.EventRepository;
 import com.redbee.io.representation.EventRepresentation;
+import com.redbee.io.representation.OrderRepresentation;
+import com.redbee.io.representation.VoteRepresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 @Service
 public class EventService {
 
     @Autowired
     private EventConverter converter;
+
+    @Autowired
+    private VoteConverter voteConverter;
+
+    @Autowired
+    private OrderConverter orderConverter;
 
     @Autowired
     private EventRepository repo;
@@ -51,6 +60,28 @@ public class EventService {
 
     public EventRepresentation create(EventRepresentation eventRepresentation) {
         Event event = converter.convert(eventRepresentation);
+        event.setState(EventState.PENDING);
         return converter.convert(repo.insert(event));
+    }
+
+    public VoteRepresentation vote(VoteRepresentation voteRepresentation, String id) {
+        Event event = repo.findOne(id);
+        if (event.getVotes() == null){
+            event.setVotes(new ArrayList<>());
+        }
+        event.getVotes().add(voteConverter.convertRepresentation(voteRepresentation));
+        repo.save(event);
+        return voteRepresentation;
+    }
+
+    public OrderRepresentation order(OrderRepresentation orderRepresentation, String id) {
+        Event event = repo.findOne(id);
+        if (event.getOrders() == null){
+            event.setOrders(new ArrayList<>());
+        }
+        event.getOrders().add(orderConverter.convertrepresentation(orderRepresentation));
+        repo.save(event);
+        return orderRepresentation;
+
     }
 }

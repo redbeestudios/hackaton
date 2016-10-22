@@ -1,6 +1,6 @@
 package com.redbee.io.resources;
 
-import com.redbee.io.persistence.entities.Event;
+import com.redbee.io.representation.EventRepresentation;
 import com.redbee.io.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,7 @@ public class CurrentEventResource {
     private EventService eventService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public Optional<Event> eventOn(){
+    public Optional<EventRepresentation> eventOn(){
         return eventService.getEvent();
     }
 }
