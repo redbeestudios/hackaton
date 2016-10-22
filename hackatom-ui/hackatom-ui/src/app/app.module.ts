@@ -8,6 +8,7 @@ import { RouterModule }   from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { RestaurantComponent } from './components/restaurant.cmpt';
+import { RestaurantDetailComponent } from './components/restaurant.detail.cmpt';
 import { HomeComponent } from './components/home.cmpt';
 
 
@@ -16,6 +17,7 @@ import { HomeComponent } from './components/home.cmpt';
   declarations: [
     AppComponent,
     RestaurantComponent,
+    RestaurantDetailComponent,
     HomeComponent
   ],
   imports: [
@@ -25,7 +27,8 @@ import { HomeComponent } from './components/home.cmpt';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'restaurants', component: RestaurantComponent },
-      { path: '**', component: RestaurantComponent }
+      { path: 'restaurants/:id', component: RestaurantDetailComponent }
+      //{ path: '**', component: RestaurantComponent }
     ])
   ],
   providers: [],

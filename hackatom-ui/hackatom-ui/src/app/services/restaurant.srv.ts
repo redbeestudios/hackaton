@@ -16,11 +16,15 @@ export class RestaurantService {
                     .catch(this.handleError);
   }
 
-  getRestaurant(id: String): Observable<Restaurant> {
+  get(id: String): Observable<Restaurant> {
 
-    return this.http.get(this.restaurantUrl + '/' + id)
+    /*return this.http.get(this.restaurantUrl + '/' + id)
                     .map(this.extractData)
-                    .catch(this.handleError);
+                    .catch(this.handleError);*/
+
+    console.log('idddd '+id);
+
+    return Observable.of(new Restaurant());
   }
 
   saveRestaurant(restaurant: Restaurant): Observable<Restaurant> {
