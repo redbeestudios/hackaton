@@ -12,7 +12,5 @@ public interface TomApiService {
 	public List<Restaurant> findRestaurants(String eventId);
 	public List<Dish> findDishesForEvent(String eventId);
 	public boolean voteRestaurantForEvent(String eventId, String restaurantId, String userId);
-  public boolean selectDishForEvent(String eventId, String dishId, String userId);
-
-
+	public boolean selectDishForEvent(String eventId, List<String> dishes, String userId);
 }

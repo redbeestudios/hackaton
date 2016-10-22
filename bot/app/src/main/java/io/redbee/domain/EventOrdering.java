@@ -10,6 +10,7 @@ import io.redbee.utils.GroupingCollector;
 import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.api.methods.BotApiMethod;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.api.objects.CallbackQuery;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
@@ -31,11 +32,20 @@ public class EventOrdering extends Event {
       // ACA entra si se hizo click en un boton inline
       CallbackQuery callbackQuery = update.getCallbackQuery();
 
-      AnswerCallbackQuery answer = new AnswerCallbackQuery();
-      answer.setCallbackQueryId(callbackQuery.getId());
-      answer.setText("+1 " + callbackQuery.getData());
+//      AnswerCallbackQuery answer = new AnswerCallbackQuery();
+//      answer.setCallbackQueryId(callbackQuery.getId());
+//      answer.setText("+1 " + callbackQuery.getData());
+//
+//      return answer;
 
-      return answer;
+      EditMessageText edit = new EditMessageText();
+      edit.setText("Tu pedido es 20% mejor ahora");
+      edit.setChatId(String.valueOf(callbackQuery.getMessage().getChatId()));
+      edit.setMessageId(callbackQuery.getMessage().getMessageId());
+      edit.setInlineMessageId(callbackQuery.getInlineMessageId());
+      edit.setReplyMarkup(keyboard(event, dishes));
+
+      return edit;
 
     } else {
       SendMessage outgoingMsg = buildMessage(message, keyboard(event, dishes));
@@ -67,8 +77,9 @@ public class EventOrdering extends Event {
 
     if (event.getState().equals(Status.ORDERING)) {
 
-      List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
+      dishes.add(Dish.ENVIAR);
 
+      List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
 
       List<InlineKeyboardButton> row = null;
 
