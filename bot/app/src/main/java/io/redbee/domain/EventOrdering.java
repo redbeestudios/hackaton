@@ -1,13 +1,15 @@
 package io.redbee.domain;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import io.redbee.services.factory.TomApiServiceFactory;
+import io.redbee.services.interfaces.CacheService;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.GroupingCollector;
 
-import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.api.methods.BotApiMethod;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageText;
@@ -20,6 +22,7 @@ import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboar
 public class EventOrdering extends Event {
 
   private static final TomApiService service = TomApiServiceFactory.getInstance();
+  private static final CacheService cache = null;
 
   @Override
   public BotApiMethod buildReplyMessage(Update update) {
@@ -38,8 +41,10 @@ public class EventOrdering extends Event {
 //
 //      return answer;
 
+      Order order = updateOrder(callbackQuery, event);
+
       EditMessageText edit = new EditMessageText();
-      edit.setText("Tu pedido es 20% mejor ahora");
+      edit.setText(buildOrderMessage(callbackQuery, event));
       edit.setChatId(String.valueOf(callbackQuery.getMessage().getChatId()));
       edit.setMessageId(callbackQuery.getMessage().getMessageId());
       edit.setInlineMessageId(callbackQuery.getInlineMessageId());
@@ -54,22 +59,49 @@ public class EventOrdering extends Event {
 
       return outgoingMsg;
     }
-//    if (votedDish != null) {
-//      service.selectDishForEvent(event.getEventId(), votedDish.getDishId(), message.getFrom().getUserName());
-//      outgoingMsg.setText("Seleccionaste la siguiente comida " + message.getText());
-//    } else {
-//    }
   }
 
+  private Order updateOrder(CallbackQuery callbackQuery, Event event) {
+    String key = buildKey(callbackQuery.getMessage(), event);
+    Order order = cache.getOrderEntry(key);
 
-  public Dish extractVotedDish(Message message, List<Dish> dishes) {
-    if (message.hasText()) {
-      for (Dish dish : dishes) {
-        if (message.getText().equals(dish.getName())) return dish;
-      }
+    String data = callbackQuery.getData();
+    if (Dish.BORRAR.getName().equals(data)) {
+      order.getDishes().clear();
+    } else {
+      order.getDishes().add(data);
     }
 
-    return null;
+    cache.addOrderEntry(key, order);
+
+    return order;
+  }
+
+  private String buildOrderMessage(CallbackQuery callbackQuery, Event event) {
+    String key = buildKey(callbackQuery.getMessage(), event);
+    Order order = cache.getOrderEntry(key);
+    StringBuffer message = new StringBuffer();
+    if (order.getDishes() == null || order.getDishes().size() == 0)
+      message.append("Su pedido está vacío");
+
+    HashMap<String, Integer> dishes = new HashMap<>();
+
+    for (String dishname : order.getDishes()) {
+      if (!dishes.containsKey(dishname))
+        dishes.put(dishname, 1);
+      else
+        dishes.put(dishname, dishes.get(dishname) + 1);
+    }
+
+    for (Map.Entry<String, Integer> entry : dishes.entrySet()) {
+      message.append(entry.getValue()).append(" ").append(entry.getKey()).append("\n");
+    }
+
+    return message.toString();
+  }
+
+  private String buildKey(Message message, Event event) {
+    return message.getChatId() + "-" + event.getName();
   }
 
   public InlineKeyboardMarkup keyboard(Event event, List<Dish> dishes) {

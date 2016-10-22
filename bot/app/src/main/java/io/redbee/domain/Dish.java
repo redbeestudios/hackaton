@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Dish {
 
-  public final static Dish ENVIAR = new Dish("ENVIAR");
+  public final static Dish ENVIAR = new Dish("Enviar");
+  public final static Dish BORRAR = new Dish("Borrar");
 
   @JsonIgnore
 	private String dishId;
