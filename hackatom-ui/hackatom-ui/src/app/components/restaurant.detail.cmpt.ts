@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
       <h1>
         Restaurants
       </h1>
-      <form #restaurantForm="ngForm" (ngSubmit)="submit()" *ngIf="restaurant">
+      <form #restaurantForm="ngForm" *ngIf="restaurant">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" 
@@ -43,7 +43,7 @@ import { Location } from '@angular/common';
           </ul>
           
           
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button class="btn btn-default" (click)="submit()">Submit</button>
       </form>
    </div>   
   `,
@@ -52,7 +52,7 @@ import { Location } from '@angular/common';
 })
 export class RestaurantDetailComponent implements OnInit {
 
-    restaurant: Restaurant
+    restaurant: Restaurant;
     dish: Dish;
 
     constructor(private restaurantService:  RestaurantService,
@@ -71,7 +71,6 @@ export class RestaurantDetailComponent implements OnInit {
             if (id !== 'new') {
                 this.restaurantService.get(id)
                     .subscribe((restaurant) => {
-                        console.log('sdjaksdj '+restaurant);
                         this.restaurant = restaurant
                     });
             } else {
@@ -82,7 +81,8 @@ export class RestaurantDetailComponent implements OnInit {
 
     submit() {
 
-        console.log(this.restaurant.name)
+        console.log(''+this.restaurant);
+        this.restaurantService.save(this.restaurant).subscribe(() => console.log('la concha de tu madre'));
     }
 
     addDish() {

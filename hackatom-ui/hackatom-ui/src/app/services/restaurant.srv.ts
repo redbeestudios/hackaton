@@ -21,16 +21,16 @@ export class RestaurantService {
   get(id: String): Observable<Restaurant> {
 
     return this.http.get(this.restaurantUrl + '/' + id)
-                    .map(this.extractData);
-//                    .catch(this.handleError);
+                    .map(this.extractData)
+                    .catch(this.handleError);
 
   }
 
   save(restaurant: Restaurant): Observable<Restaurant> {
-    let body = JSON.stringify(restaurant);
-    return this.http.post(this.restaurantUrl, body)
-      .map(this.extractData);
-      //.catch(this.handleError);
+
+    return this.http.post(this.restaurantUrl, restaurant)
+      .map(this.extractData)
+      .catch(this.handleError);
   }
 
   update(restaurant: Restaurant): Observable<Restaurant> {
