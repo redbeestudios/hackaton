@@ -10,7 +10,10 @@ import java.util.stream.Collectors;
 /**
  * Created by martin on 21/10/16.
  */
+<<<<<<< HEAD
+=======
 
+>>>>>>> 38a91cea15d316742ba5e5af85e1fed98f723667
 @Component
 public class UserConverter {
 

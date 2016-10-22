@@ -1,5 +1,7 @@
 package io.redbee.domain;
 
+import static org.telegram.services.LocalisationService.lformat;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,43 +12,29 @@ import org.telegram.api.methods.SendMessage;
 import org.telegram.api.objects.Message;
 import org.telegram.api.objects.ReplyKeyboardMarkup;
 
-public class EventVoting extends Event {
+public class EventOrdering extends Event {
 
   private static final TomApiService service = TomApiServiceFactory.getInstance();
 
   @Override
   public SendMessage buildReplyMessage(Message message) {
 
-    Event event = service.findActiveEvent();
-    List<Restaurant> restaurants = service.findRestaurants(event.getEventId());
+    SendMessage replyMessage = buildMessage(message, keyboard());
+    replyMessage.setText("A que lugar le pedimos comida?");
+    replyMessage.setChatId(message.getChatId());
 
-    SendMessage outgoingMsg = buildMessage(message, keyboard(restaurants));
-    outgoingMsg.setChatId(message.getChatId());
-
-    if (messageIsVote(message, restaurants)) {
-      outgoingMsg.setText("Tu voto está registrado ahora en " + message.getText());
-    } else {
-      outgoingMsg.setText("¿A qué lugar le pedimos comida?");
-    }
-
-    return outgoingMsg;
+    return replyMessage;
   }
 
-  public boolean messageIsVote(Message message, List<Restaurant> restaurants) {
-    if (message.hasText()) {
-      for (Restaurant restaurant : restaurants) {
-        if (message.getText().equals(restaurant.getDescription())) return true;
-      }
-    }
-
-    return false;
-  }
-
-  public ReplyKeyboardMarkup keyboard(List<Restaurant> restaurants) {
+  public ReplyKeyboardMarkup keyboard() {
     ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
     replyKeyboardMarkup.setSelective(true);
     replyKeyboardMarkup.setResizeKeyboard(true);
     replyKeyboardMarkup.setOneTimeKeyboad(false);
+
+    Event event = service.findActiveEvent();
+
+    List<Restaurant> restaurants = service.findRestaurants(event.getEventId());
 
     List<List<String>> keyboard = new ArrayList<>();
     List<String> keyboardFirstRow = new ArrayList<>();

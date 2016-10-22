@@ -10,6 +10,4 @@ import java.util.Collection;
 
 public interface OrderRepository extends MongoRepository<Order, String> {
 
-//    Collection<Order> findByUser(User user);
-//    Collection<Order> findByEvent(Event event);
 }
