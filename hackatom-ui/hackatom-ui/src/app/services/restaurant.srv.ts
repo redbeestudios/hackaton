@@ -6,41 +6,16 @@ import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class RestaurantService {
-  private restaurantUrl = '/restaurants';
+  private restaurantUrl = '52.90.47.124:8081/restaurants';
+  private restaurantsMock = {};
 
   constructor(private http: Http) {}
 
   getRestaurants(): Observable<Restaurant[]> {
-    let restaurant = new Restaurant('1', 'Petalo', [
-  		{
-  		"name": "Milanesa",
-  		"type": "Plato Principal"
-  		},
-  		{
-  		"name": "Creme Brulee",
-  		"type": "Postre"
-  		}
-  	]);
-    let restaurant2 = new Restaurant('2', 'Arepaepa', [
-  		{
-  		"name": "caca",
-  		"type": "Plato Principal"
-  		},
-  		{
-  		"name": "polenta",
-  		"type": "Postre"
-  		}
-  	]);
-    let restaurants = [];
-    restaurants.push(restaurant);
-    restaurants.push(restaurant2);
-    let obs = Observable.of(restaurants);
 
-    return obs;
-
-    // return this.http.get(this.restaurantUrl)
-                    // .map(this.extractData)
-                    // .catch(this.handleError);
+    return this.http.get(this.restaurantUrl)
+                    .map(this.extractData)
+                    .catch(this.handleError);
   }
 
   getRestaurant(id: String): Observable<Restaurant> {
