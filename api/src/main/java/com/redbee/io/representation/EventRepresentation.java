@@ -18,8 +18,6 @@ public class EventRepresentation {
 
     private List<RestaurantRepresentation> restaurants;
 
-    private List<UserRepresentation> voters;
-
     private String chosenRestaurant;
 
     private List<VoteRepresentation> votes;
@@ -52,13 +50,6 @@ public class EventRepresentation {
         this.restaurants = restaurants;
     }
 
-    public List<UserRepresentation> getVoters() {
-        return voters;
-    }
-
-    public void setVoters(List<UserRepresentation> voters) {
-        this.voters = voters;
-    }
 
     public String getChosenRestaurant() {
         return chosenRestaurant;
