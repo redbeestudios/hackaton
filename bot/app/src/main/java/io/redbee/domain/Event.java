@@ -1,5 +1,6 @@
 package io.redbee.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.telegram.telegrambots.api.methods.BotApiMethod;
@@ -10,7 +11,12 @@ import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboard;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Event {
+public class Event implements Serializable{
+
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1993883879901320664L;
 
   public enum Status {
       PENDING("PENDING"), VOTING("VOTING"), ORDERING("ORDERING"), CANCELLED("CANCELLED"), CLOSED("CLOSED");

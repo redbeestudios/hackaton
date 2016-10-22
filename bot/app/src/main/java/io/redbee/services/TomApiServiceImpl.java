@@ -6,13 +6,17 @@ import java.util.List;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import io.redbee.domain.Dish;
 import io.redbee.domain.Event;
+import io.redbee.domain.Order;
 import io.redbee.domain.Restaurant;
+import io.redbee.domain.VotingResto;
 import io.redbee.services.interfaces.TomApiService;
 import io.redbee.utils.EventFactory;
 
@@ -73,12 +77,37 @@ public class TomApiServiceImpl implements TomApiService {
 
   @Override
   public boolean voteRestaurantForEvent(String eventId, String restaurantId, String userId) {
-    return false;
+	  
+	  WebTarget target = client.target(intIP + "/events");
+	  target.path(eventId).path("resto");
+	  
+	  VotingResto resto = new VotingResto(restaurantId,userId);
+	  
+	
+		
+		Entity<VotingResto> entity =  Entity.entity(resto, MediaType.APPLICATION_JSON_TYPE);
+		
+		Response resp = target.request(MediaType.APPLICATION_JSON_TYPE).post(entity);
+		
+		
+		return (Boolean) resp.getEntity();
+
   }
 
   @Override
-  public boolean selectDishForEvent(String eventId, String dishId, String userId) {
-    return false;
+  public boolean selectDishForEvent(String eventId, List<String> dishes, String userId) {
+	
+		WebTarget target = client.target(intIP + "/events");
+		target.path(eventId).path("order");
+
+		Order order = new Order(dishes, userId);
+
+		Entity<Order> entity = Entity.entity(order, MediaType.APPLICATION_JSON_TYPE);
+
+		Response resp = target.request(MediaType.APPLICATION_JSON_TYPE).post(entity);
+
+		return (Boolean) resp.getEntity();
+  
   }
 
 }
