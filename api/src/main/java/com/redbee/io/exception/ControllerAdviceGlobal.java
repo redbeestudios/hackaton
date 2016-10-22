@@ -30,4 +30,9 @@ public class ControllerAdviceGlobal {
     @ResponseStatus(value = HttpStatus.FORBIDDEN, reason ="No se puede Borrar!!!")
     public void cantBeDelete(){
     }
+
+    @ExceptionHandler(value = EntityCantBeChange.class )
+    @ResponseStatus(value = HttpStatus.FORBIDDEN, reason ="No se puede Cambiar")
+    public void cantBeChange(){
+    }
 }
