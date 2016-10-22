@@ -19,7 +19,7 @@ export var RestaurantCardComponent = (function () {
     RestaurantCardComponent = __decorate([
         Component({
             selector: 'restaurant-card',
-            template: "\n  <div class=\"card-block\">\n    <span>\n      <span class=\"card-title\">{{ restaurant.id }} - {{ restaurant.name }}</span>\n      <div style=\"float: right\">\n        <button class=\"btn btn-primary block\">Editar</button>\n        <button class=\"btn btn-danger block\" data-toggle=\"modal\" data-target=\"#myModal\">Borrar</button>\n      </div>\n    </span>\n  </div>\n  ",
+            template: "\n  <div class=\"card-block\">\n    <span>\n      <span class=\"card-title\">{{ restaurant.id }} - {{ restaurant.name }}</span>\n      <div style=\"float: right\">\n        <button class=\"btn btn-danger block\" data-toggle=\"modal\" data-target=\"#myModal\">Borrar</button>\n      </div>\n    </span>\n  </div>\n  ",
             styles: [""]
         }), 
         __metadata('design:paramtypes', [])

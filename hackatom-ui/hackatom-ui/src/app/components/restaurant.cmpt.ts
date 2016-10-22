@@ -8,12 +8,11 @@ import { RestaurantService } from '../services/restaurant.srv';
   template: `
     <div class="container">
       <span  class="title"> Restaurants</span>
-      <a routerLink="/restaurant/new" class="btn btn-success block" style="float: right">Crear</a>
+      <a routerLink="/restaurant/new" class="btn btn-success block" style="float: right; margin-top: 1%; margin-right: 23px;">Crear</a>
       <br><br>
-      <div *ngFor="let restaurant of restaurants"class="card">
+      <div *ngFor="let restaurant of restaurants" class="card">
           <restaurant-card [restaurant]="restaurant"></restaurant-card>
       </div>
-
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
