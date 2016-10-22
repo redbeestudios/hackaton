@@ -7,15 +7,16 @@ import { RouterModule }   from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-import { RestaurantComponent } from './components/restaurant.cmpt';
 import { HomeComponent } from './components/home.cmpt';
-
+import { RestaurantComponent } from './components/restaurant.cmpt';
+import { RestaurantCardComponent } from './components/restaurant-card.cmpt';
 
 @NgModule({
 
   declarations: [
     AppComponent,
     RestaurantComponent,
+    RestaurantCardComponent,
     HomeComponent
   ],
   imports: [
