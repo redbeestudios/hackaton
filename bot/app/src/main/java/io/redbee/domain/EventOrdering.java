@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.redbee.services.factory.CacheServiceFactory;
 import io.redbee.services.factory.TomApiServiceFactory;
 import io.redbee.services.interfaces.CacheService;
 import io.redbee.services.interfaces.TomApiService;
@@ -22,7 +23,7 @@ import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboar
 public class EventOrdering extends Event {
 
   private static final TomApiService service = TomApiServiceFactory.getInstance();
-  private static final CacheService cache = null;
+  private static final CacheService cache = CacheServiceFactory.getInstance();
 
   @Override
   public BotApiMethod buildReplyMessage(Update update) {
@@ -63,7 +64,7 @@ public class EventOrdering extends Event {
 
   private Order updateOrder(CallbackQuery callbackQuery, Event event) {
     String key = buildKey(callbackQuery.getMessage(), event);
-    Order order = cache.getOrderEntry(key);
+    Order order = getOrder(callbackQuery, event);
 
     String data = callbackQuery.getData();
     if (Dish.BORRAR.getName().equals(data)) {
@@ -78,8 +79,9 @@ public class EventOrdering extends Event {
   }
 
   private String buildOrderMessage(CallbackQuery callbackQuery, Event event) {
-    String key = buildKey(callbackQuery.getMessage(), event);
-    Order order = cache.getOrderEntry(key);
+    Order order = getOrder(callbackQuery, event);
+
+
     StringBuffer message = new StringBuffer();
     if (order.getDishes() == null || order.getDishes().size() == 0)
       message.append("Su pedido está vacío");
@@ -100,6 +102,17 @@ public class EventOrdering extends Event {
     return message.toString();
   }
 
+  private Order getOrder(CallbackQuery callbackQuery, Event event) {
+    String key = buildKey(callbackQuery.getMessage(), event);
+    Order order = cache.getOrderEntry(key);
+
+    if (order == null) {
+      cache.addOrderEntry(key, new Order(new ArrayList<String>(), null));
+    }
+
+    return order;
+  }
+
   private String buildKey(Message message, Event event) {
     return message.getChatId() + "-" + event.getName();
   }
@@ -109,6 +122,7 @@ public class EventOrdering extends Event {
 
     if (event.getState().equals(Status.ORDERING)) {
 
+      dishes.add(Dish.BORRAR);
       dishes.add(Dish.ENVIAR);
 
       List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();

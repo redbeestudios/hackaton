@@ -13,6 +13,8 @@ public class Order implements Serializable {
 	private List<String> dishes;
 	private String userId;
 
+  public Order() {}
+
 	public Order(List<String> dishes, String userId) {
 		
 		this.dishes = dishes;
