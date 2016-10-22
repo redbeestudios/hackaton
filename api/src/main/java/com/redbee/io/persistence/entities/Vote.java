@@ -6,11 +6,12 @@ public class Vote {
     @Id
     private String id;
 
-    private User user;
-    private Restaurant restaurant;
+    private String user;
+    private String restaurant;
 
-
-    public Vote(User user, Restaurant restaurant) {
+    public Vote() {
+    }
+    public Vote(String user, String restaurant) {
         this.user = user;
         this.restaurant = restaurant;
     }
@@ -23,19 +24,19 @@ public class Vote {
         this.id = id;
     }
 
-    public User getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
-    public Restaurant getRestaurant() {
+    public String getRestaurant() {
         return restaurant;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
+    public void setRestaurant(String restaurant) {
         this.restaurant = restaurant;
     }
 }
